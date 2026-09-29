@@ -174,6 +174,6 @@ export async function POST(request) {
     ok: true,
     leadId: lead.id,
     fit,
-    bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "",
+    bookingUrl: fit === "strong" ? (process.env.NEXT_PUBLIC_BOOKING_URL || "") : "",
   });
 }
