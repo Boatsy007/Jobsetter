@@ -1963,3 +1963,183 @@ footer .footerNav a{color:#c2ccda!important}
   .formStepActions .textButton{width:100%}
   .heroSubline{font-size:14px!important}
 }
+
+
+/* =========================================================
+   Scroll motion v1
+   Restrained reveals, active pilot timeline, animated pipeline
+   ========================================================= */
+
+/* Remove the old global story guide line completely. */
+.storySection:not(.hero):before{
+  display:none!important;
+}
+
+/* Keep initial movement subtle and short. */
+.storySection,
+.storyBridge,
+.founderSection,
+.caseStudySection,
+.callDemoSection{
+  opacity:0;
+  transform:translate3d(0,22px,0);
+  transition:
+    opacity .58s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms),
+    transform .58s cubic-bezier(.22,.61,.36,1) var(--reveal-delay,0ms);
+  will-change:opacity,transform;
+}
+.hero.storySection{
+  opacity:1;
+  transform:none;
+}
+.storySection.is-revealed,
+.storyBridge.is-revealed,
+.founderSection.is-revealed,
+.caseStudySection.is-revealed,
+.callDemoSection.is-revealed{
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+
+/* Pipeline becomes a repeatable brand motion:
+   line draws once, then nodes arrive in sequence. */
+.pipelineLine{
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .72s cubic-bezier(.22,.61,.36,1);
+}
+.pipelineNode{
+  opacity:.26;
+  transform:translateY(7px) scale(.985);
+  transition:
+    opacity .34s ease,
+    transform .44s cubic-bezier(.22,.61,.36,1);
+}
+.pipelineMotif.is-visible .pipelineLine{
+  transform:scaleX(1);
+}
+.pipelineMotif.is-visible .pipelineNode{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(2){transition-delay:.08s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(3){transition-delay:.16s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(4){transition-delay:.24s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(5){transition-delay:.32s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(6){transition-delay:.40s}
+
+.pipelineMotif.is-visible .pipelineNode>span{
+  animation:pipelinePulse .5s cubic-bezier(.22,.61,.36,1) both;
+}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(2)>span{animation-delay:.08s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(3)>span{animation-delay:.16s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(4)>span{animation-delay:.24s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(5)>span{animation-delay:.32s}
+.pipelineMotif.is-visible .pipelineNode:nth-of-type(6)>span{animation-delay:.40s}
+
+@keyframes pipelinePulse{
+  0%{transform:scale(.86);box-shadow:0 0 0 rgba(32,88,255,0)}
+  60%{transform:scale(1.06);box-shadow:0 0 0 8px rgba(32,88,255,.06)}
+  100%{transform:scale(1);box-shadow:0 6px 18px rgba(11,16,32,.07)}
+}
+
+/* The pilot timeline follows the user's scroll position. */
+#pilot-offer .pilotTimeline article{
+  opacity:.5;
+  transform:translateX(0) scale(.985);
+  border-color:rgba(255,255,255,.065)!important;
+  transition:
+    opacity .24s ease,
+    transform .32s cubic-bezier(.22,.61,.36,1),
+    background .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease;
+}
+#pilot-offer .pilotTimeline article.is-active{
+  opacity:1;
+  transform:translateX(5px) scale(1);
+  background:rgba(255,255,255,.075)!important;
+  border-color:rgba(126,157,255,.36)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.14)!important;
+}
+#pilot-offer .pilotTimeline article.is-active span{
+  color:var(--j-lime)!important;
+}
+#pilot-offer .pilotTimeline article.is-active h3{
+  color:#fff!important;
+}
+
+/* Report gets a restrained response when the pilot section is in view. */
+#pilot-offer.is-revealed .reportDemo{
+  animation:reportSettle .62s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes reportSettle{
+  from{opacity:.72;transform:translateY(14px) scale(.99)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* Hover motion stays tiny and purposeful. */
+@media (hover:hover){
+  .reportTabs button,
+  .journeyTabs button,
+  .choice,
+  .button{
+    transition:
+      transform .16s ease,
+      box-shadow .18s ease,
+      background .18s ease,
+      color .18s ease,
+      border-color .18s ease;
+  }
+  .reportTabs button:hover,
+  .journeyTabs button:hover{
+    transform:translateY(-1px);
+  }
+}
+
+/* Mobile motion should feel lighter, not busier. */
+@media(max-width:700px){
+  .storySection,
+  .storyBridge,
+  .founderSection,
+  .caseStudySection,
+  .callDemoSection{
+    transform:translate3d(0,14px,0);
+    transition-duration:.46s;
+  }
+  .storySection.is-revealed,
+  .storyBridge.is-revealed,
+  .founderSection.is-revealed,
+  .caseStudySection.is-revealed,
+  .callDemoSection.is-revealed{
+    transform:translate3d(0,0,0);
+  }
+  #pilot-offer .pilotTimeline article{
+    opacity:.72;
+    transform:none;
+  }
+  #pilot-offer .pilotTimeline article.is-active{
+    transform:none;
+    opacity:1;
+    box-shadow:0 10px 26px rgba(0,0,0,.12)!important;
+  }
+}
+
+/* Accessibility: no forced motion for users who request less animation. */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .storySection,
+  .storyBridge,
+  .founderSection,
+  .caseStudySection,
+  .callDemoSection,
+  .pipelineLine,
+  .pipelineNode,
+  #pilot-offer .pilotTimeline article,
+  .reportDemo{
+    opacity:1!important;
+    transform:none!important;
+    animation:none!important;
+    transition:none!important;
+  }
+}
