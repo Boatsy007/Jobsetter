@@ -1,11 +1,16 @@
 export default function FounderSection() {
   const videoUrl = process.env.NEXT_PUBLIC_FOUNDER_VIDEO_URL;
+  const imageUrl = process.env.NEXT_PUBLIC_FOUNDER_IMAGE_URL;
 
   return (
     <section className="section founderSection" id="founder">
       <div className="shell founderGrid">
         <div className="founderIdentity">
-          <div className="founderAvatar" aria-hidden="true">RH</div>
+          {imageUrl ? (
+            <img className="founderPhoto" src={imageUrl} alt="Rohan, founder of JobSetter" />
+          ) : (
+            <div className="founderAvatar" aria-hidden="true">RH</div>
+          )}
           <div>
             <small>FOUNDER, JOBSETTER</small>
             <h3>Rohan</h3>
@@ -21,15 +26,10 @@ export default function FounderSection() {
             somebody should be responsible for working every worthwhile opportunity until there is a clear next step.
           </p>
           <p className="founderPromise">Before your pilot goes live, you know who is handling your conversations, what they are allowed to say, what a good job looks like and how the handoff works.</p>
-          {videoUrl ? (
-            <video className="founderVideo" controls preload="metadata" src={videoUrl}>
+          {videoUrl && (
+            <video className="founderVideo" controls preload="metadata" poster={imageUrl || undefined} src={videoUrl}>
               Your browser does not support video playback.
             </video>
-          ) : (
-            <div className="founderVideoPlaceholder">
-              <b>Founder video slot ready</b>
-              <span>When a real founder video is added, it will appear here without changing the page structure.</span>
-            </div>
           )}
         </div>
       </div>
