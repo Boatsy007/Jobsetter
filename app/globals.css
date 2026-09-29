@@ -2159,3 +2159,77 @@ footer .footerNav a{color:#c2ccda!important}
   }
   .comparisonTable.sixCol>div{min-width:980px!important}
 }
+
+
+/* Dynamic scroll refinement */
+.storySection .storyIntro,
+.founderSection .founderGrid,
+.caseStudySection .caseStudyGrid,
+.callDemoSection .callDemoGrid{
+  transform:translate3d(0,calc((.5 - var(--section-progress,.5)) * 10px),0);
+  transition:transform .12s linear;
+}
+.storyBridgeInner{
+  transform:translate3d(0,calc((.5 - var(--section-progress,.5)) * 6px),0);
+  transition:transform .12s linear;
+}
+
+/* Keep reveals crisp rather than theatrical. */
+.storySection,
+.storyBridge,
+.founderSection,
+.caseStudySection,
+.callDemoSection{
+  transition-duration:.5s!important;
+}
+.pipelineMotif.is-visible .pipelineLine{
+  transition-duration:.62s!important;
+}
+.pipelineMotif.is-visible .pipelineNode{
+  transition-duration:.38s!important;
+}
+
+/* Stronger but still restrained pilot focus state. */
+#pilot-offer .pilotTimeline article{
+  filter:saturate(.82);
+}
+#pilot-offer .pilotTimeline article.is-active{
+  filter:saturate(1);
+  transform:translateX(6px) scale(1.008)!important;
+}
+#pilot-offer .pilotTimeline article.is-active:after{
+  content:"";
+  position:absolute;
+  left:-1px;
+  top:14px;
+  bottom:14px;
+  width:3px;
+  border-radius:999px;
+  background:linear-gradient(180deg,var(--j-blue),var(--j-violet),var(--j-lime));
+}
+#pilot-offer .pilotTimeline article{position:relative}
+
+/* Mobile: preserve motion but remove continuous drift. */
+@media(max-width:700px){
+  .storySection .storyIntro,
+  .founderSection .founderGrid,
+  .caseStudySection .caseStudyGrid,
+  .callDemoSection .callDemoGrid,
+  .storyBridgeInner{
+    transform:none!important;
+  }
+  #pilot-offer .pilotTimeline article.is-active{
+    transform:none!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .storySection .storyIntro,
+  .founderSection .founderGrid,
+  .caseStudySection .caseStudyGrid,
+  .callDemoSection .callDemoGrid,
+  .storyBridgeInner{
+    transform:none!important;
+    transition:none!important;
+  }
+}
