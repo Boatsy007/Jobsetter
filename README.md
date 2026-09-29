@@ -94,15 +94,48 @@ app/data/caseStudy.js
 
 Set `published: true` only after the client metrics and any quote have been verified and permission to publish has been obtained.
 
-## Current pilot terms
+## Current pilot operating model
 
-The homepage currently states:
+The website currently states:
 
 - 14-day JobSetter Revenue Recovery Pilot
 - $0 JobSetter pilot service fee
-- ongoing pricing agreed before the pilot begins
 - no automatic rollover to paid service
-- ongoing service begins only if the client chooses to continue after Day 14
-- continuing service is cancel-anytime
+- up to 20 eligible new enquiries during the pilot
+- up to 15 open quotes selected for recovery
+- up to 25 reactivation contacts
+- standard coverage Monday-Friday, 8am-6pm in the client's local business time
+- new leads: up to 5 contact attempts across up to 5 business days
+- open quotes: up to 4 follow-up attempts during the pilot
+- reactivation contacts: up to 3 attempts during the pilot
+- ongoing standard plan: $2,490 + GST/month
+- ongoing standard volume: up to 80 new enquiries, 40 quote-follow-up records and 100 reactivation contacts/month
+- ongoing service is month-to-month
+
+Strong pilot fit is currently defined in the lead scoring logic as:
+
+- 30+ new enquiries/month OR $25,000+ of open quotes suitable for follow-up
+- average job value around $750+
+- capacity to accept more work in the next 30 days
 
 Keep these statements aligned with the actual client agreement before accepting pilots.
+
+## CRM timing
+
+HubSpot is optional at launch. The site can operate with a lead webhook or Resend notification first, then move to HubSpot after the production website/domain setup is ready.
+
+## Calendly booking
+
+The website is ready for Calendly. Add the public scheduling URL in Vercel:
+
+```
+NEXT_PUBLIC_BOOKING_URL=https://calendly.com/...
+```
+
+Strong-fit leads are saved first, then sent to Calendly with name/email prefilled. Configure the Calendly event's post-booking redirect to:
+
+```
+https://YOUR-PRODUCTION-DOMAIN/pilot-confirmed
+```
+
+That page fires the `Pilot Call Booked` analytics event.
