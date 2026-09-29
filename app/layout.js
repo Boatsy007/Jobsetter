@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
+import ScrollReset from "./ScrollReset";
 import "./globals.css";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-AU">
       <body>
+        <ScrollReset />
         {children}
         <Analytics />
       </body>
