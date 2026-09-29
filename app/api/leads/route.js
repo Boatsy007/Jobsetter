@@ -7,6 +7,11 @@ function clean(value, max = 500) {
   return String(value ?? "").trim().slice(0, max);
 }
 
+function toNumber(value) {
+  const n = Number(String(value ?? "").replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) ? n : 0;
+}
+
 export async function POST(request) {
   let body;
   try {
@@ -15,23 +20,30 @@ export async function POST(request) {
     return NextResponse.json({ ok: false, error: "Invalid request." }, { status: 400 });
   }
 
-  // Honeypot: bots often fill fields humans never see.
   if (clean(body.website, 200)) {
     return NextResponse.json({ ok: true });
   }
 
+  const now = new Date().toISOString();
   const lead = {
     id: crypto.randomUUID(),
-    createdAt: new Date().toISOString(),
+    createdAt: now,
     name: clean(body.name, 120),
     business: clean(body.business, 160),
     trade: clean(body.trade, 80),
     email: clean(body.email, 180).toLowerCase(),
     phone: clean(body.phone, 60),
     monthlyLeads: clean(body.monthlyLeads, 30),
+    averageJobValue: clean(body.averageJobValue, 40),
+    openQuoteValue: clean(body.openQuoteValue, 40),
     monthlyRevenue: clean(body.monthlyRevenue, 60),
     currentSystem: clean(body.currentSystem, 120),
     preferredWindow: clean(body.preferredWindow, 80),
+    capacityWithin30Days: Boolean(body.capacityWithin30Days),
+    pilotContactConsent: Boolean(body.pilotContactConsent),
+    pilotContactConsentAt: body.pilotContactConsent ? now : "",
+    marketingConsent: Boolean(body.marketingConsent),
+    marketingConsentAt: body.marketingConsent ? now : "",
     audit: body.audit && typeof body.audit === "object" ? body.audit : null,
     page: clean(body.page, 250),
     referrer: clean(body.referrer, 250),
@@ -43,10 +55,18 @@ export async function POST(request) {
   if (lead.business.length < 2) errors.business = "Enter your business name.";
   if (!emailPattern.test(lead.email)) errors.email = "Enter a valid email.";
   if (lead.phone.replace(/\D/g, "").length < 8) errors.phone = "Enter a valid phone number.";
+  if (!lead.pilotContactConsent) errors.pilotContactConsent = "Please agree so we can contact you about your pilot request.";
 
   if (Object.keys(errors).length) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
+
+  const monthlyLeads = toNumber(lead.monthlyLeads);
+  const averageJob = toNumber(lead.averageJobValue || lead.audit?.averageJob);
+  const openQuoteValue = toNumber(lead.openQuoteValue);
+  const strongDemand = monthlyLeads >= 30 || openQuoteValue >= 25000;
+  const strongJobValue = averageJob >= 750;
+  const fit = strongDemand && strongJobValue && lead.capacityWithin30Days ? "strong" : "review";
 
   let persisted = false;
   const persistenceErrors = [];
@@ -56,7 +76,7 @@ export async function POST(request) {
       const response = await fetch(process.env.LEAD_WEBHOOK_URL, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ event: "jobsetter_lead", lead }),
+        body: JSON.stringify({ event: "jobsetter_lead", fit, lead }),
         cache: "no-store",
       });
       if (!response.ok) throw new Error(`Webhook returned ${response.status}`);
@@ -73,8 +93,8 @@ export async function POST(request) {
       const auditLines = lead.audit
         ? [
             `Diagnostic score: ${lead.audit.score ?? "-"}`,
-            `Monthly enquiries: ${lead.audit.monthlyLeads ?? "-"}`,
-            `Average job value: $${lead.audit.averageJob ?? "-"}`,
+            `Audit monthly enquiries: ${lead.audit.monthlyLeads ?? "-"}`,
+            `Audit average job value: $${lead.audit.averageJob ?? "-"}`,
             `Current close rate: ${lead.audit.closeRate ?? "-"}%`,
             `Biggest leak: ${lead.audit.biggestLeak ?? "-"}`,
           ]
@@ -84,15 +104,21 @@ export async function POST(request) {
         "New JobSetter pilot lead",
         "",
         `Lead ID: ${lead.id}`,
+        `Pilot fit: ${fit}`,
         `Name: ${lead.name}`,
         `Business: ${lead.business}`,
         `Trade: ${lead.trade}`,
         `Email: ${lead.email}`,
         `Phone: ${lead.phone}`,
         `Monthly leads: ${lead.monthlyLeads || "-"}`,
+        `Average job value: $${lead.averageJobValue || "-"}`,
+        `Open quote value: $${lead.openQuoteValue || "-"}`,
         `Monthly revenue: ${lead.monthlyRevenue || "-"}`,
-        `Current CRM/job system: ${lead.currentSystem || "-"}`,
+        `CRM/job system: ${lead.currentSystem || "-"}`,
+        `Capacity for more work: ${lead.capacityWithin30Days ? "Yes" : "No / unsure"}`,
         `Preferred call window: ${lead.preferredWindow || "-"}`,
+        `Pilot contact consent: ${lead.pilotContactConsent ? "Yes" : "No"}`,
+        `Marketing consent: ${lead.marketingConsent ? "Yes" : "No"}`,
         ...auditLines,
         "",
         `Page: ${lead.page || "-"}`,
@@ -108,7 +134,7 @@ export async function POST(request) {
         body: JSON.stringify({
           from,
           to: [recipient],
-          subject: `JobSetter pilot lead — ${lead.business}`,
+          subject: `JobSetter pilot lead [${fit.toUpperCase()}] — ${lead.business}`,
           text: textBody,
           reply_to: lead.email,
         }),
@@ -140,12 +166,14 @@ export async function POST(request) {
     await track("Pilot Lead Saved", {
       trade: lead.trade || "Unknown",
       hasAudit: lead.audit ? "yes" : "no",
+      fit,
     });
   } catch {}
 
   return NextResponse.json({
     ok: true,
     leadId: lead.id,
+    fit,
     bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "",
   });
 }
