@@ -1,12 +1,12 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "JobSetter | The Revenue Conversion Layer for the Trades",
-  description: "JobSetter is a human-led, AI-assisted front office that answers, qualifies, books, follows up and reactivates opportunities for trades and service businesses.",
-  keywords: ["tradie lead follow up", "appointment setting for trades", "quote follow up", "AI receptionist trades", "lead conversion for tradies", "outsourced front office"],
+  title: "JobSetter | Stop Losing Jobs You Already Paid to Get",
+  description: "JobSetter is the done-for-you front office for trades: human-led lead response, qualification, booking, quote follow-up and reactivation, with AI working behind the scenes.",
+  keywords: ["tradie lead follow up", "appointment setting for trades", "quote follow up", "outsourced front office", "lead conversion for tradies", "missed call recovery"],
   openGraph: {
-    title: "JobSetter | Turn demand into booked work",
-    description: "Human-led, AI-assisted revenue conversion for trades and service businesses.",
+    title: "JobSetter | Stop losing jobs you already paid to get",
+    description: "Human-led, AI-assisted lead conversion and quote recovery for trades and service businesses.",
     type: "website",
     locale: "en_AU",
     siteName: "JobSetter",
