@@ -5,6 +5,25 @@ import { track } from "@vercel/analytics";
 
 const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
 
+const recommendations = {
+  "Speed to lead": {
+    title: "Give every new enquiry an owner and a response deadline.",
+    text: "Your first move is to make sure each eligible lead is assigned immediately and contacted fast enough that the customer is still actively choosing who to use."
+  },
+  "Qualification": {
+    title: "Define the five questions that decide whether a lead belongs on the calendar.",
+    text: "Your first move is to standardise job type, location, urgency, budget/fit and decision readiness so weak enquiries stop consuming the same attention as good ones."
+  },
+  "Quote recovery": {
+    title: "No quote should sit in limbo.",
+    text: "Your first move is to keep every open quote assigned to a named owner until it becomes Won, Lost or Deferred — with a documented next follow-up date."
+  },
+  "Reactivation": {
+    title: "Turn your old database into an active pipeline.",
+    text: "Your first move is to segment past customers and dormant opportunities by service need and recency, then give each segment a clear reason to re-engage."
+  }
+};
+
 const questions = [
   { key: "monthlyLeads", eyebrow: "QUESTION 1 OF 7", title: "How many enquiries do you get in a typical month?", type: "number", suffix: "enquiries", min: 0 },
   { key: "averageJob", eyebrow: "QUESTION 2 OF 7", title: "Roughly what is an average won job worth?", type: "money", min: 0 },
@@ -68,6 +87,7 @@ export default function RevenueLeakCalculator() {
   }, [answers, scenarioLift]);
 
   const q = questions[step];
+  const recommendation = recommendations[scores.biggestLeak];
   const setAnswer = (key, value) => setAnswers((old) => ({ ...old, [key]: value }));
 
   const next = () => {
@@ -201,6 +221,12 @@ export default function RevenueLeakCalculator() {
           <ScoreRow label="Qualification" value={scores.qualify} />
           <ScoreRow label="Quote recovery" value={scores.quotes} />
           <ScoreRow label="Reactivation" value={scores.reactivate} />
+
+          <div className="recommendationBox">
+            <small>YOUR FIRST MOVE</small>
+            <h4>{recommendation.title}</h4>
+            <p>{recommendation.text}</p>
+          </div>
 
           <div className="personalUrgency">
             <small>YOUR PIPELINE DOESN'T PAUSE</small>
