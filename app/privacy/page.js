@@ -41,7 +41,7 @@ export default function PrivacyPage() {
 
         <div className="legalNotice">
           <strong>Business identity</strong>
-          <p>JobSetter is the trading name used for this service in Australia. The legal contracting entity and ABN will be stated in the client service agreement and should be added to this page once finalised.</p>
+          <p>JobSetter is the trading name used for this service in Australia. The legal contracting entity and ABN are stated in any client service agreement issued to you.</p>
         </div>
 
         <div className="legalFooterLinks"><a href="/">Home</a><a href="/terms">Terms</a><a href="mailto:hello@jobsetter.com.au">Contact</a></div>
