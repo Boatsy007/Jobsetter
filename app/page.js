@@ -1,3 +1,5 @@
+import Header from "./Header";
+
 const metrics = [
   ["Leads", "248", "+12%"],
   ["Contacted", "236", "+96%"],
@@ -26,18 +28,7 @@ const features = [
 export default function Home() {
   return (
     <main>
-      <header className="siteHeader">
-        <div className="shell nav">
-          <a className="brand" href="#top"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></a>
-          <nav className="desktopNav">
-            <a href="#how">How it works</a>
-            <a href="#features">What we do</a>
-            <a href="#why">Why JobSetter</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-          <a className="button small" href="#demo">Book a demo</a>
-        </div>
-      </header>
+      <Header />
 
       <section className="hero" id="top">
         <div className="shell heroGrid">
