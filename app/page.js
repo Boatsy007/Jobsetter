@@ -1,28 +1,43 @@
 import Header from "./Header";
 
-const metrics = [
-  ["Leads", "248", "+12%"],
-  ["Contacted", "236", "+96%"],
-  ["Qualified", "178", "+24%"],
-  ["Booked", "122", "+28%"],
-  ["Quotes sent", "96", "+18%"],
-  ["Jobs won", "87", "+26%"],
+const pipelineMetrics = [
+  ["New leads", "248"],
+  ["Contacted", "236"],
+  ["Qualified", "178"],
+  ["Booked", "122"],
+  ["Open quotes", "34"],
+  ["Won jobs", "87"],
 ];
 
-const steps = [
-  ["01", "Lead comes in", "Calls, forms, chats and ad leads are captured in one place."],
-  ["02", "We contact fast", "A real setter responds quickly, qualifies the enquiry and keeps the conversation moving."],
-  ["03", "We book the job", "Qualified work is booked into your calendar around your availability and service area."],
-  ["04", "We follow up", "Quotes are chased, cold leads are reactivated and no good opportunity is left sitting."],
+const revenueLoop = [
+  ["01", "Capture", "Phone calls, forms, ads, chats and referrals enter one operating queue instead of disappearing across inboxes and phones."],
+  ["02", "Convert", "JobSetter responds, qualifies the opportunity, answers the common questions and books the next best action."],
+  ["03", "Recover", "Missed calls, unresponsive leads and open quotes are worked until they convert, disqualify or clearly close."],
+  ["04", "Reactivate", "Past customers and dormant opportunities are brought back into the pipeline when there is a reason to buy again."],
 ];
 
-const features = [
-  ["Missed-call answering", "Every genuine enquiry gets a response, even when you're on the tools."],
-  ["Lead qualification", "We filter tyre-kickers and pass through the jobs that fit your business."],
-  ["Appointment booking", "Jobs and quote appointments are booked directly into your calendar."],
-  ["Quote follow-up", "We follow up open quotes so more quoted work turns into revenue."],
-  ["Lead reactivation", "Old enquiries and past customers become a fresh source of work."],
-  ["CRM updates", "Every conversation, status and next action is kept organised and visible."],
+const platform = [
+  ["Inbound lead desk", "Fast human response for new enquiries, missed calls and web leads."],
+  ["Qualification engine", "Consistent questions, job-fit rules, service-area checks and lead notes."],
+  ["Booking & dispatch handoff", "Qualified opportunities move into the client's calendar or workflow with the context attached."],
+  ["Quote recovery", "Open estimates are followed up systematically instead of being forgotten."],
+  ["Customer reactivation", "Old leads and past customers become an always-on source of future work."],
+  ["Revenue intelligence", "See where every opportunity sits and which parts of the front office are leaking revenue."],
+];
+
+const layers = [
+  ["Human setters", "Trust, judgement, objection handling and sales conversations."],
+  ["AI agents", "Summaries, reminders, triage, routing, scoring and repetitive follow-up."],
+  ["Client systems", "JobSetter is designed to sit on top of the CRM, calendar and field-service tools a business already uses."],
+];
+
+const who = [
+  ["Plumbing", "Emergency calls, quote follow-up, maintenance reminders and repeat work."],
+  ["Electrical", "Fast qualification, booking, switchboard/solar/project follow-up and reactivation."],
+  ["HVAC", "Seasonal demand, service reminders, quote recovery and maintenance-plan opportunities."],
+  ["Roofing & building", "Higher-ticket leads, longer sales cycles and relentless estimate follow-up."],
+  ["Landscaping & outdoor", "Site visits, quote chasing, recurring maintenance and dormant lead reactivation."],
+  ["Other service businesses", "Any business where leads arrive faster than the owner or office can consistently work them."],
 ];
 
 export default function Home() {
@@ -31,97 +46,222 @@ export default function Home() {
       <Header />
 
       <section className="hero" id="top">
+        <div className="heroAura heroAuraOne" />
+        <div className="heroAura heroAuraTwo" />
         <div className="shell heroGrid">
-          <div>
-            <div className="eyebrow"><span /> OUTSOURCED FRONT OFFICE FOR TRADIES</div>
-            <h1>Turn more leads into <span>booked jobs.</span></h1>
-            <p className="heroText">JobSetter answers, qualifies, books and follows up every lead so you can focus on the work. Human-led where judgement matters. AI-assisted everywhere else.</p>
+          <div className="heroCopy">
+            <div className="eyebrow"><span /> THE REVENUE CONVERSION LAYER FOR THE TRADES</div>
+            <h1>Turn every good lead into the <span>next best action.</span></h1>
+            <p className="heroText">
+              JobSetter is the human-led, AI-assisted front office that answers, qualifies, books,
+              follows up and reactivates — so opportunities keep moving until there is an outcome.
+            </p>
             <div className="heroActions">
-              <a className="button" href="#demo">Book a demo →</a>
-              <a className="button secondary" href="#how">See how it works</a>
+              <a className="button" href="#pilot">Start a pilot <b>→</b></a>
+              <a className="button secondary" href="#loop">See the revenue loop</a>
             </div>
             <div className="proofRow">
-              <span>✓ Human setters</span><span>✓ AI-assisted follow-up</span><span>✓ Built for service businesses</span>
+              <span>✓ Human conversations where trust matters</span>
+              <span>✓ AI agents behind the scenes</span>
+              <span>✓ No rip-and-replace required</span>
             </div>
           </div>
 
           <div className="dashboardWrap">
-            <div className="dashboardTop"><div className="miniBrand"><b>Job</b><span>Setter</span></div><div className="dashboardPill">Last 30 days</div></div>
-            <div className="dashboardTitle"><small>Your pipeline</small><strong>More leads. More booked jobs.</strong></div>
+            <div className="dashboardChrome">
+              <div className="windowDots"><i/><i/><i/></div>
+              <span>Illustrative JobSetter workspace</span>
+            </div>
+            <div className="dashboardTop">
+              <div className="miniBrand"><b>Job</b><span>Setter</span></div>
+              <div className="dashboardPill">Revenue workspace</div>
+            </div>
+            <div className="dashboardHeadline">
+              <small>Pipeline today</small>
+              <strong>Every opportunity has a next action.</strong>
+            </div>
             <div className="metricGrid">
-              {metrics.map(([label,value,delta]) => <div className="metricCard" key={label}><span>{label}</span><b>{value}</b><em>{delta}</em></div>)}
+              {pipelineMetrics.map(([label,value]) => (
+                <div className="metricCard" key={label}><span>{label}</span><b>{value}</b></div>
+              ))}
             </div>
-            <div className="pipeline">
-              <div><span>Sarah Mitchell</span><small>Hot water system</small><b className="status booked">Booked</b></div>
-              <div><span>Daniel Kerr</span><small>Bathroom renovation</small><b className="status qualified">Qualified</b></div>
-              <div><span>Lisa Carter</span><small>Blocked drain</small><b className="status quote">Quote sent</b></div>
+            <div className="activityList">
+              <div><span className="activityDot blue"/><p><b>New plumbing lead qualified</b><small>Booked for tomorrow, 9:30am</small></p><em>Booked</em></div>
+              <div><span className="activityDot amber"/><p><b>Bathroom quote follow-up</b><small>Customer asked for finance options</small></p><em>Active</em></div>
+              <div><span className="activityDot green"/><p><b>Past customer reactivated</b><small>Annual service appointment requested</small></p><em>Won</em></div>
             </div>
-            <div className="revenueCard"><span>Attributed revenue</span><b>$42,680</b><small>from won jobs this month</small></div>
+            <div className="dashboardFooter">
+              <span>Lead → Contact → Qualify → Book → Quote → Win → Reactivate</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section" id="how">
+      <section className="categoryStrip">
+        <div className="shell categoryGrid">
+          <div><small>THE OLD MODEL</small><strong>Buy leads. Hope someone follows up.</strong></div>
+          <div className="categoryArrow">→</div>
+          <div><small>THE JOBSETTER MODEL</small><strong>Operate every opportunity to an outcome.</strong></div>
+        </div>
+      </section>
+
+      <section className="section" id="loop">
+        <div className="shell">
+          <div className="sectionIntro centered wideIntro">
+            <div className="eyebrow"><span /> THE JOBSETTER REVENUE LOOP</div>
+            <h2>Marketing creates demand. JobSetter makes sure the demand gets worked.</h2>
+            <p>
+              Most service businesses do not have a lead problem every day. They have a consistency problem:
+              missed calls, slow replies, forgotten quotes and old customers nobody calls.
+            </p>
+          </div>
+          <div className="loopGrid">
+            {revenueLoop.map(([num,title,text]) => (
+              <article className="loopCard" key={num}>
+                <div className="loopTop"><span>{num}</span><i>→</i></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section navySection" id="platform">
+        <div className="shell splitHeading">
+          <div>
+            <div className="eyebrow light"><span /> ONE MANAGED REVENUE LAYER</div>
+            <h2>Not another CRM. Not another answering service.</h2>
+          </div>
+          <p>
+            Software records work. Answering services take messages. JobSetter is designed to actively move
+            opportunities through the revenue journey using people, automation and client-specific workflows.
+          </p>
+        </div>
+        <div className="shell platformGrid">
+          {platform.map(([title,text],index) => (
+            <article className="platformCard" key={title}>
+              <span className="platformIndex">0{index+1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" id="architecture">
+        <div className="shell architectureGrid">
+          <div className="architectureCopy">
+            <div className="eyebrow"><span /> HUMAN-LED. AI-NATIVE.</div>
+            <h2>The labour gets smarter as the system learns.</h2>
+            <p className="leadText">
+              The first version of JobSetter wins with exceptional human execution. The scalable version uses
+              AI agents to remove admin, enforce process and let each setter supervise more revenue without making
+              the customer experience feel robotic.
+            </p>
+            <div className="architectureNote">
+              <b>The product is not the AI.</b>
+              <span>The product is a reliably operated front office with better economics over time.</span>
+            </div>
+          </div>
+          <div className="layerStack">
+            {layers.map(([title,text],index) => (
+              <div className="layerCard" key={title}>
+                <span>Layer {index+1}</span><h3>{title}</h3><p>{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section soft" id="outcomes">
         <div className="shell">
           <div className="sectionIntro centered">
-            <div className="eyebrow"><span /> HOW IT WORKS</div>
-            <h2>A simple process. A busier business.</h2>
-            <p>We sit between your marketing and your calendar, making sure opportunities actually move.</p>
+            <div className="eyebrow"><span /> WHAT YOU BUY</div>
+            <h2>Not activity. Revenue discipline.</h2>
+            <p>JobSetter should be judged on whether opportunities move, not how many calls an operator made.</p>
           </div>
-          <div className="stepsGrid">{steps.map(([num,title,text]) => <article className="stepCard" key={num}><div className="stepNum">{num}</div><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="outcomeGrid">
+            <article><span>01</span><h3>Faster response</h3><p>New opportunities are acted on while intent is still high.</p></article>
+            <article><span>02</span><h3>More booked work</h3><p>Qualified leads get a clear next step instead of sitting in an inbox.</p></article>
+            <article><span>03</span><h3>More recovered revenue</h3><p>Quotes, missed calls and dormant customers get systematically worked.</p></article>
+            <article><span>04</span><h3>Better visibility</h3><p>Owners can see where demand is converting and where revenue is leaking.</p></article>
+          </div>
         </div>
       </section>
 
-      <section className="section soft" id="features">
-        <div className="shell sectionIntro">
-          <div className="eyebrow"><span /> EVERYTHING YOU NEED</div>
-          <h2>Your front office, without building one yourself.</h2>
-          <p>The goal is not more software. The goal is fewer missed opportunities, better visibility and more jobs booked from the leads you already generate.</p>
-        </div>
-        <div className="shell featureGrid">{features.map(([title,text]) => <article className="featureCard" key={title}><div className="featureIcon">✓</div><h3>{title}</h3><p>{text}</p></article>)}</div>
-      </section>
-
-      <section className="section" id="why">
-        <div className="shell whyGrid">
+      <section className="section" id="who">
+        <div className="shell splitHeading lightSplit">
           <div>
-            <div className="eyebrow"><span /> BUILT AROUND THE OUTCOME</div>
-            <h2>Not another marketing agency. Not another CRM.</h2>
-            <p className="leadText">JobSetter is the operating layer between an enquiry and a booked job. We combine people, process and automation around the result your business actually cares about.</p>
+            <div className="eyebrow"><span /> START VERTICAL. EXPAND LATER.</div>
+            <h2>Built first for businesses where the phone still matters.</h2>
           </div>
-          <div className="comparisonCard">
-            <div><small>Old way</small><b>Leads arrive everywhere</b><p>Missed calls, slow replies, inconsistent qualification, quotes forgotten, no clear pipeline.</p></div>
-            <div className="compareArrow">→</div>
-            <div><small>JobSetter</small><b>One conversion system</b><p>Every lead captured, contacted, qualified, booked, followed up and visible.</p></div>
+          <p>
+            The wedge is trades and service businesses: fragmented markets, expensive leads, high-value jobs and
+            owners who often cannot answer every enquiry while delivering the work.
+          </p>
+        </div>
+        <div className="shell tradeGrid">
+          {who.map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}
+        </div>
+      </section>
+
+      <section className="section comparisonSection" id="why">
+        <div className="shell">
+          <div className="sectionIntro centered wideIntro">
+            <div className="eyebrow"><span /> WHY JOBSETTER</div>
+            <h2>Own the space between “lead generated” and “job won.”</h2>
+          </div>
+          <div className="comparisonTable">
+            <div className="tableHead"><span></span><b>Answering service</b><b>CRM / field software</b><b className="jobsetterCol">JobSetter</b></div>
+            <div><span>Answers inbound calls</span><i>Usually</i><i>Sometimes</i><strong>Yes</strong></div>
+            <div><span>Qualifies sales opportunities</span><i>Basic</i><i>Workflow only</i><strong>Yes</strong></div>
+            <div><span>Books the next action</span><i>Sometimes</i><i>Tools provided</i><strong>Yes</strong></div>
+            <div><span>Chases open quotes</span><i>No</i><i>Automation only</i><strong>Human + AI</strong></div>
+            <div><span>Reactivates old customers</span><i>No</i><i>Campaign tools</i><strong>Operated for you</strong></div>
+            <div><span>Owns conversion outcome</span><i>No</i><i>No</i><strong>That is the product</strong></div>
           </div>
         </div>
       </section>
 
-      <section className="section dark">
-        <div className="shell darkGrid">
-          <div><div className="eyebrow light"><span /> HUMAN-LED. AI-ASSISTED.</div><h2>Automation where it saves time. Humans where it wins trust.</h2></div>
-          <div className="darkCards"><div><strong>Humans handle</strong><p>Real conversations, objections, qualification, judgement and the moments where your reputation matters.</p></div><div><strong>AI handles</strong><p>Summaries, reminders, CRM updates, lead scoring, reporting and repetitive follow-up work.</p></div></div>
-        </div>
-      </section>
-
-      <section className="section" id="faq">
+      <section className="section faqSection" id="faq">
         <div className="shell faqGrid">
-          <div className="sectionIntro"><div className="eyebrow"><span /> FAQ</div><h2>What business owners usually ask first.</h2></div>
+          <div className="sectionIntro">
+            <div className="eyebrow"><span /> FAQ</div>
+            <h2>Simple on the outside. Serious underneath.</h2>
+            <p>JobSetter is designed to feel like adding a high-performing front office, not implementing another piece of software.</p>
+          </div>
           <div className="faqList">
-            <details open><summary>Do you replace my receptionist?</summary><p>You can use JobSetter as your primary lead-conversion front office or alongside your existing team.</p></details>
-            <details><summary>Is it an AI phone service?</summary><p>No. The core offer is human-led. AI supports the team behind the scenes.</p></details>
-            <details><summary>Can you work with my CRM?</summary><p>Yes. The model is designed to plug into existing systems wherever practical.</p></details>
+            <details open><summary>Is JobSetter just an AI receptionist?</summary><p>No. AI reception can be one tool in the system. JobSetter is broader: human sales conversations, qualification, booking, quote recovery, reactivation and revenue reporting.</p></details>
+            <details><summary>Do I need to change my CRM or job software?</summary><p>The model is designed to work around the systems a client already uses wherever practical. The long-term advantage is becoming the conversion layer across those systems, not forcing every customer onto a new back office.</p></details>
+            <details><summary>Are the people real humans?</summary><p>Yes. Human setters handle the conversations where judgement and trust matter. AI assists with repetitive work, summaries, routing, follow-up and reporting.</p></details>
+            <details><summary>Does JobSetter provide the leads?</summary><p>The core product converts and recovers demand. Marketing can be added as a separate capability, but the front-office conversion engine should remain useful regardless of where the lead came from.</p></details>
+            <details><summary>How would we start?</summary><p>Begin with a contained pilot, define the lead sources and qualification rules, connect the calendar/workflow, and measure the journey from enquiry to booked and won work.</p></details>
           </div>
         </div>
       </section>
 
-      <section className="ctaSection" id="demo">
+      <section className="ctaSection" id="pilot">
         <div className="shell ctaCard">
-          <div><div className="eyebrow light"><span /> READY WHEN YOU ARE</div><h2>You do the work. We make sure it gets booked.</h2><p>See how JobSetter could sit behind your business and turn more enquiries into real jobs.</p></div>
-          <a className="button white" href="mailto:hello@jobsetter.com.au?subject=JobSetter%20demo">Book a demo →</a>
+          <div>
+            <div className="eyebrow light"><span /> BUILD THE REVENUE ENGINE</div>
+            <h2>You do the work. JobSetter operates the opportunity.</h2>
+            <p>Start with a focused pilot and see what happens when every worthwhile lead, quote and past customer gets a next action.</p>
+          </div>
+          <div className="ctaActions">
+            <a className="button white" href="mailto:hello@jobsetter.com.au?subject=JobSetter%20pilot">Start a pilot <b>→</b></a>
+            <a className="textLink" href="#loop">See how the model works</a>
+          </div>
         </div>
       </section>
 
-      <footer><div className="shell footerGrid"><div className="brand"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></div><div>© {new Date().getFullYear()} JobSetter. Australia.</div></div></footer>
+      <footer>
+        <div className="shell footerTop">
+          <div><div className="brand"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></div><p>The revenue conversion layer for the trades.</p></div>
+          <div className="footerNav"><a href="#platform">Platform</a><a href="#loop">Revenue loop</a><a href="#who">Who it's for</a><a href="#faq">FAQ</a></div>
+        </div>
+        <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter. Australia.</span><span>Human-led. AI-assisted. Outcome-focused.</span></div>
+      </footer>
     </main>
   );
 }
