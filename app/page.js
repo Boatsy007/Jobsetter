@@ -2,6 +2,9 @@ import Header from "./Header";
 import RevenueLeakCalculator from "./RevenueLeakCalculator";
 import LeadJourney from "./LeadJourney";
 import PilotForm from "./PilotForm";
+import FounderSection from "./FounderSection";
+import FoundingCaseStudy from "./FoundingCaseStudy";
+import CallDemo from "./CallDemo";
 
 const revenueLoop = [
   ["01", "Capture", "Calls, forms, ads, chats and referrals enter one operating queue instead of disappearing across inboxes and phones."],
@@ -62,7 +65,7 @@ export default function Home() {
               chases open quotes and reactivates old opportunities — while you stay on the tools.
             </p>
             <div className="heroActions">
-              <a className="button" href="#audit">See my revenue leak <b>→</b></a>
+              <a className="button" href="#audit">Take the 60-second audit <b>→</b></a>
               <a className="button secondary" href="#journey">Watch JobSetter work a lead</a>
             </div>
             <div className="proofRow">
@@ -74,18 +77,23 @@ export default function Home() {
           </div>
 
           <div className="heroOfferCard">
-            <div className="offerFlag">FOUNDING PILOT PROGRAM</div>
+            <div className="offerFlag">FOUNDING PILOT</div>
             <small>THE OFFER</small>
             <h2>14-Day Revenue Recovery Pilot</h2>
             <p>Give JobSetter a defined slice of your real pipeline. We work it. You review the numbers at Day 14 and decide whether continuing makes sense.</p>
+            <div className="commercialTerms">
+              <div><strong>$0</strong><span>pilot service fee</span></div>
+              <div><strong>14 days</strong><span>before you decide</span></div>
+              <div><strong>No auto-charge</strong><span>you opt in to continue</span></div>
+            </div>
             <div className="offerMiniGrid">
               <div><b>New leads</b><span>Contact + qualify</span></div>
               <div><b>Open quotes</b><span>Systematic follow-up</span></div>
               <div><b>Old opportunities</b><span>Reactivation</span></div>
-              <div><b>Your dashboard</b><span>See the outcomes</span></div>
+              <div><b>Your report</b><span>See the outcomes</span></div>
             </div>
-            <a className="button fullButton" href="#pilot">Build my pilot <b>→</b></a>
-            <em>Capacity-limited onboarding because each pilot is configured around the client's actual workflow.</em>
+            <a className="button fullButton" href="#pilot">Build my free pilot <b>→</b></a>
+            <em>Ongoing pricing is agreed before the pilot begins. You are not charged for ongoing service unless you choose to continue after Day 14. Continuing service is cancel-anytime.</em>
           </div>
         </div>
       </section>
@@ -98,11 +106,13 @@ export default function Home() {
         </div>
       </section>
 
+      <FoundingCaseStudy />
+
       <section className="section auditSection" id="audit">
         <div className="shell sectionIntro centered wideIntro">
           <div className="eyebrow"><span /> DIAGNOSE BEFORE YOU BUY</div>
-          <h2>How much opportunity is leaking out of your follow-up?</h2>
-          <p>Put in your numbers. The calculator scores the consistency of your current front office and models a simple 5-point conversion scenario.</p>
+          <h2>Where is opportunity leaking out of your follow-up?</h2>
+          <p>Answer seven quick questions. You'll get a personalised diagnostic, your biggest conversion leak and an illustrative scenario using your own numbers.</p>
         </div>
         <div className="shell"><RevenueLeakCalculator /></div>
       </section>
@@ -118,6 +128,8 @@ export default function Home() {
         <div className="shell"><LeadJourney /></div>
       </section>
 
+      <CallDemo />
+
       <section className="section navySection" id="pilot-offer">
         <div className="shell pilotHeading">
           <div>
@@ -127,6 +139,13 @@ export default function Home() {
           <p>Instead of asking you to believe a sales page, the pilot is designed to let your own pipeline become the proof.</p>
         </div>
 
+        <div className="shell termsBanner">
+          <div><small>PILOT SERVICE FEE</small><strong>$0</strong></div>
+          <div><small>DECISION POINT</small><strong>Day 14</strong></div>
+          <div><small>AUTOMATIC ROLLOVER</small><strong>None</strong></div>
+          <div><small>IF YOU CONTINUE</small><strong>Cancel anytime</strong></div>
+        </div>
+
         <div className="shell includedGrid">
           {pilotIncludes.map(([title,text], index) => (
             <article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{text}</p></article>
@@ -134,9 +153,9 @@ export default function Home() {
         </div>
 
         <div className="shell riskCard">
-          <div><small>THE RISK REVERSAL</small><h3>See the work before making a longer-term decision.</h3></div>
-          <p>At Day 14, review what was contacted, qualified, booked, followed up and recovered. Then decide whether you want JobSetter to keep operating the pipeline.</p>
-          <a className="button white" href="#pilot">Request a pilot call <b>→</b></a>
+          <div><small>THE RISK REVERSAL</small><h3>See the work before paying for ongoing service.</h3></div>
+          <p>The 14-day pilot has a $0 JobSetter service fee. At Day 14, review what was contacted, qualified, booked, followed up and recovered. Ongoing billing starts only if you choose to continue.</p>
+          <a className="button white" href="#pilot">Request my free pilot <b>→</b></a>
         </div>
       </section>
 
@@ -156,9 +175,9 @@ export default function Home() {
       <section className="section soft" id="proof">
         <div className="shell proofGrid">
           <div className="sectionIntro">
-            <div className="eyebrow"><span /> PROOF, NOT VANITY METRICS</div>
-            <h2>Your pilot report measures movement through the pipeline.</h2>
-            <p>Until JobSetter has enough verified client case studies, the right proof is your own business data. We do not need fake logos, invented testimonials or made-up ROI claims.</p>
+            <div className="eyebrow"><span /> MEASURE THE THINGS THAT MATTER</div>
+            <h2>Your own pipeline becomes the proof.</h2>
+            <p>Start with a baseline. End the pilot with a report showing exactly how opportunities moved through the process. Verified client case studies will appear above as they are earned and approved for publication.</p>
           </div>
           <div className="measurementGrid">
             {measurement.map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}
@@ -181,34 +200,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section humanSection">
-        <div className="shell humanGrid">
-          <div>
-            <div className="eyebrow"><span /> REAL PEOPLE, AI LEVERAGE</div>
-            <h2>You meet the human responsible for your conversations.</h2>
-            <p className="leadText">The customer-facing moments stay human where judgement, objection handling and reputation matter. AI works behind the scenes to remove repetitive admin and keep the process consistent.</p>
-          </div>
-          <div className="humanCards">
-            <article><span>01</span><h3>Assigned setter</h3><p>Meet the person handling the conversations before go-live.</p></article>
-            <article><span>02</span><h3>Your playbook</h3><p>They work from your job criteria, service areas, FAQs and booking rules.</p></article>
-            <article><span>03</span><h3>AI support layer</h3><p>Summaries, reminders, scoring, routing and repetitive follow-up become easier to supervise.</p></article>
-          </div>
-        </div>
-      </section>
+      <FounderSection />
 
       <section className="section comparisonSection" id="why">
         <div className="shell sectionIntro centered wideIntro">
           <div className="eyebrow"><span /> WHY JOBSETTER</div>
           <h2>Own the space between “lead generated” and “job won.”</h2>
         </div>
-        <div className="shell comparisonTable">
-          <div className="tableHead"><span></span><b>Answering service</b><b>CRM / field software</b><b className="jobsetterCol">JobSetter</b></div>
-          <div><span>Answers inbound calls</span><i>Usually</i><i>Sometimes</i><strong>Yes</strong></div>
-          <div><span>Qualifies sales opportunities</span><i>Basic</i><i>Workflow only</i><strong>Yes</strong></div>
-          <div><span>Books the next action</span><i>Sometimes</i><i>Tools provided</i><strong>Yes</strong></div>
-          <div><span>Chases open quotes</span><i>No</i><i>Automation only</i><strong>Human + AI</strong></div>
-          <div><span>Reactivates old customers</span><i>No</i><i>Campaign tools</i><strong>Operated for you</strong></div>
-          <div><span>Owns the conversion process</span><i>No</i><i>No</i><strong>That is the product</strong></div>
+        <div className="shell comparisonTable fiveCol">
+          <div className="tableHead"><span></span><b>Answering service</b><b>CRM / field software</b><b>Internal hire</b><b className="jobsetterCol">JobSetter</b></div>
+          <div><span>Answers inbound calls</span><i>Usually</i><i>Sometimes</i><i>Yes</i><strong>Yes</strong></div>
+          <div><span>Qualifies sales opportunities</span><i>Basic</i><i>Workflow only</i><i>If trained</i><strong>Yes</strong></div>
+          <div><span>Books the next action</span><i>Sometimes</i><i>Tools provided</i><i>Yes</i><strong>Yes</strong></div>
+          <div><span>Chases open quotes</span><i>No</i><i>Automation only</i><i>If managed</i><strong>Human + AI</strong></div>
+          <div><span>Reactivates old customers</span><i>No</i><i>Campaign tools</i><i>If prioritised</i><strong>Operated for you</strong></div>
+          <div><span>Requires hiring & daily management</span><i>No</i><i>No</i><i>Yes</i><strong>No</strong></div>
+          <div><span>Owns the conversion process</span><i>No</i><i>No</i><i>Depends on role</i><strong>That is the product</strong></div>
         </div>
         <p className="hireAlternative">JobSetter is designed as an alternative to adding another full-time front-office hire — without forcing you to replace the systems you already use.</p>
       </section>
@@ -221,6 +228,10 @@ export default function Home() {
         <div className="shell tradeGrid">
           {trades.map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}
         </div>
+        <div className="shell fitCard">
+          <div><small>GOOD FIT</small><b>You already generate consistent enquiries and want more of them properly worked.</b></div>
+          <div><small>PROBABLY NOT YET</small><b>You have little or no demand coming in and primarily need lead generation first.</b></div>
+        </div>
       </section>
 
       <section className="section faqSection" id="faq">
@@ -231,12 +242,14 @@ export default function Home() {
             <p>The goal is for JobSetter to feel like adding a high-performing front office, not another software project.</p>
           </div>
           <div className="faqList">
-            <details open><summary>Is JobSetter just an AI receptionist?</summary><p>No. AI can support the workflow, but the core service is broader: human sales conversations, qualification, booking, quote recovery, reactivation and reporting.</p></details>
+            <details open><summary>What does the 14-day pilot cost?</summary><p>The JobSetter pilot service fee is $0 for the 14 days. Before the pilot starts, we'll tell you what ongoing service would cost if you decide to continue. There is no automatic rollover into paid service.</p></details>
+            <details><summary>When would I actually get charged?</summary><p>Only after the 14-day pilot if you explicitly choose to continue. If you do not continue, there is no ongoing JobSetter service charge. Continuing service is cancel-anytime.</p></details>
+            <details><summary>Is JobSetter just an AI receptionist?</summary><p>No. AI can support the workflow, but the core service is broader: human sales conversations, qualification, booking, quote recovery, reactivation and reporting.</p></details>
+            <details><summary>Who actually speaks to my customers?</summary><p>A real assigned setter handles the conversations where judgement and trust matter. Before go-live, you know the qualification rules, scripts, service areas and handoff process they are working from.</p></details>
             <details><summary>Do I need to change my CRM or job software?</summary><p>No rip-and-replace is required for the pilot. JobSetter is designed to work around the systems and calendar you already use wherever practical.</p></details>
             <details><summary>What do I have to do?</summary><p>Give us your qualification rules, service areas, calendar process and agreed lead sources. We build the playbook and do the chasing.</p></details>
             <details><summary>Does JobSetter provide the leads?</summary><p>The pilot focuses on converting and recovering demand you already have. Marketing can be separate; JobSetter should remain valuable regardless of where the lead came from.</p></details>
             <details><summary>Do you guarantee revenue?</summary><p>No. We cannot control lead quality, pricing, customer decisions or the work itself. The pilot is designed around measurable execution and attributable outcomes in your own pipeline.</p></details>
-            <details><summary>Why is pilot onboarding limited?</summary><p>Each founding pilot needs manual setup around the client's actual scripts, qualification rules and workflow. We would rather onboard fewer businesses properly than pretend the service is plug-and-play.</p></details>
           </div>
         </div>
       </section>
@@ -244,10 +257,15 @@ export default function Home() {
       <section className="ctaSection" id="pilot">
         <div className="shell ctaCard">
           <div className="ctaCopy">
-            <div className="eyebrow light"><span /> FOUNDING PILOT INTAKE</div>
+            <div className="eyebrow light"><span /> FREE 14-DAY PILOT INTAKE</div>
             <h2>Bring us your last 30 days of leads and open quotes.</h2>
             <p>We'll use the pilot call to identify where the opportunity is sitting, define the first 14-day test and decide whether your business is a good fit.</p>
-            <div className="ctaChecklist"><span>✓ No fake ROI promise</span><span>✓ Clear 14-day scope</span><span>✓ Review your own numbers at the end</span></div>
+            <div className="ctaChecklist">
+              <span>✓ $0 pilot service fee</span>
+              <span>✓ No automatic rollover</span>
+              <span>✓ Ongoing pricing agreed upfront</span>
+              <span>✓ Only pay ongoing service if you choose to continue</span>
+            </div>
           </div>
           <PilotForm />
         </div>
@@ -256,7 +274,7 @@ export default function Home() {
       <footer>
         <div className="shell footerTop">
           <div><div className="brand"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></div><p>The done-for-you revenue front office for the trades.</p></div>
-          <div className="footerNav"><a href="#audit">Revenue audit</a><a href="#pilot-offer">Pilot</a><a href="#why">Why JobSetter</a><a href="#faq">FAQ</a></div>
+          <div className="footerNav"><a href="#audit">Revenue audit</a><a href="#pilot-offer">Free pilot</a><a href="#why">Why JobSetter</a><a href="#faq">FAQ</a></div>
         </div>
         <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter. Australia.</span><span>Human-led. AI-assisted. Outcome-focused.</span></div>
       </footer>
