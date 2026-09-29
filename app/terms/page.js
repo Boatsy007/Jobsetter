@@ -18,9 +18,9 @@ export default function TermsPage() {
         <h3>Pilot operating limits</h3>
         <ul>
           <li>One business or brand, one primary service region and one primary CRM/calendar workflow.</li>
-          <li>Up to 40 eligible new enquiries during the 14-day pilot.</li>
-          <li>Up to 25 existing open quotes selected for recovery follow-up.</li>
-          <li>Up to 50 dormant leads or past-customer contacts selected for reactivation.</li>
+          <li>Up to 20 eligible new enquiries during the 14-day pilot.</li>
+          <li>Up to 15 existing open quotes selected for recovery follow-up.</li>
+          <li>Up to 25 dormant leads or past-customer contacts selected for reactivation.</li>
           <li>Standard pilot coverage: Monday to Friday, 8:00am–6:00pm in the client's local business time. Leads received outside coverage are queued for the next coverage window unless otherwise agreed.</li>
           <li>New leads: up to 5 contact attempts across up to 5 business days using the agreed channels.</li>
           <li>Open quotes: up to 4 follow-up attempts during the pilot.</li>
@@ -39,13 +39,13 @@ export default function TermsPage() {
         <p>JobSetter does not guarantee a particular number of bookings, sales, jobs or revenue. Results depend on lead quality, pricing, demand, availability, customer decisions, service quality and other factors outside JobSetter's control.</p>
 
         <h2>Ongoing service after the pilot</h2>
-        <p>The current standard ongoing plan is <strong>$1,990 + GST per month</strong> and includes up to 80 eligible new enquiries, up to 40 open-quote follow-up records and up to 100 reactivation contacts per month, with standard Monday–Friday 8:00am–6:00pm local-business-time coverage. Higher volumes, extra brands, extra regions, after-hours coverage or more complex workflows are quoted separately.</p>
+        <p>The current standard ongoing plan is <strong>$2,490 + GST per month</strong> and includes up to 80 eligible new enquiries, up to 40 open-quote follow-up records and up to 100 reactivation contacts per month, with standard Monday–Friday 8:00am–6:00pm local-business-time coverage. Higher volumes, extra brands, extra regions, after-hours coverage or more complex workflows are quoted separately.</p>
         <p>Ongoing service is month-to-month unless otherwise agreed. A client may cancel before the next billing cycle; service continues until the end of the paid billing period unless otherwise agreed.</p>
 
         <h2>Pilot fit</h2>
         <p>JobSetter is primarily designed for established service businesses that already generate demand. A strong pilot candidate will generally meet most of the following:</p>
         <ul>
-          <li>At least 25 new enquiries per month, or at least $25,000 of active/open quote opportunity suitable for follow-up.</li>
+          <li>At least 30 new enquiries per month, or at least $25,000 of active/open quote opportunity suitable for follow-up.</li>
           <li>Typical job value of about $750 or more.</li>
           <li>Capacity to accept additional work during the next 30 days.</li>
           <li>A working calendar, CRM or other clear booking/handoff process.</li>
