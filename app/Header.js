@@ -11,25 +11,16 @@ export default function Header() {
     const onScroll = () => {
       if (ticking.current) return;
       ticking.current = true;
-
       requestAnimationFrame(() => {
         const y = window.scrollY || 0;
-        const previous = lastY.current;
-        const delta = y - previous;
-
-        if (y <= 8) {
-          setVisible(true);
-        } else if (delta > 2) {
-          setVisible(false);
-        } else if (delta < -1) {
-          setVisible(true);
-        }
-
+        const delta = y - lastY.current;
+        if (y <= 8) setVisible(true);
+        else if (delta > 2) setVisible(false);
+        else if (delta < -1) setVisible(true);
         lastY.current = y;
         ticking.current = false;
       });
     };
-
     lastY.current = window.scrollY || 0;
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -39,16 +30,16 @@ export default function Header() {
     <>
       <header className={`siteHeader ${visible ? "headerVisible" : "headerHidden"}`}>
         <div className="shell nav">
-          <a className="brand" href="#top">
+          <a className="brand" href="#top" aria-label="JobSetter home">
             <span className="brandJob">Job</span><span className="brandSetter">Setter</span>
           </a>
           <nav className="desktopNav">
-            <a href="#how">How it works</a>
-            <a href="#features">What we do</a>
+            <a href="#platform">Platform</a>
+            <a href="#loop">Revenue loop</a>
+            <a href="#who">Who it's for</a>
             <a href="#why">Why JobSetter</a>
-            <a href="#faq">FAQ</a>
           </nav>
-          <a className="button small" href="#demo">Book a demo</a>
+          <a className="button small" href="#pilot">Start a pilot</a>
         </div>
       </header>
       <div className="mobileHeaderSpacer" aria-hidden="true" />
