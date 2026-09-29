@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 const journeys = {
   lead: {
@@ -42,11 +43,16 @@ export default function LeadJourney() {
   const [selected, setSelected] = useState("lead");
   const journey = journeys[selected];
 
+  const choose = (key) => {
+    setSelected(key);
+    try { track("Journey Viewed", { journey: key }); } catch {}
+  };
+
   return (
     <div className="journeyShell">
       <div className="journeyTabs">
         {Object.entries(journeys).map(([key, item]) => (
-          <button key={key} className={selected === key ? "active" : ""} onClick={() => setSelected(key)}>
+          <button key={key} className={selected === key ? "active" : ""} onClick={() => choose(key)}>
             {item.label}
           </button>
         ))}
