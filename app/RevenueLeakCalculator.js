@@ -7,33 +7,33 @@ const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
 
 const recommendations = {
   "Speed to lead": {
-    title: "Give every new enquiry an owner and a response deadline.",
-    text: "Your first move is to make sure each eligible lead is assigned immediately and contacted fast enough that the customer is still actively choosing who to use."
+    title: "Give every new lead one owner and a clear response time.",
+    text: "Make sure every good lead is assigned fast and contacted while the customer is still choosing who to use."
   },
   "Qualification": {
-    title: "Define the five questions that decide whether a lead belongs on the calendar.",
-    text: "Your first move is to standardise job type, location, urgency, budget/fit and decision readiness so weak enquiries stop consuming the same attention as good ones."
+    title: "Decide what makes a lead worth booking.",
+    text: "Use the same few questions every time so good jobs get booked and poor-fit leads stop wasting time."
   },
   "Quote recovery": {
     title: "No quote should sit in limbo.",
-    text: "Your first move is to keep every open quote assigned to a named owner until it becomes Won, Lost or Deferred — with a documented next follow-up date."
+    text: "Keep every open quote owned until it is won, lost or deliberately parked — with a next follow-up date."
   },
   "Reactivation": {
-    title: "Turn your old database into an active pipeline.",
-    text: "Your first move is to segment past customers and dormant opportunities by service need and recency, then give each segment a clear reason to re-engage."
+    title: "Give old leads and customers a reason to come back.",
+    text: "Group past customers and old leads by what they bought or asked about, then follow up with a clear reason to act."
   }
 };
 
 const questions = [
   { key: "monthlyLeads", eyebrow: "QUESTION 1 OF 7", title: "How many enquiries do you get in a typical month?", type: "number", suffix: "enquiries", min: 0 },
-  { key: "averageJob", eyebrow: "QUESTION 2 OF 7", title: "Roughly what is an average won job worth?", type: "money", min: 0 },
-  { key: "closeRate", eyebrow: "QUESTION 3 OF 7", title: "What percentage of enquiries become paying jobs today?", type: "percent", min: 0, max: 100 },
+  { key: "averageJob", eyebrow: "QUESTION 2 OF 7", title: "Roughly what is an average job worth?", type: "money", min: 0 },
+  { key: "closeRate", eyebrow: "QUESTION 3 OF 7", title: "Roughly what percentage of enquiries turn into paid jobs?", type: "percent", min: 0, max: 100 },
   {
     key: "responseSpeed", eyebrow: "QUESTION 4 OF 7", title: "How quickly are new leads usually contacted?", type: "choice",
     options: [["fast", "Within 5 minutes"], ["hour", "Within an hour"], ["same-day", "Same day"], ["irregular", "Whenever someone gets time"]]
   },
   {
-    key: "qualification", eyebrow: "QUESTION 5 OF 7", title: "Do you consistently qualify leads before booking?", type: "choice",
+    key: "qualification", eyebrow: "QUESTION 5 OF 7", title: "Do you check whether a lead is a good fit before booking?", type: "choice",
     options: [["always", "Yes, every time"], ["sometimes", "Sometimes"], ["no", "Not really"]]
   },
   {
@@ -41,7 +41,7 @@ const questions = [
     options: [["always", "Every quote is followed up"], ["sometimes", "Some get followed up"], ["rarely", "No consistent system"]]
   },
   {
-    key: "reactivation", eyebrow: "QUESTION 7 OF 7", title: "Do you systematically reactivate old leads or past customers?", type: "choice",
+    key: "reactivation", eyebrow: "QUESTION 7 OF 7", title: "Do you ever follow up old leads or past customers?", type: "choice",
     options: [["yes", "Yes, consistently"], ["sometimes", "Occasionally"], ["no", "No"]]
   },
 ];
@@ -206,7 +206,7 @@ export default function RevenueLeakCalculator() {
         <div>
           <div className="calcBadge">YOUR JOBSETTER CONVERSION DIAGNOSTIC</div>
           <h3>{scores.total}<em>/100</em></h3>
-          <p>This is a JobSetter diagnostic based on the follow-up practices you selected — not an industry benchmark.</p>
+          <p>This score is based on the answers you gave. It is a JobSetter diagnostic, not an industry benchmark.</p>
         </div>
         <div className="prescriptionCard">
           <small>BIGGEST LEAK</small>
@@ -235,7 +235,7 @@ export default function RevenueLeakCalculator() {
         </div>
 
         <div className="scenarioCard">
-          <small>CHOOSE AN ILLUSTRATIVE CLOSE-RATE SCENARIO</small>
+          <small>TRY A SIMPLE CLOSE-RATE SCENARIO</small>
           <div className="scenarioButtons">
             {[1,3,5,10].map((n) => <button key={n} className={scenarioLift === n ? "active" : ""} onClick={() => setScenarioLift(n)}>+{n} pts</button>)}
           </div>
@@ -245,7 +245,7 @@ export default function RevenueLeakCalculator() {
             <div><span>At {model.scenarioRate}% close rate</span><b>{money(model.scenario)}</b></div>
           </div>
           <div className="scenarioLift">Difference: <b>+{money(model.lift)}/month</b></div>
-          <p>You chose the improvement scenario. This is simple maths using your inputs, not a forecast or promise of JobSetter results.</p>
+          <p>This is simple maths using your numbers — not a promise of JobSetter results.</p>
         </div>
       </div>
 
