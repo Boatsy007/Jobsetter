@@ -152,19 +152,21 @@ export default function Home() {
           <span className="storyNumber">04</span>
           <div>
             <div className="eyebrow"><span /> THE DECISION</div>
-            <h2>Hire someone, buy more software — or let JobSetter run the follow-up.</h2>
-            <p>JobSetter sits between the lead coming in and the job being won. You keep your existing systems.</p>
+            <h2>Hire someone, use AI, buy more software — or let JobSetter run the follow-up.</h2>
+            <p>AI receptionists can answer and route. JobSetter is built to keep owning the follow-up after that — with humans handling the conversations that need judgement.</p>
           </div>
         </div>
 
         <div className="shell decisionGrid">
-          <div className="comparisonTable fiveCol">
-            <div className="tableHead"><span></span><b>Answering service</b><b>CRM</b><b>Internal hire</b><b className="jobsetterCol">JobSetter</b></div>
-            <div><span>Talks to customers</span><i>Usually</i><i>No</i><i>Yes</i><strong>Yes</strong></div>
-            <div><span>Qualifies the job</span><i>Basic</i><i>No</i><i>If trained</i><strong>Yes</strong></div>
-            <div><span>Books the next step</span><i>Sometimes</i><i>Tool only</i><i>Yes</i><strong>Yes</strong></div>
-            <div><span>Chases quotes</span><i>No</i><i>Automation</i><i>If managed</i><strong>Yes</strong></div>
-            <div><span>Needs daily management</span><i>No</i><i>No</i><i>Yes</i><strong>No</strong></div>
+          <div className="comparisonTable sixCol">
+            <div className="tableHead"><span></span><b>Answering service</b><b>CRM</b><b>AI receptionist</b><b>Internal hire</b><b className="jobsetterCol">JobSetter</b></div>
+            <div><span>Talks to customers</span><i>Usually</i><i>No</i><i>Yes</i><i>Yes</i><strong>Yes</strong></div>
+            <div><span>Qualifies the job</span><i>Basic</i><i>No</i><i>Rules-based</i><i>If trained</i><strong>Yes</strong></div>
+            <div><span>Books the next step</span><i>Sometimes</i><i>Tool only</i><i>Usually</i><i>Yes</i><strong>Yes</strong></div>
+            <div><span>Chases open quotes</span><i>No</i><i>Automation</i><i>Limited</i><i>If managed</i><strong>Yes</strong></div>
+            <div><span>Handles objections & judgement</span><i>Limited</i><i>No</i><i>Limited</i><i>Yes</i><strong>Human-led</strong></div>
+            <div><span>Reactivates old leads</span><i>No</i><i>Campaigns</i><i>Sometimes</i><i>If managed</i><strong>Yes</strong></div>
+            <div><span>Needs daily management</span><i>No</i><i>No</i><i>Some setup</i><i>Yes</i><strong>No</strong></div>
           </div>
 
           <div className="pricingCard" id="pricing">
