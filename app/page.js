@@ -7,6 +7,7 @@ import FoundingCaseStudy from "./FoundingCaseStudy";
 import CallDemo from "./CallDemo";
 import PipelineMotif from "./PipelineMotif";
 import PilotReportDemo from "./PilotReportDemo";
+import ScrollMotion from "./ScrollMotion";
 
 const pilotTimeline = [
   ["Day 1", "Learn your business", "Jobs, service area, calendar and what a good lead looks like."],
@@ -19,6 +20,7 @@ const pilotTimeline = [
 export default function Home() {
   return (
     <main>
+      <ScrollMotion />
       <Header />
 
       <section className="hero storySection" id="top">
