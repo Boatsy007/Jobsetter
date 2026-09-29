@@ -59,7 +59,7 @@ export default function Home() {
         <div className="shell heroGrid">
           <div className="heroCopy">
             <div className="eyebrow"><span /> DONE-FOR-YOU FRONT OFFICE FOR TRADES</div>
-            <h1>Stop losing jobs you already <span>paid to get.</span></h1>
+            <h1>Stop losing jobs<br />you already <span>paid to get.</span></h1>
             <p className="heroText">
               JobSetter answers every new lead, qualifies the customer, books the next step,
               chases open quotes and reactivates old opportunities — while you stay on the tools.
@@ -82,9 +82,9 @@ export default function Home() {
             <h2>14-Day Revenue Recovery Pilot</h2>
             <p>Give JobSetter a defined slice of your real pipeline. We work it. You review the numbers at Day 14 and decide whether continuing makes sense.</p>
             <div className="commercialTerms">
-              <div><strong>$0</strong><span>pilot service fee</span></div>
-              <div><strong>14 days</strong><span>before you decide</span></div>
-              <div><strong>No auto-charge</strong><span>you opt in to continue</span></div>
+              <div><strong>$0</strong><span>Pilot fee</span></div>
+              <div><strong>14 days</strong><span>Before you decide</span></div>
+              <div><strong>No rollover</strong><span>You choose to continue</span></div>
             </div>
             <div className="offerMiniGrid">
               <div><b>New leads</b><span>Contact + qualify</span></div>
