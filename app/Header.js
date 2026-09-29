@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { track } from "@vercel/analytics";
 
 export default function Header() {
   const [visible, setVisible] = useState(true);
@@ -26,20 +27,24 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const trackNav = (label) => {
+    try { track("Nav Click", { label }); } catch {}
+  };
+
   return (
     <>
       <header className={`siteHeader ${visible ? "headerVisible" : "headerHidden"}`}>
         <div className="shell nav">
-          <a className="brand" href="#top" aria-label="JobSetter home">
+          <a className="brand" href="#top" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
             <span className="brandJob">Job</span><span className="brandSetter">Setter</span>
           </a>
           <nav className="desktopNav">
-            <a href="#platform">Platform</a>
-            <a href="#loop">Revenue loop</a>
-            <a href="#who">Who it's for</a>
-            <a href="#why">Why JobSetter</a>
+            <a href="#audit" onClick={() => trackNav("Revenue Audit")}>Revenue audit</a>
+            <a href="#journey" onClick={() => trackNav("How It Works")}>How it works</a>
+            <a href="#pilot-offer" onClick={() => trackNav("14-Day Pilot")}>14-day pilot</a>
+            <a href="#why" onClick={() => trackNav("Why JobSetter")}>Why JobSetter</a>
           </nav>
-          <a className="button small" href="#pilot">Start a pilot</a>
+          <a className="button small" href="#pilot" onClick={() => trackNav("Start Pilot")}>Start a pilot</a>
         </div>
       </header>
       <div className="mobileHeaderSpacer" aria-hidden="true" />
