@@ -25,9 +25,12 @@ export async function POST(request) {
   }
 
   const now = new Date().toISOString();
+  const stage = clean(body.stage, 30) || "qualified";
+  const existingId = clean(body.leadId, 80);
   const lead = {
-    id: crypto.randomUUID(),
+    id: existingId || crypto.randomUUID(),
     createdAt: now,
+    stage,
     name: clean(body.name, 120),
     business: clean(body.business, 160),
     trade: clean(body.trade, 80),
@@ -36,7 +39,6 @@ export async function POST(request) {
     monthlyLeads: clean(body.monthlyLeads, 30),
     averageJobValue: clean(body.averageJobValue, 40),
     openQuoteValue: clean(body.openQuoteValue, 40),
-    monthlyRevenue: clean(body.monthlyRevenue, 60),
     currentSystem: clean(body.currentSystem, 120),
     preferredWindow: clean(body.preferredWindow, 80),
     capacityWithin30Days: Boolean(body.capacityWithin30Days),
@@ -66,7 +68,7 @@ export async function POST(request) {
   const openQuoteValue = toNumber(lead.openQuoteValue);
   const strongDemand = monthlyLeads >= 30 || openQuoteValue >= 25000;
   const strongJobValue = averageJob >= 750;
-  const fit = strongDemand && strongJobValue && lead.capacityWithin30Days ? "strong" : "review";
+  const fit = stage === "contact" ? "unscored" : (strongDemand && strongJobValue && lead.capacityWithin30Days ? "strong" : "review");
 
   let persisted = false;
   const persistenceErrors = [];
@@ -76,7 +78,7 @@ export async function POST(request) {
       const response = await fetch(process.env.LEAD_WEBHOOK_URL, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ event: "jobsetter_lead", fit, lead }),
+        body: JSON.stringify({ event: stage === "contact" ? "jobsetter_contact_captured" : "jobsetter_lead_qualified", fit, lead }),
         cache: "no-store",
       });
       if (!response.ok) throw new Error(`Webhook returned ${response.status}`);
@@ -90,39 +92,27 @@ export async function POST(request) {
     try {
       const recipient = process.env.LEAD_NOTIFICATION_EMAIL || "hello@jobsetter.com.au";
       const from = process.env.RESEND_FROM_EMAIL || "JobSetter Leads <leads@jobsetter.com.au>";
-      const auditLines = lead.audit
-        ? [
-            `Diagnostic score: ${lead.audit.score ?? "-"}`,
-            `Audit monthly enquiries: ${lead.audit.monthlyLeads ?? "-"}`,
-            `Audit average job value: $${lead.audit.averageJob ?? "-"}`,
-            `Current close rate: ${lead.audit.closeRate ?? "-"}%`,
-            `Biggest leak: ${lead.audit.biggestLeak ?? "-"}`,
-          ]
-        : [];
 
       const textBody = [
-        "New JobSetter pilot lead",
+        stage === "contact" ? "JobSetter contact captured" : "JobSetter qualified pilot lead",
         "",
         `Lead ID: ${lead.id}`,
+        `Stage: ${stage}`,
         `Pilot fit: ${fit}`,
         `Name: ${lead.name}`,
         `Business: ${lead.business}`,
-        `Trade: ${lead.trade}`,
         `Email: ${lead.email}`,
         `Phone: ${lead.phone}`,
+        `Trade: ${lead.trade || "-"}`,
         `Monthly leads: ${lead.monthlyLeads || "-"}`,
         `Average job value: $${lead.averageJobValue || "-"}`,
         `Open quote value: $${lead.openQuoteValue || "-"}`,
-        `Monthly revenue: ${lead.monthlyRevenue || "-"}`,
         `CRM/job system: ${lead.currentSystem || "-"}`,
         `Capacity for more work: ${lead.capacityWithin30Days ? "Yes" : "No / unsure"}`,
         `Preferred call window: ${lead.preferredWindow || "-"}`,
-        `Pilot contact consent: ${lead.pilotContactConsent ? "Yes" : "No"}`,
+        `Diagnostic score: ${lead.audit?.score ?? "-"}`,
+        `Biggest leak: ${lead.audit?.biggestLeak ?? "-"}`,
         `Marketing consent: ${lead.marketingConsent ? "Yes" : "No"}`,
-        ...auditLines,
-        "",
-        `Page: ${lead.page || "-"}`,
-        `Referrer: ${lead.referrer || "-"}`,
       ].join("\n");
 
       const response = await fetch("https://api.resend.com/emails", {
@@ -134,7 +124,9 @@ export async function POST(request) {
         body: JSON.stringify({
           from,
           to: [recipient],
-          subject: `JobSetter pilot lead [${fit.toUpperCase()}] — ${lead.business}`,
+          subject: stage === "contact"
+            ? `JobSetter contact — ${lead.business}`
+            : `JobSetter pilot [${fit.toUpperCase()}] — ${lead.business}`,
           text: textBody,
           reply_to: lead.email,
         }),
@@ -148,10 +140,6 @@ export async function POST(request) {
   }
 
   if (!persisted) {
-    console.error("JobSetter lead persistence is not configured or failed.", {
-      leadId: lead.id,
-      errors: persistenceErrors,
-    });
     return NextResponse.json(
       {
         ok: false,
@@ -163,7 +151,7 @@ export async function POST(request) {
   }
 
   try {
-    await track("Pilot Lead Saved", {
+    await track(stage === "contact" ? "Pilot Contact Captured" : "Pilot Lead Qualified", {
       trade: lead.trade || "Unknown",
       hasAudit: lead.audit ? "yes" : "no",
       fit,
@@ -174,6 +162,6 @@ export async function POST(request) {
     ok: true,
     leadId: lead.id,
     fit,
-    bookingUrl: fit === "strong" ? (process.env.NEXT_PUBLIC_BOOKING_URL || "") : "",
+    bookingUrl: stage === "qualified" && fit === "strong" ? (process.env.NEXT_PUBLIC_BOOKING_URL || "") : "",
   });
 }
