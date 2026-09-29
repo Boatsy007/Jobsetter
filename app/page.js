@@ -93,7 +93,7 @@ export default function Home() {
               <div><b>Your report</b><span>See the outcomes</span></div>
             </div>
             <a className="button fullButton" href="#pilot">Build my free pilot <b>→</b></a>
-            <em>Ongoing pricing is agreed before the pilot begins. You are not charged for ongoing service unless you choose to continue after Day 14. Continuing service is cancel-anytime.</em>
+            <em>Pilot scope: up to 20 new enquiries, 15 open quotes and 25 reactivation contacts. Standard coverage is Mon–Fri, 8am–6pm in your local business time. Ongoing pricing is agreed before the pilot begins.</em>
           </div>
         </div>
       </section>
@@ -146,6 +146,13 @@ export default function Home() {
           <div><small>IF YOU CONTINUE</small><strong>Cancel anytime</strong></div>
         </div>
 
+        <div className="shell pilotScopeCard">
+          <div><small>NEW ENQUIRIES</small><strong>Up to 20</strong><span>Up to 5 contact attempts across 5 business days.</span></div>
+          <div><small>OPEN QUOTES</small><strong>Up to 15</strong><span>Up to 4 follow-up attempts during the pilot.</span></div>
+          <div><small>REACTIVATION</small><strong>Up to 25</strong><span>Up to 3 attempts during the pilot.</span></div>
+          <div><small>COVERAGE</small><strong>Mon–Fri 8am–6pm</strong><span>Local business time; after-hours enquiries queue to the next coverage window.</span></div>
+        </div>
+
         <div className="shell includedGrid">
           {pilotIncludes.map(([title,text], index) => (
             <article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{text}</p></article>
@@ -177,7 +184,7 @@ export default function Home() {
           <div className="sectionIntro">
             <div className="eyebrow"><span /> MEASURE THE THINGS THAT MATTER</div>
             <h2>Your own pipeline becomes the proof.</h2>
-            <p>Start with a baseline. End the pilot with a report showing exactly how opportunities moved through the process. Verified client case studies will appear above as they are earned and approved for publication.</p>
+            <p>Start with a baseline. End the pilot with a report showing exactly how opportunities moved through the process — so the decision to continue is based on your own pipeline, not vague activity metrics.</p>
           </div>
           <div className="measurementGrid">
             {measurement.map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}
@@ -234,6 +241,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section pricingSection" id="pricing">
+        <div className="shell pricingGrid">
+          <div>
+            <div className="eyebrow"><span /> AFTER THE PILOT</div>
+            <h2>Simple ongoing pricing.</h2>
+            <p className="leadText">If the 14-day pilot proves useful, the standard ongoing plan is <strong>$2,490 + GST per month</strong>. No performance fee, no percentage of your revenue and no long-term lock-in.</p>
+            <div className="pricingIncludes">
+              <span>Up to 80 new enquiries / month</span>
+              <span>Up to 40 open-quote records / month</span>
+              <span>Up to 100 reactivation contacts / month</span>
+              <span>Mon–Fri, 8am–6pm local business time</span>
+              <span>Monthly conversion reporting</span>
+              <span>Cancel before your next billing cycle</span>
+            </div>
+            <p className="pricingNote">Higher volumes, multiple brands, extra regions or after-hours coverage are quoted separately.</p>
+          </div>
+          <div className="fitPanel">
+            <small>STRONG PILOT FIT</small>
+            <h3>JobSetter is built for businesses with enough opportunity to recover.</h3>
+            <ul>
+              <li><b>30+ new enquiries per month</b> or roughly <b>$25k+ of open quotes</b> suitable for follow-up.</li>
+              <li>Typical job value of around <b>$750+</b>.</li>
+              <li>Capacity to take on more work in the next 30 days.</li>
+              <li>A working calendar, CRM or clear booking process.</li>
+              <li>Lawfully usable customer/lead data for agreed follow-up.</li>
+            </ul>
+            <a className="button" href="#pilot">Check my fit <b>→</b></a>
+          </div>
+        </div>
+      </section>
+
       <section className="section faqSection" id="faq">
         <div className="shell faqGrid">
           <div className="sectionIntro">
@@ -243,7 +281,8 @@ export default function Home() {
           </div>
           <div className="faqList">
             <details open><summary>What does the 14-day pilot cost?</summary><p>The JobSetter pilot service fee is $0 for the 14 days. Before the pilot starts, we'll tell you what ongoing service would cost if you decide to continue. There is no automatic rollover into paid service.</p></details>
-            <details><summary>When would I actually get charged?</summary><p>Only after the 14-day pilot if you explicitly choose to continue. If you do not continue, there is no ongoing JobSetter service charge. Continuing service is cancel-anytime.</p></details>
+            <details><summary>When would I actually get charged?</summary><p>Only after the 14-day pilot if you explicitly choose to continue. The current standard ongoing plan is $2,490 + GST per month. There is no automatic rollover into paid service and ongoing service is month-to-month.</p></details>
+            <details><summary>How much work is included in the free pilot?</summary><p>Up to 20 new enquiries, 15 open quotes and 25 reactivation contacts. New leads receive up to 5 contact attempts, open quotes up to 4 and reactivation contacts up to 3 during the 14 days. Standard coverage is Monday to Friday, 8am–6pm in your local business time.</p></details>
             <details><summary>Is JobSetter just an AI receptionist?</summary><p>No. AI can support the workflow, but the core service is broader: human sales conversations, qualification, booking, quote recovery, reactivation and reporting.</p></details>
             <details><summary>Who actually speaks to my customers?</summary><p>A real assigned setter handles the conversations where judgement and trust matter. Before go-live, you know the qualification rules, scripts, service areas and handoff process they are working from.</p></details>
             <details><summary>Do I need to change my CRM or job software?</summary><p>No rip-and-replace is required for the pilot. JobSetter is designed to work around the systems and calendar you already use wherever practical.</p></details>
@@ -274,9 +313,9 @@ export default function Home() {
       <footer>
         <div className="shell footerTop">
           <div><div className="brand"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></div><p>The done-for-you revenue front office for the trades.</p></div>
-          <div className="footerNav"><a href="#audit">Revenue audit</a><a href="#pilot-offer">Free pilot</a><a href="#why">Why JobSetter</a><a href="#faq">FAQ</a></div>
+          <div className="footerNav"><a href="#audit">Revenue audit</a><a href="#pilot-offer">Free pilot</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@jobsetter.com.au">Contact</a></div>
         </div>
-        <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter. Australia.</span><span>Human-led. AI-assisted. Outcome-focused.</span></div>
+        <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter · Australia · hello@jobsetter.com.au</span><span>Human-led. AI-assisted. Outcome-focused.</span></div>
       </footer>
     </main>
   );
