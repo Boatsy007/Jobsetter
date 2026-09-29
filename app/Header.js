@@ -42,6 +42,7 @@ export default function Header() {
             <a href="#audit" onClick={() => trackNav("Revenue Audit")}>Revenue audit</a>
             <a href="#journey" onClick={() => trackNav("How It Works")}>How it works</a>
             <a href="#pilot-offer" onClick={() => trackNav("14-Day Pilot")}>14-day pilot</a>
+            <a href="#pricing" onClick={() => trackNav("Pricing")}>Pricing</a>
             <a href="#why" onClick={() => trackNav("Why JobSetter")}>Why JobSetter</a>
           </nav>
           <a className="button small" href="#pilot" onClick={() => trackNav("Start Pilot")}>Start a pilot</a>
