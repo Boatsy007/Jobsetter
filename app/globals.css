@@ -2143,3 +2143,19 @@ footer .footerNav a{color:#c2ccda!important}
     transition:none!important;
   }
 }
+
+
+/* AI comparison column */
+.comparisonTable.sixCol>div{
+  grid-template-columns:1.35fr repeat(5,1fr);
+}
+@media(max-width:960px){
+  .comparisonTable.sixCol>div{min-width:980px}
+}
+@media(max-width:700px){
+  .comparisonTable.sixCol{
+    overflow-x:auto!important;
+    -webkit-overflow-scrolling:touch;
+  }
+  .comparisonTable.sixCol>div{min-width:980px!important}
+}
