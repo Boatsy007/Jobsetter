@@ -2233,3 +2233,372 @@ footer .footerNav a{color:#c2ccda!important}
     transition:none!important;
   }
 }
+
+
+/* =========================================================
+   JobSetter Industrial Brand System v6
+   Built for trades: premium, direct, rugged, modern
+   ========================================================= */
+:root{
+  --t-bg:#f3f5f7;
+  --t-surface:#ffffff;
+  --t-ink:#0c1520;
+  --t-ink-2:#1b2733;
+  --t-muted:#5f6c79;
+  --t-line:#d8dde3;
+  --t-blue:#1769ff;
+  --t-blue-dark:#0f4ec2;
+  --t-orange:#ff7a00;
+  --t-steel:#c7ced6;
+  --t-dark:#0b121a;
+  --t-dark-2:#111c27;
+}
+
+/* Kill the agency-template colour language. */
+.brandSetter{
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  color:var(--t-blue)!important;
+}
+.heroCopy h1 span{
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  color:var(--t-blue)!important;
+}
+.hero{
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f3f5f7 100%)!important;
+}
+.hero:before{display:none!important}
+.eyebrow span{
+  background:var(--t-orange)!important;
+}
+.eyebrow.light span{
+  background:var(--t-orange)!important;
+}
+
+/* Overall surface system */
+html,body,main{background:var(--t-bg)!important}
+body{color:var(--t-ink)!important}
+.section.soft,.journeySection,.founderSection,.pricingSection{background:#eef1f4!important}
+.auditSection,.comparisonSection,.decisionSection{background:#fff!important}
+.navySection{
+  background:linear-gradient(180deg,var(--t-dark) 0%,#0d1722 100%)!important;
+}
+
+/* Header: simpler, tougher, less app-template */
+.siteHeader{
+  background:rgba(255,255,255,.94)!important;
+  border-bottom:1px solid #d9dee4!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+  backdrop-filter:blur(16px)!important;
+}
+.desktopNav a{
+  color:#293746!important;
+  font-weight:780!important;
+}
+.desktopNav a:hover{color:var(--t-blue)!important}
+.nav .button.small{
+  background:var(--t-blue)!important;
+  border-radius:9px!important;
+  box-shadow:0 5px 0 #0b3f9a!important;
+}
+.nav .button.small:hover{
+  background:var(--t-blue-dark)!important;
+  transform:translateY(-1px)!important;
+}
+
+/* Buttons */
+.button{
+  background:var(--t-blue)!important;
+  border-radius:10px!important;
+  box-shadow:0 6px 0 #0c48b6!important;
+  font-weight:900!important;
+}
+.button:hover{
+  background:var(--t-blue-dark)!important;
+  box-shadow:0 7px 0 #0a3f9e!important;
+}
+.button.secondary{
+  background:#fff!important;
+  color:var(--t-ink)!important;
+  border:1px solid #bfc7d0!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+}
+.button.secondary:hover{
+  border-color:#8894a0!important;
+  color:var(--t-blue)!important;
+}
+
+/* Hero */
+.heroCopy h1{
+  color:var(--t-ink)!important;
+  letter-spacing:-.07em!important;
+}
+.heroText{color:#3f4d5b!important}
+.heroSubline{color:#6a7682!important}
+.proofRow span{
+  background:#fff!important;
+  border:1px solid #dce1e6!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+.withoutLine{
+  background:#eaf1ff!important;
+  color:#2f4052!important;
+  border-left:4px solid var(--t-blue)!important;
+  border-radius:8px!important;
+}
+
+/* Hero offer: industrial dashboard, not neon SaaS */
+.heroOfferCard{
+  background:linear-gradient(180deg,var(--t-dark-2),var(--t-dark))!important;
+  border:1px solid #27333f!important;
+  border-radius:18px!important;
+  box-shadow:0 28px 70px rgba(6,12,18,.24)!important;
+}
+.heroOfferCard:before{display:none!important}
+.offerFlag{
+  background:var(--t-orange)!important;
+  color:#111820!important;
+  border-radius:7px!important;
+  box-shadow:none!important;
+}
+.heroOfferCard>small{color:#7da6ff!important}
+.heroOfferCard h2{color:#fff!important}
+.heroOfferCard>p{color:#b6c0cb!important}
+.commercialTerms div,
+.offerMiniGrid div{
+  background:#15212d!important;
+  border:1px solid #2d3945!important;
+  border-radius:10px!important;
+}
+.commercialTerms span,.offerMiniGrid span{color:#95a3b2!important}
+.heroOfferCard .button{
+  background:var(--t-orange)!important;
+  color:#111820!important;
+  box-shadow:0 5px 0 #a34d00!important;
+}
+.heroOfferCard .button:hover{
+  background:#ff8a1f!important;
+}
+
+/* Story bridge */
+.storyBridge{background:#101922!important}
+.storyBridgeInner span{color:var(--t-orange)!important}
+.storyBridgeInner small{color:#92a0ad!important}
+
+/* Pipeline motif: one industrial signature colour */
+.pipelineLine{
+  background:var(--t-blue)!important;
+  opacity:.22!important;
+}
+.pipelineNode>span{
+  border-color:#cbd3db!important;
+  color:var(--t-blue)!important;
+  background:#fff!important;
+}
+.pipelineMotif.dark .pipelineNode>span{
+  background:#17222d!important;
+  border-color:#33414e!important;
+  color:var(--t-orange)!important;
+}
+@keyframes pipelinePulse{
+  0%{transform:scale(.9);box-shadow:0 0 0 rgba(23,105,255,0)}
+  60%{transform:scale(1.05);box-shadow:0 0 0 8px rgba(23,105,255,.05)}
+  100%{transform:scale(1);box-shadow:0 6px 18px rgba(11,16,32,.07)}
+}
+
+/* Diagnostic: clean service tool, not colourful app */
+.diagnosticShell,.diagnosticResultShell,.journeyShell,.comparisonTable,.legalShell,.confirmationCard{
+  border-radius:16px!important;
+  border:1px solid #dce1e6!important;
+  box-shadow:0 18px 50px rgba(21,34,46,.08)!important;
+}
+.diagnosticProgress span{
+  background:var(--t-blue)!important;
+}
+.calcBadge{
+  background:#e9f0ff!important;
+  color:var(--t-blue)!important;
+}
+.choice{
+  border-radius:10px!important;
+}
+.choice.active{
+  background:#eef4ff!important;
+  border-color:#95b6ff!important;
+  color:#163e8e!important;
+  box-shadow:none!important;
+}
+.prescriptionCard{
+  background:var(--t-dark)!important;
+  box-shadow:none!important;
+  border-radius:14px!important;
+}
+.scoreTrack i{background:var(--t-blue)!important}
+.recommendationBox{
+  background:#eef4ff!important;
+  border-color:#d2def8!important;
+}
+.personalUrgency{
+  background:#fff5ea!important;
+  border-color:#ffd2a8!important;
+}
+.scenarioCard{
+  background:var(--t-dark)!important;
+  border-radius:14px!important;
+}
+
+/* Journey */
+.journeyTabs button{
+  border-radius:8px!important;
+}
+.journeyTabs button.active{
+  background:var(--t-blue)!important;
+  box-shadow:none!important;
+}
+.journeyHeader>span{
+  color:var(--t-blue)!important;
+  background:#eaf1ff!important;
+}
+.journeyRail span{background:var(--t-blue)!important}
+.journeyFooter{
+  background:#edf2f8!important;
+  color:#3f4a56!important;
+}
+
+/* Pilot */
+.pilotBigTerms article,
+#pilot-offer .pilotTimeline article{
+  border-radius:12px!important;
+}
+#pilot-offer .pilotTimeline article.is-active{
+  border-color:rgba(23,105,255,.46)!important;
+  box-shadow:0 10px 26px rgba(0,0,0,.13)!important;
+}
+#pilot-offer .pilotTimeline article.is-active:after{
+  background:var(--t-orange)!important;
+}
+#pilot-offer .pilotTimeline article.is-active span{
+  color:var(--t-orange)!important;
+}
+.riskCard{
+  background:#15283e!important;
+  border-radius:14px!important;
+}
+.riskCard .button{
+  background:var(--t-orange)!important;
+  color:#111820!important;
+  box-shadow:none!important;
+}
+
+/* Pilot report */
+.reportDemo{
+  border-radius:16px!important;
+  box-shadow:0 24px 60px rgba(0,0,0,.22)!important;
+}
+.reportTabs button{
+  border-radius:8px!important;
+}
+.reportTabs button.active{
+  background:var(--t-blue)!important;
+}
+.reportDemoTop small,
+.reportActivityRow b{
+  color:var(--t-blue)!important;
+}
+
+/* Comparison/pricing */
+.comparisonTable{
+  border-radius:16px!important;
+}
+.tableHead .jobsetterCol{
+  background:var(--t-blue)!important;
+}
+.comparisonTable strong{
+  background:#eaf1ff!important;
+  color:var(--t-blue)!important;
+}
+.pricingCard,
+.fitPanel{
+  background:var(--t-dark)!important;
+  border-radius:16px!important;
+  box-shadow:0 20px 55px rgba(9,16,24,.16)!important;
+}
+.pricingCard>small,.fitPanel>small{color:#86aaff!important}
+.pricingCard li:before{color:var(--t-orange)!important}
+
+/* Founder */
+.founderIdentity{
+  border-radius:16px!important;
+  box-shadow:0 14px 36px rgba(21,34,46,.08)!important;
+}
+.founderAvatar{
+  background:var(--t-blue)!important;
+  border-radius:14px!important;
+}
+.founderPhoto{border-radius:14px!important}
+.founderPromise{
+  border-left-color:var(--t-orange)!important;
+  border-radius:10px!important;
+}
+
+/* CTA */
+.ctaCard{
+  background:linear-gradient(135deg,#0b121a,#14283d)!important;
+  border-radius:18px!important;
+  box-shadow:0 24px 60px rgba(9,16,24,.18)!important;
+}
+.pilotForm{
+  border-radius:16px!important;
+  box-shadow:0 18px 45px rgba(9,16,24,.18)!important;
+}
+.auditChip{
+  background:#e9f0ff!important;
+  color:var(--t-blue)!important;
+}
+.formStepProgress span{
+  background:var(--t-blue)!important;
+}
+
+/* Remove decorative multicolour remnants */
+.fitCard>div:first-child{
+  background:#eef4ff!important;
+}
+.storyNumber{
+  color:var(--t-blue)!important;
+}
+.lightStory .storyNumber,
+.finalNumber{
+  color:var(--t-orange)!important;
+}
+.pricingCard .button,
+.fitPanel .button{
+  background:var(--t-blue)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+
+/* More squared, practical rhythm */
+.loopCard,.tradeGrid article,.pricingIncludes span,.measurementGrid article,.pilotTimeline article{
+  border-radius:12px!important;
+}
+.faqMore>div{
+  border-radius:10px!important;
+}
+
+/* Mobile */
+@media(max-width:700px){
+  .heroOfferCard,
+  .ctaCard,
+  .pilotForm,
+  .reportDemo,
+  .pricingCard,
+  .comparisonTable{
+    border-radius:14px!important;
+  }
+}
