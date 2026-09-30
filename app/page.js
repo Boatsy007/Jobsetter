@@ -142,8 +142,8 @@ export default function Home() {
 
       <section className="section storySection processSection" id="how">
         <div className="shell storyIntro processIntro">
-          <h2>Someone owns the lead until there’s an answer.</h2>
-          <p>From the first enquiry to the final outcome, someone is responsible for moving it forward.</p>
+          <h2>We own the lead until there’s an answer.</h2>
+          <p>From the first enquiry to the final outcome, we take responsibility for moving it forward.</p>
         </div>
         <ProcessTimeline />
         <div className="shell sectionAction"><a className="button secondary" href="/how-it-works">See the full process <b>→</b></a></div>
