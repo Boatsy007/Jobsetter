@@ -85,17 +85,51 @@ export default function Home() {
           <div className="problemList">
             <p>You’re on site. You’re quoting. You’re driving between jobs.</p>
             <strong>Meanwhile:</strong>
-            <ul>
-              <li>Enquiries sit for hours.</li>
-              <li>Quotes go out and never get chased.</li>
-              <li>Old leads get buried in your inbox and job software.</li>
-              <li>Past customers never hear from you again.</li>
+            <ul className="problemPainList">
+              <li>
+                <span className="painIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+                </span>
+                <span>Enquiries sit for hours.</span>
+              </li>
+              <li>
+                <span className="painIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M8 3h6l5 5v13H8z"/><path d="M14 3v5h5"/></svg>
+                </span>
+                <span>Quotes go out and never get chased.</span>
+              </li>
+              <li>
+                <span className="painIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 7h16v10H4z"/><path d="M4 9l8 5 8-5"/></svg>
+                </span>
+                <span>Old leads get buried in your inbox and job software.</span>
+              </li>
+              <li>
+                <span className="painIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="8" r="3"/><path d="M6 19c1.5-3 4-4.5 6-4.5s4.5 1.5 6 4.5"/></svg>
+                </span>
+                <span>Past customers never hear from you again.</span>
+              </li>
             </ul>
           </div>
           <div className="problemStatement">
             <small>THE LEAK</small>
             <h3>You've already done the hard part.</h3>
             <p>Your ads, lead platforms, referrals and reputation brought the enquiry in. JobSetter makes following it through someone's actual job.</p>
+          </div>
+        </div>
+
+        <div className="shell leadJourneyWrap">
+          <div className="leadJourneyDiagram" aria-label="Where leads can drop out of the follow-up process">
+            <div className="journeyStep"><span>Enquiry</span></div>
+            <div className="journeyArrow">→</div>
+            <div className="journeyStep journeyLeak"><span>Contacted</span><small>Slow response</small></div>
+            <div className="journeyArrow">→</div>
+            <div className="journeyStep journeyLeak"><span>Quoted</span><small>Quote never chased</small></div>
+            <div className="journeyArrow">→</div>
+            <div className="journeyStep journeyLeak"><span>Followed up</span><small>Old lead forgotten</small></div>
+            <div className="journeyArrow">→</div>
+            <div className="journeyStep successStep"><span>Won</span></div>
           </div>
         </div>
       </section>
@@ -246,6 +280,31 @@ export default function Home() {
           <p>Extra work, only after approval: <b>$35 + GST</b> per enquiry · <b>$45 + GST</b> per quote · <b>$9 + GST</b> per reactivation.</p>
           <p>Quiet month? Unused enquiry allowance can be moved into extra reactivation work.</p>
           <a className="button secondary" href="/pricing">See full pricing <b>→</b></a>
+        </div>
+      </section>
+
+      <section className="section storySection teamSection">
+        <div className="shell storyIntro">
+          <h2>Your JobSetter team.</h2>
+          <p>Real people following up your enquiries and quotes. These placeholders will be replaced with genuine team photos and names.</p>
+        </div>
+        <div className="shell teamGrid">
+          {[
+            ["First name", "Account manager"],
+            ["First name", "Lead follow-up"],
+            ["First name", "Quote follow-up"],
+          ].map(([name, role], index) => (
+            <article className="teamCard" key={role}>
+              <div className="teamPhotoPlaceholder" aria-label={`Photo placeholder for team member ${index + 1}`}>
+                <div className="teamPhotoFrame">
+                  <span>REAL TEAM PHOTO</span>
+                  <small>Candid desk photo · headset · natural</small>
+                </div>
+              </div>
+              <h3>{name}</h3>
+              <p>{role}</p>
+            </article>
+          ))}
         </div>
       </section>
 
