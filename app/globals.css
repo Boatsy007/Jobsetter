@@ -2602,3 +2602,285 @@ body{color:var(--t-ink)!important}
     border-radius:14px!important;
   }
 }
+
+
+/* =========================================================
+   JobSetter punch pass
+   Ownable control-room identity instead of generic SaaS cards
+   ========================================================= */
+:root{
+  --p-ink:#09111a;
+  --p-blue:#1267ff;
+  --p-hi:#d8ff2f;
+  --p-steel:#e7ebef;
+}
+
+/* Strip the generic softness from the hero. */
+.hero{
+  background:
+    linear-gradient(180deg,#ffffff 0%,#f6f8fa 100%)!important;
+}
+.heroGrid{
+  align-items:stretch!important;
+}
+.heroCopy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.heroCopy h1{
+  max-width:9.4ch!important;
+  font-size:clamp(62px,6.4vw,96px)!important;
+  line-height:.88!important;
+  letter-spacing:-.078em!important;
+}
+.heroText{
+  max-width:620px!important;
+  font-size:21px!important;
+}
+.heroSubline{
+  font-weight:750!important;
+  color:#3e4a56!important;
+}
+
+/* Distinctive control-room module */
+.heroControlRoom{
+  background:var(--p-ink)!important;
+  border-radius:14px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid #1b2631!important;
+  box-shadow:0 36px 80px rgba(5,12,19,.26)!important;
+}
+.heroControlRoom:before{display:none!important}
+.controlRoomHead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  padding:28px 28px 22px;
+  border-bottom:1px solid #26313b;
+}
+.controlRoomHead small{
+  display:block;
+  color:#7ea7ff;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.controlRoomHead h2{
+  margin:7px 0 0!important;
+  color:#fff!important;
+  font-size:38px!important;
+  letter-spacing:-.055em!important;
+}
+.controlStatus{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 10px;
+  border:1px solid #31404d;
+  background:#121d27;
+  color:#aebbc6;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+.controlStatus i{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--p-hi);
+  box-shadow:0 0 0 5px rgba(216,255,47,.08);
+  animation:controlBlink 1.8s ease-in-out infinite;
+}
+@keyframes controlBlink{
+  0%,100%{opacity:1}
+  50%{opacity:.45}
+}
+.leadStack{
+  position:relative;
+  display:grid;
+  gap:10px;
+  padding:24px 28px 10px;
+}
+.leadCard{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:15px 16px;
+  background:#121d27;
+  border:1px solid #2a3742;
+  color:#fff;
+  transform-origin:center;
+}
+.leadCard small{
+  display:block;
+  color:#738392;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.leadCard strong{
+  display:block;
+  margin-top:4px;
+  font-size:14px;
+}
+.leadCard>span{
+  color:#0c141c;
+  background:var(--p-hi);
+  padding:7px 9px;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.06em;
+}
+.leadCardOne{animation:leadBreathe 5.4s ease-in-out infinite}
+.leadCardTwo{animation:leadBreathe 5.4s ease-in-out 1.8s infinite}
+.leadCardThree{animation:leadBreathe 5.4s ease-in-out 3.6s infinite}
+@keyframes leadBreathe{
+  0%,100%{transform:translateX(0);border-color:#2a3742}
+  50%{transform:translateX(4px);border-color:#3c5f88}
+}
+.controlStrip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin:10px 28px 0;
+  border:1px solid #2a3742;
+}
+.controlStrip>div{
+  padding:14px 15px;
+  border-right:1px solid #2a3742;
+}
+.controlStrip>div:last-child{border-right:0}
+.controlStrip b{
+  display:block;
+  color:#fff;
+  font-size:15px;
+}
+.controlStrip span{
+  display:block;
+  margin-top:3px;
+  color:#80909e;
+  font-size:9px;
+}
+.heroControlRoom .fullButton{
+  width:calc(100% - 56px)!important;
+  margin:20px 28px 0!important;
+  background:var(--p-blue)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+.heroControlRoom>em{
+  display:block;
+  padding:12px 28px 24px;
+  color:#71808d!important;
+  font-size:9px!important;
+  line-height:1.5;
+}
+.heroControlRoom .offerFlag{
+  top:14px!important;
+  right:14px!important;
+  z-index:3;
+  background:var(--p-hi)!important;
+  color:#0a1118!important;
+  border-radius:3px!important;
+  box-shadow:none!important;
+}
+
+/* Big signature transition: turns the process into the brand. */
+.heroPunch{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:64px!important;
+  padding-top:22px;
+  border-top:2px solid var(--p-ink);
+  overflow:hidden;
+}
+.heroPunch span{
+  color:var(--p-ink);
+  font-size:clamp(21px,2.4vw,36px);
+  font-weight:950;
+  letter-spacing:-.04em;
+}
+.heroPunch i{
+  color:var(--p-blue);
+  font-size:24px;
+  font-style:normal;
+  font-weight:900;
+}
+
+/* Reuse the same high-vis accent rather than a palette of template colours. */
+.offerFlag,
+#pilot-offer .pilotTimeline article.is-active span,
+.lightStory .storyNumber,
+.finalNumber{
+  color:#0b1218!important;
+}
+#pilot-offer .pilotTimeline article.is-active span{
+  color:var(--p-hi)!important;
+}
+#pilot-offer .pilotTimeline article.is-active:after{
+  background:var(--p-hi)!important;
+}
+.pricingCard li:before{color:var(--p-hi)!important}
+.pipelineMotif.dark .pipelineNode>span{color:var(--p-hi)!important}
+
+/* Reduce generic pill/card language in core content. */
+.storyNumber{
+  border-radius:7px!important;
+}
+.eyebrow{
+  border-radius:5px!important;
+}
+.proofRow span{
+  border-radius:5px!important;
+}
+.reportTabs button,
+.journeyTabs button{
+  border-radius:7px!important;
+}
+
+/* Mobile: keep the punch without crowding. */
+@media(max-width:700px){
+  .heroCopy h1{
+    font-size:clamp(52px,14vw,67px)!important;
+    max-width:9.6ch!important;
+  }
+  .heroText{font-size:18px!important}
+  .heroControlRoom{border-radius:10px!important}
+  .controlRoomHead{
+    display:block;
+    padding:22px 18px 18px;
+  }
+  .controlStatus{
+    margin-top:14px;
+  }
+  .leadStack{padding:18px 18px 8px}
+  .controlStrip{
+    margin:8px 18px 0;
+    grid-template-columns:1fr;
+  }
+  .controlStrip>div{
+    border-right:0;
+    border-bottom:1px solid #2a3742;
+  }
+  .controlStrip>div:last-child{border-bottom:0}
+  .heroControlRoom .fullButton{
+    width:calc(100% - 36px)!important;
+    margin:18px 18px 0!important;
+  }
+  .heroControlRoom>em{padding:11px 18px 20px}
+  .heroPunch{
+    overflow-x:auto;
+    justify-content:flex-start;
+    gap:14px;
+    scrollbar-width:none;
+  }
+  .heroPunch::-webkit-scrollbar{display:none}
+  .heroPunch span{white-space:nowrap;font-size:22px}
+  .heroPunch i{font-size:18px}
+}
