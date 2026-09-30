@@ -186,7 +186,6 @@ export default function RevenueLeakCalculator() {
           <span style={{ width: ((step + 1) / questions.length) * 100 + "%" }} />
         </div>
         <div className="diagnosticContent">
-          <div className="calcBadge">60-SECOND REVENUE LEAK AUDIT</div>
           <small className="questionCount">{q.eyebrow}</small>
           <h3>{q.title}</h3>
           <p>Your answers stay in this browser until you choose to request a pilot call.</p>
