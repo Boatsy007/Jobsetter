@@ -88,14 +88,14 @@ export default function Home() {
             <ul>
               <li>Enquiries sit for hours.</li>
               <li>Quotes go out and never get chased.</li>
-              <li>Old leads disappear into the CRM.</li>
+              <li>Old leads get buried in your inbox and job software.</li>
               <li>Past customers never hear from you again.</li>
             </ul>
           </div>
           <div className="problemStatement">
             <small>THE LEAK</small>
-            <h3>You already paid for the opportunity.</h3>
-            <p>Ads, lead platforms, referrals and word of mouth got the enquiry in. JobSetter gives someone the job of following it through.</p>
+            <h3>You've already done the hard part.</h3>
+            <p>Your ads, lead platforms, referrals and reputation brought the enquiry in. JobSetter makes following it through someone's actual job.</p>
           </div>
         </div>
       </section>
