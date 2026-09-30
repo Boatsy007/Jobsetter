@@ -5,6 +5,11 @@ import PilotForm from "./PilotForm";
 import ScrollMotion from "./ScrollMotion";
 import MarketingFooter from "./MarketingFooter";
 
+export const metadata = {
+  title: "JobSetter | Turn More Trade Leads Into Jobs",
+  description: "Australian-based follow-up team for high-ticket trades. We contact leads, book jobs, chase quotes and reactivate old customers.",
+};
+
 const steps = [
   ["01", "Contact", "Every new enquiry gets an instant text, then a call from our Australian-based team within 30 minutes during business hours."],
   ["02", "Qualify", "We check the job against your rules: location, job type, budget and timing."],
