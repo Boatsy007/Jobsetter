@@ -126,71 +126,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="shell leadJourneyWrap">
-          <div className="leadJourneyHeader">
-            <small>YOUR EXISTING LEAD FLOW</small>
-            <p>Most leads aren’t lost because they were bad leads. They’re lost in the gaps between enquiry and follow-up.</p>
+        <div className="shell jobSetterLayer">
+          <div className="jobSetterLayerIntro">
+            <small>WHERE JOBSETTER FITS</small>
+            <h3>We close the follow-up gaps around your existing sales process.</h3>
+            <p>You still quote the work and run the job. We make sure the opportunity keeps moving.</p>
           </div>
-
-          <div className="clientFlowLabel">WHAT HAPPENS IN YOUR BUSINESS</div>
-          <div className="leadJourneyCard" aria-label="Your existing lead flow and the gaps where opportunities can be lost">
-            <div className="leadFlowTrack" aria-hidden="true"></div>
-
-            <div className="leadFlowStage">
-              <span className="leadFlowDot"></span>
-              <strong>Enquiry</strong>
-            </div>
-
-            <div className="leadFlowGap">
-              <small>Slow response</small>
-            </div>
-
-            <div className="leadFlowStage">
-              <span className="leadFlowDot"></span>
-              <strong>Contacted</strong>
-            </div>
-
-            <div className="leadFlowGap">
-              <small>No answer<br />no retry</small>
-            </div>
-
-            <div className="leadFlowStage">
-              <span className="leadFlowDot"></span>
-              <strong>Quoted</strong>
-            </div>
-
-            <div className="leadFlowGap">
-              <small>Quote not chased</small>
-            </div>
-
-            <div className="leadFlowStage">
-              <span className="leadFlowDot"></span>
-              <strong>Follow-up</strong>
-            </div>
-
-            <div className="leadFlowGap">
-              <small>Follow-up stops</small>
-            </div>
-
-            <div className="leadFlowStage leadFlowWon">
-              <span className="leadFlowDot"></span>
-              <strong>Job won</strong>
-            </div>
-          </div>
-
-          <div className="jobSetterLayer">
-            <div className="jobSetterLayerIntro">
-              <small>WHERE JOBSETTER FITS</small>
-              <h3>We close the follow-up gaps around your existing sales process.</h3>
-              <p>You still quote the work and run the job. We make sure the opportunity keeps moving.</p>
-            </div>
-            <div className="jobSetterActions">
-              <span>Call new enquiries</span>
-              <span>Keep following up</span>
-              <span>Work old leads</span>
-              <span>Book the next step</span>
-              <span>Hand it back to your team</span>
-            </div>
+          <div className="jobSetterActions">
+            <span>Call new enquiries</span>
+            <span>Keep following up</span>
+            <span>Work old leads</span>
+            <span>Book the next step</span>
+            <span>Hand it back to your team</span>
           </div>
         </div>
       </section>
