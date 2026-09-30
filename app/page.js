@@ -49,28 +49,43 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="heroOfferCard">
+          <div className="heroOfferCard heroControlRoom">
             <div className="offerFlag">FOUNDING PILOT</div>
-            <small>14-DAY REVENUE RECOVERY PILOT</small>
-            <h2>Let your own pipeline prove the value.</h2>
-            <p>For 14 days, we work a defined slice of your new leads, open quotes and old opportunities.</p>
-
-            <div className="commercialTerms">
-              <div><strong>$0</strong><span>Pilot fee</span></div>
-              <div><strong>14 days</strong><span>Before you decide</span></div>
-              <div><strong>No rollover</strong><span>You choose to continue</span></div>
+            <div className="controlRoomHead">
+              <div>
+                <small>JOBSETTER CONTROL DESK</small>
+                <h2>Lead in. Job moving.</h2>
+              </div>
+              <span className="controlStatus"><i /> ACTIVE WORKFLOW</span>
             </div>
 
-            <div className="offerMiniGrid">
-              <div><b>20 new leads</b><span>Up to 5 attempts</span></div>
-              <div><b>15 open quotes</b><span>Up to 4 follow-ups</span></div>
-              <div><b>25 old contacts</b><span>Up to 3 attempts</span></div>
-              <div><b>Your report</b><span>See every outcome</span></div>
+            <div className="leadStack" aria-label="Illustrative JobSetter workflow">
+              <article className="leadCard leadCardOne">
+                <div><small>NEW LEAD</small><strong>Hot water system</strong></div>
+                <span>CONTACT NOW</span>
+              </article>
+              <article className="leadCard leadCardTwo">
+                <div><small>CONTACTED</small><strong>Qualified + ready</strong></div>
+                <span>BOOK NEXT</span>
+              </article>
+              <article className="leadCard leadCardThree">
+                <div><small>BOOKED</small><strong>Tomorrow · 8:30am</strong></div>
+                <span>DONE</span>
+              </article>
+            </div>
+
+            <div className="controlStrip">
+              <div><b>$0</b><span>Pilot fee</span></div>
+              <div><b>14 days</b><span>Before you decide</span></div>
+              <div><b>No rollover</b><span>You choose to continue</span></div>
             </div>
 
             <a className="button fullButton" href="#pilot">Build my free pilot <b>→</b></a>
-            <em>Mon–Fri, 8am–6pm local business time. If you continue after the pilot, the standard plan is $2,490 + GST/month.</em>
+            <em>Illustrative workflow. Pilot covers agreed new leads, quotes and reactivation contacts. Ongoing plan: $2,490 + GST/month.</em>
           </div>
+        </div>
+        <div className="shell heroPunch" aria-hidden="true">
+          <span>LEAD</span><i>→</i><span>CONTACT</span><i>→</i><span>BOOK</span><i>→</i><span>QUOTE</span><i>→</i><span>WIN</span>
         </div>
       </section>
 
