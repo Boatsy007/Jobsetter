@@ -3094,3 +3094,86 @@ body{color:var(--t-ink)!important}
     text-shadow:none!important;
   }
 }
+
+
+/* Process banner: explicit stepped motion */
+.processBannerTrack{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:0!important;
+}
+.processBannerStep{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  min-width:0;
+}
+.processBannerStep span,
+.processBannerStep i{
+  transition:
+    color .22s ease,
+    transform .22s ease,
+    background .22s ease,
+    box-shadow .22s ease,
+    opacity .22s ease;
+}
+.processBannerStep span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius:7px;
+}
+.processBannerStep span.isActive{
+  color:#fff!important;
+  background:#1769ff;
+  transform:translateY(-1px) scale(1.04);
+  box-shadow:0 8px 18px rgba(23,105,255,.18);
+}
+.processBannerStep i{
+  color:#1769ff;
+  opacity:.45;
+}
+.processBannerStep i.isActive{
+  opacity:1;
+  transform:translateX(4px) scale(1.12);
+  text-shadow:0 0 12px rgba(23,105,255,.25);
+}
+
+/* Disable the previous CSS-only loop so JS controls the sequence. */
+.processBannerTrack span,
+.processBannerTrack i{
+  animation:none!important;
+}
+.processBanner:after{
+  animation:processSweep 8s ease-in-out infinite!important;
+}
+
+@media(max-width:700px){
+  .processBannerTrack{
+    display:flex!important;
+    grid-template-columns:none!important;
+  }
+  .processBannerStep{
+    flex:0 0 auto;
+  }
+  .processBannerStep span{
+    padding:6px 8px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .processBannerStep span,
+  .processBannerStep i{
+    transition:none!important;
+  }
+  .processBannerStep span.isActive{
+    transform:none!important;
+    box-shadow:none!important;
+  }
+  .processBannerStep i.isActive{
+    transform:none!important;
+    text-shadow:none!important;
+  }
+}
