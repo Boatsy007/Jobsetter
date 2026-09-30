@@ -21,11 +21,23 @@ h1,h2,h3,h4,p{margin-top:0}
 .siteHeader{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{text-decoration:none;font-weight:950;font-size:29px;letter-spacing:-1.7px;white-space:nowrap}
-.brandImageLink{display:inline-flex;align-items:center;line-height:0}
-.brandLogo{display:block;width:122px;height:auto}
-.footerLogoPlate{display:inline-flex;align-items:center;background:#fff;padding:8px 10px}
-.footerLogo{display:block;width:154px;height:auto}
-.legalLogo{display:block;width:178px;height:auto}
+.brandWordmark{display:inline-flex;align-items:baseline;line-height:.82;font-family:Arial Black,Inter,ui-sans-serif,system-ui,sans-serif;font-weight:950;letter-spacing:-.08em}
+.logoJob,.logoSetter{display:inline-block}
+.logoJob{
+  background:linear-gradient(180deg,#071a44 0%,#0b2b66 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.logoSetter{
+  background:linear-gradient(180deg,#0d63ff 0%,#1a78ff 52%,#0e55ff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.siteHeader .brandWordmark{font-size:30px}
+.footerWordmark{font-size:36px}
+footer .footerWordmark .logoJob{
+  background:linear-gradient(180deg,#ffffff 0%,#dfe7f1 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.legalBrand.brandWordmark{font-size:40px}
 .brandJob{color:var(--ink)}
 .brandSetter{color:var(--blue)}
 .desktopNav{display:flex;gap:26px}
@@ -349,9 +361,9 @@ footer .brandSetter{color:#4f8cff}
   .mobileHeaderSpacer{display:block;height:64px}
   .nav{height:64px}
   .brand{font-size:24px}
-  .brandLogo{width:108px}
-  .footerLogo{width:142px}
-  .legalLogo{width:154px}
+  .siteHeader .brandWordmark{font-size:27px}
+  .footerWordmark{font-size:34px}
+  .legalBrand.brandWordmark{font-size:34px}
   .processBannerTrack{display:flex;width:100%;min-height:56px;padding:0 13px;gap:14px;overflow-x:auto;scrollbar-width:none}
   .processBannerTrack::-webkit-scrollbar{display:none}
   .processBannerStep{flex:0 0 auto}
