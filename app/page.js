@@ -226,7 +226,7 @@ export default function Home() {
 
       <footer>
         <div className="shell footerTop">
-          <div><div className="brand"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></div><p>The done-for-you front office for trades.</p></div>
+          <div className="footerBrandBlock"><div className="footerLogoPlate"><img className="footerLogo" src="/jobsetter-logo.webp" alt="JobSetter" width="360" height="93" /></div><p>The done-for-you front office for trades.</p></div>
           <div className="footerNav"><a href="#audit">Audit</a><a href="#journey">How it works</a><a href="#pilot-offer">Free pilot</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
         </div>
         <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter · Australia · hello@jobsetter.com.au</span><span>Human-led. AI-assisted.</span></div>
