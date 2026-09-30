@@ -1657,3 +1657,11 @@ footer .brandSetter{color:#4f8cff}
     font-size:15px;
   }
 }
+
+/* Consistent blue emphasis for intentionally wrapped words in major homepage headings */
+.storyIntro h2 > span,
+.splitIntro h2 > span,
+.pilotHeroGrid h2 > span,
+.employeeAltIntro h2 > span,
+.guaranteeGrid h2 > span,
+.ctaCopy h2 > span { color: var(--blue); }
