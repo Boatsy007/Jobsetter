@@ -35,8 +35,8 @@ export default function Header() {
     <>
       <header className={`siteHeader ${visible ? "headerVisible" : "headerHidden"}`}>
         <div className="shell nav">
-          <a className="brand brandImageLink" href="#top" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
-            <img className="brandLogo" src="/jobsetter-logo.webp" alt="JobSetter" width="360" height="93" />
+          <a className="brand brandWordmark" href="#top" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
+            <span className="logoJob">Job</span><span className="logoSetter">Setter</span>
           </a>
           <nav className="desktopNav">
             <a href="#audit" onClick={() => trackNav("Revenue Audit")}>Revenue audit</a>
