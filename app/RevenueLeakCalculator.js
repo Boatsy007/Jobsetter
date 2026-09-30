@@ -90,6 +90,33 @@ export default function RevenueLeakCalculator() {
   const recommendation = recommendations[scores.biggestLeak];
   const setAnswer = (key, value) => setAnswers((old) => ({ ...old, [key]: value }));
 
+  const finishAudit = (finalAnswers = answers) => {
+    const response = { fast: 95, hour: 78, "same-day": 55, irregular: 28 }[finalAnswers.responseSpeed];
+    const qualify = { always: 90, sometimes: 58, no: 30 }[finalAnswers.qualification];
+    const quotes = { always: 92, sometimes: 56, rarely: 24 }[finalAnswers.quoteFollowup];
+    const reactivate = { yes: 88, sometimes: 50, no: 16 }[finalAnswers.reactivation];
+    const total = Math.round((response + qualify + quotes + reactivate) / 4);
+    const ranked = [
+      ["Speed to lead", response],
+      ["Qualification", qualify],
+      ["Quote recovery", quotes],
+      ["Reactivation", reactivate],
+    ].sort((a, b) => a[1] - b[1]);
+
+    const summary = {
+      ...finalAnswers,
+      score: total,
+      biggestLeak: ranked[0][0],
+      strongest: ranked[ranked.length - 1][0],
+    };
+
+    setComplete(true);
+    try {
+      sessionStorage.setItem("jobsetterAudit", JSON.stringify(summary));
+      track("Diagnostic Completed", { scoreBand: total >= 75 ? "75+" : total >= 50 ? "50-74" : "under50" });
+    } catch {}
+  };
+
   const next = () => {
     if (step === 0) {
       try { track("Diagnostic Started", { source: "Revenue Audit" }); } catch {}
@@ -98,24 +125,15 @@ export default function RevenueLeakCalculator() {
       setStep((s) => s + 1);
       return;
     }
-    setComplete(true);
-    const summary = {
-      ...answers,
-      score: scores.total,
-      biggestLeak: scores.biggestLeak,
-      strongest: scores.strongest,
-    };
-    try {
-      sessionStorage.setItem("jobsetterAudit", JSON.stringify(summary));
-      track("Diagnostic Completed", { scoreBand: scores.total >= 75 ? "75+" : scores.total >= 50 ? "50-74" : "under50" });
-    } catch {}
+    finishAudit();
   };
 
   const chooseAndAdvance = (key, value) => {
-    setAnswer(key, value);
+    const updated = { ...answers, [key]: value };
+    setAnswers(updated);
     window.setTimeout(() => {
       if (step < questions.length - 1) setStep((s) => s + 1);
-      else setComplete(true);
+      else finishAudit(updated);
     }, 260);
   };
 
