@@ -72,7 +72,7 @@ export default function Home() {
           </div>
 
           <div className="heroProofBar">
-            <span><b>AUSTRALIAN-BASED TEAM</b> Your customers speak to people here</span>
+            <span><b>AUSTRALIAN-BASED TEAM</b> Your customers speak to Australians</span>
             <span><b>HUMAN-LED</b> AI handles texts, reminders and admin</span>
             <span><b>NO REVENUE CUT</b> Fixed monthly pricing</span>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
         <div className="shell splitIntro">
           <div>
             <small>THE DIFFERENCE</small>
-            <h2>Your customers speak to people in Australia.</h2>
+            <h2>Your customers speak to Australians.</h2>
           </div>
           <div>
             <p>JobSetter is not an offshore VA service and it is not an AI receptionist.</p>
