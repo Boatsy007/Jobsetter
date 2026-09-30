@@ -49,7 +49,7 @@ export default function Home() {
 
               <div className="heroBoldAction">
                 <a className="button heroPrimary" href="/pilot">Start the 30-day pilot <b>→</b></a>
-                <a className="heroTextLink" href="/how-it-works">See how JobSetter works</a>
+                <a className="heroTextLink" href="#audit">Find where you’re losing leads ↓</a>
                 <span>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</span>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function Home() {
       <section className="section auditSection storySection" id="audit">
         <div className="shell auditLead">
           <h2>Find the <span>leak.</span></h2>
-          <p>Seven quick questions. See where your follow-up is weakest.</p>
+          <p>Answer 7 quick questions and we’ll show you where your follow-up is leaking.</p>
         </div>
         <div className="shell"><RevenueLeakCalculator /></div>
       </section>
