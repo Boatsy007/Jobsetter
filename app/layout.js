@@ -5,10 +5,10 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL("https://jobsetter.com.au"),
   title: {
-    default: "JobSetter | Lead Follow-Up & Quote Recovery for Tradies",
+    default: "JobSetter | Turn More Trade Leads Into Jobs",
     template: "%s | JobSetter",
   },
-  description: "JobSetter helps tradies turn more enquiries into booked work with human-led lead response, qualification, booking, quote follow-up and reactivation.",
+  description: "Australian-based, human-led follow-up for high-ticket trade businesses: new enquiries, qualification, booking, quote follow-up and reactivation.",
   keywords: [
     "tradie lead follow up",
     "appointment setting for trades",
