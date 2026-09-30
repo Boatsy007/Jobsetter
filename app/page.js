@@ -127,15 +127,41 @@ export default function Home() {
         </div>
 
         <div className="shell decisionGrid">
-          <div className="comparisonTable sixCol">
+          <div className="comparisonTable sixCol desktopComparison">
             <div className="tableHead"><span></span><b>Answering service</b><b>CRM</b><b>AI receptionist</b><b>Internal hire</b><b className="jobsetterCol">JobSetter</b></div>
             <div><span>Talks to customers</span><i>Usually</i><i>No</i><i>Yes</i><i>Yes</i><strong>Yes</strong></div>
             <div><span>Qualifies the job</span><i>Basic</i><i>No</i><i>Rules-based</i><i>If trained</i><strong>Yes</strong></div>
             <div><span>Books the next step</span><i>Sometimes</i><i>Tool only</i><i>Usually</i><i>Yes</i><strong>Yes</strong></div>
-            <div><span>Chases open quotes</span><i>No</i><i>Automation</i><i>Limited</i><i>If managed</i><strong>Yes</strong></div>
+            <div><span>Chases open quotes</span><i>No</i><i>Automation</i><i>Depends on workflow</i><i>If managed</i><strong>Yes</strong></div>
             <div><span>Handles objections & judgement</span><i>Limited</i><i>No</i><i>Limited</i><i>Yes</i><strong>Human-led</strong></div>
-            <div><span>Reactivates old leads</span><i>No</i><i>Campaigns</i><i>Sometimes</i><i>If managed</i><strong>Yes</strong></div>
-            <div><span>Needs daily management</span><i>No</i><i>No</i><i>Some setup</i><i>Yes</i><strong>No</strong></div>
+            <div><span>Reactivates old leads</span><i>No</i><i>Campaign tools</i><i>Depends on setup</i><i>If managed</i><strong>Yes</strong></div>
+            <div><span>Needs daily management</span><i>No</i><i>Configuration</i><i>Some oversight</i><i>Yes</i><strong>No</strong></div>
+          </div>
+
+          <div className="mobileComparison" aria-label="Mobile comparison">
+            {[
+              ["Answering service", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Usually","Basic","Sometimes","No"]],
+              ["CRM", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["No","No","Tool only","Automation"]],
+              ["AI receptionist", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Yes","Rules-based","Usually","Depends on workflow"]],
+              ["Internal hire", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Yes","If trained","Yes","If managed"]],
+            ].map(([name, labels, values]) => (
+              <details key={name}>
+                <summary>{name} <span>vs JobSetter</span></summary>
+                <div className="mobileCompareRows">
+                  {labels.map((label, index) => (
+                    <div key={label}>
+                      <b>{label}</b>
+                      <span>{values[index]}</span>
+                      <strong>JobSetter: Yes</strong>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            ))}
+            <div className="mobileCompareNote">
+              <b>JobSetter</b>
+              <span>Human-led + AI-assisted. Built to own follow-up from first contact through quote recovery and reactivation.</span>
+            </div>
           </div>
 
           <div className="pricingCard" id="pricing">
