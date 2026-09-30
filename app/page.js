@@ -197,7 +197,7 @@ export default function Home() {
             <h2>Give us 30 days and your real pipeline.</h2>
             <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
             <div className="pilotPrice">$990 <span>+ GST</span></div>
-            <strong>Then $2,490 + GST a month if you continue. No lock-in.</strong>
+            <strong>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</strong>
             <a className="button" href="/pilot">See the 30-day pilot <b>→</b></a>
           </div>
           <div className="pilotMeasure">
