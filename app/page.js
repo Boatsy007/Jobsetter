@@ -56,13 +56,9 @@ export default function Home() {
       </section>
 
       <section className="section auditSection storySection" id="audit">
-        <div className="shell storyIntro">
-          <span className="storyNumber">01</span>
-          <div>
-            <div className="eyebrow"><span /> FIND THE LEAK</div>
-            <h2>Where are your leads slipping through the cracks?</h2>
-            <p>Seven quick questions. We’ll show you where follow-up looks weakest and what to fix first.</p>
-          </div>
+        <div className="shell auditLead">
+          <h2>Find the <span>leak.</span></h2>
+          <p>Seven quick questions. See where follow-up is costing you jobs.</p>
         </div>
         <div className="shell"><RevenueLeakCalculator /></div>
       </section>
