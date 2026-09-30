@@ -21,6 +21,11 @@ h1,h2,h3,h4,p{margin-top:0}
 .siteHeader{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{text-decoration:none;font-weight:950;font-size:29px;letter-spacing:-1.7px;white-space:nowrap}
+.brandImageLink{display:inline-flex;align-items:center;line-height:0}
+.brandLogo{display:block;width:122px;height:auto}
+.footerLogoPlate{display:inline-flex;align-items:center;background:#fff;padding:8px 10px}
+.footerLogo{display:block;width:154px;height:auto}
+.legalLogo{display:block;width:178px;height:auto}
 .brandJob{color:var(--ink)}
 .brandSetter{color:var(--blue)}
 .desktopNav{display:flex;gap:26px}
@@ -344,6 +349,9 @@ footer .brandSetter{color:#4f8cff}
   .mobileHeaderSpacer{display:block;height:64px}
   .nav{height:64px}
   .brand{font-size:24px}
+  .brandLogo{width:108px}
+  .footerLogo{width:142px}
+  .legalLogo{width:154px}
   .processBannerTrack{display:flex;width:100%;min-height:56px;padding:0 13px;gap:14px;overflow-x:auto;scrollbar-width:none}
   .processBannerTrack::-webkit-scrollbar{display:none}
   .processBannerStep{flex:0 0 auto}
