@@ -5,6 +5,7 @@ import PilotForm from "./PilotForm";
 import ScrollMotion from "./ScrollMotion";
 import MarketingFooter from "./MarketingFooter";
 import JobSetterFitCard from "./JobSetterFitCard";
+import ProcessTimeline from "./ProcessTimeline";
 
 export const metadata = {
   title: "JobSetter | Turn More Trade Leads Into Jobs",
@@ -138,20 +139,12 @@ export default function Home() {
         <div className="shell"><RevenueLeakCalculator /></div>
       </section>
 
-      <section className="section storySection" id="how">
-        <div className="shell storyIntro">
+      <section className="section storySection processSection" id="how">
+        <div className="shell storyIntro processIntro">
           <h2>Someone owns the lead until there’s an answer.</h2>
-          <p>JobSetter sits between the enquiry coming in and the job being won.</p>
+          <p>From the first enquiry to the final outcome, someone is responsible for moving it forward.</p>
         </div>
-        <div className="shell operatingSteps">
-          {steps.map(([number, title, text]) => (
-            <article key={title}>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
+        <ProcessTimeline />
         <div className="shell sectionAction"><a className="button secondary" href="/how-it-works">See the full process <b>→</b></a></div>
       </section>
 
