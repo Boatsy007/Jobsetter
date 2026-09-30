@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const steps = ["LEAD", "CONTACT", "BOOK", "QUOTE", "WIN"];
+const steps = ["CONTACT", "QUALIFY", "BOOK", "FOLLOW UP", "REPORT"];
 
 export default function ProcessBanner() {
   const [active, setActive] = useState(0);
