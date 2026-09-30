@@ -655,3 +655,75 @@ footer .brandSetter{color:#4f8cff}
   .pilotHeroGrid h2,.darkSection h2,.guaranteeGrid h2,.simpleCta h2{font-size:clamp(42px,12vw,58px)}
   .problemStatement,.fitPanel,.doDontGrid article,.priceCards article{padding:22px}
 }
+
+
+/* Lead-loss section refinement */
+.problemSection .storyIntro{
+  margin-bottom:42px;
+}
+.problemSection .storyIntro h2{
+  letter-spacing:-.035em;
+}
+.problemSection .storyIntro p{
+  margin:14px 0 0;
+  max-width:900px;
+  color:var(--ink);
+  font-size:clamp(24px,2vw,28px);
+  line-height:1.3;
+  font-weight:600;
+}
+.problemGrid{
+  align-items:start;
+}
+.problemList{
+  padding-right:30px;
+}
+.problemList>p{
+  margin:0 0 22px;
+  color:#31404e;
+  font-size:17px;
+  line-height:1.55;
+  font-weight:400;
+}
+.problemList>strong{
+  display:block;
+  margin:0 0 10px;
+}
+.problemStatement{
+  align-self:start;
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.problemStatement h3{
+  letter-spacing:-.03em;
+}
+@media(max-width:760px){
+  .problemSection .storyIntro{
+    margin-bottom:30px;
+  }
+  .problemSection .storyIntro h2{
+    letter-spacing:-.025em;
+  }
+  .problemSection .storyIntro p{
+    margin-top:12px;
+    font-size:22px;
+    line-height:1.32;
+  }
+  .problemGrid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .problemList{
+    padding-right:0;
+  }
+  .problemList>p{
+    font-size:16px;
+    line-height:1.55;
+  }
+  .problemStatement{
+    width:100%;
+    min-height:0;
+  }
+}
