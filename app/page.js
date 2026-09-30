@@ -8,6 +8,7 @@ import CallDemo from "./CallDemo";
 import PipelineMotif from "./PipelineMotif";
 import PilotReportDemo from "./PilotReportDemo";
 import ScrollMotion from "./ScrollMotion";
+import ProcessBanner from "./ProcessBanner";
 
 const pilotTimeline = [
   ["Day 1", "Learn your business", "Jobs, service area, calendar and what a good lead looks like."],
@@ -22,6 +23,7 @@ export default function Home() {
     <main>
       <ScrollMotion />
       <Header />
+      <ProcessBanner />
 
       <section className="hero storySection" id="top">
         <div className="shell heroGrid">
@@ -83,9 +85,6 @@ export default function Home() {
             <a className="button fullButton" href="#pilot">Build my free pilot <b>→</b></a>
             <em>Illustrative workflow. Pilot covers agreed new leads, quotes and reactivation contacts. Ongoing plan: $2,490 + GST/month.</em>
           </div>
-        </div>
-        <div className="shell heroPunch" aria-hidden="true">
-          <span>LEAD</span><i>→</i><span>CONTACT</span><i>→</i><span>BOOK</span><i>→</i><span>QUOTE</span><i>→</i><span>WIN</span>
         </div>
       </section>
 
