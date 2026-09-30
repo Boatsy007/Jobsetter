@@ -276,7 +276,7 @@ export default function RevenueLeakCalculator() {
 
       <div className="diagnosticResultActions">
         <button className="textButton" onClick={previous}>← Change my answers</button>
-        <button className="button" onClick={goToPilot}>Start my 30-day pilot <b>→</b></button>
+        <button className="button" onClick={goToPilot}>Fix my follow-up <b>→</b></button>
       </div>
     </div>
   );
