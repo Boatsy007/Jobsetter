@@ -39,7 +39,7 @@ export default function Home() {
 
       <section className="hero storySection heroBold" id="top">
         <div className="shell heroBoldInner">
-          <div className="heroKicker">AUSTRALIAN-BASED · HUMAN-LED · HIGH-TICKET TRADES</div>
+          <div className="heroKicker">AUSTRALIAN TEAM · HUMAN-LED · HIGH-TICKET TRADES</div>
           <h1>Turn leads into <span>jobs.</span></h1>
 
           <div className="heroBoldLower">
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           <div className="heroProofBar">
-            <span><b>AUSTRALIAN-BASED TEAM</b> Your customers speak to Australians</span>
+            <span><b>AUSTRALIAN TEAM</b> Your customers speak to Australians</span>
             <span><b>HUMAN-LED</b> AI handles texts, reminders and admin</span>
             <span><b>NO REVENUE CUT</b> Fixed monthly pricing</span>
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
           <div>
             <p>JobSetter is not an offshore VA service and it is not an AI receptionist.</p>
-            <p>Our customer follow-up is Australian-based and human-led. AI and automation handle instant texts, reminders and repetitive admin around the conversation.</p>
+            <p>Your customer follow-up is handled by an Australian team and is human-led. AI and automation handle instant texts, reminders and repetitive admin around the conversation.</p>
           </div>
         </div>
       </section>
@@ -245,6 +245,28 @@ export default function Home() {
           <p>Extra work, only after approval: <b>$35 + GST</b> per enquiry · <b>$45 + GST</b> per quote · <b>$9 + GST</b> per reactivation.</p>
           <p>Quiet month? Unused enquiry allowance can be moved into extra reactivation work.</p>
           <a className="button secondary" href="/pricing">See full pricing <b>→</b></a>
+        </div>
+      </section>
+
+      <section className="section storySection employeeAltSection">
+        <div className="shell employeeAltGrid">
+          <div className="employeeAltIntro">
+            <small>AN AUSTRALIAN TEAM. WITHOUT ANOTHER EMPLOYEE.</small>
+            <h2>The follow-up capacity of an employee, without the employment overhead.</h2>
+            <p>You get a real Australian team to own the follow-up, with systems and cover built into the service.</p>
+          </div>
+
+          <div className="employeeAltBenefits">
+            <div><span>✓</span><b>No recruiting</b></div>
+            <div><span>✓</span><b>No training from scratch</b></div>
+            <div><span>✓</span><b>No payroll for another employee</b></div>
+            <div><span>✓</span><b>No super or leave costs for another employee</b></div>
+            <div><span>✓</span><b>No sick-leave liability</b></div>
+            <div><span>✓</span><b>No day-to-day staff management</b></div>
+          </div>
+        </div>
+        <div className="shell employeeAltFoot">
+          <p>JobSetter is a service, not an employee. You keep the flexibility of a month-to-month arrangement while an Australian team handles the follow-up work.</p>
         </div>
       </section>
 
