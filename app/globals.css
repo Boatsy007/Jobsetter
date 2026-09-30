@@ -22,7 +22,7 @@ h1,h2,h3,h4,p{margin-top:0}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .brand{text-decoration:none;font-weight:950;font-size:29px;letter-spacing:-1.7px;white-space:nowrap}
 .brandImageLink{display:inline-flex;align-items:center;line-height:0}
-.brandLogo{display:block;width:132px;height:auto;object-fit:contain}
+.brandLogo{display:block;width:148px;height:auto;object-fit:contain}
 .footerLogoPlate{display:inline-flex;align-items:center;background:#fff;padding:8px 10px}
 .footerLogo{display:block;width:164px;height:auto;object-fit:contain}
 .legalLogo{display:block;width:190px;height:auto;object-fit:contain}
@@ -349,7 +349,7 @@ footer .brandSetter{color:#4f8cff}
   .mobileHeaderSpacer{display:block;height:64px}
   .nav{height:64px}
   .brand{font-size:24px}
-  .brandLogo{width:116px}
+  .brandLogo{width:128px}
   .footerLogo{width:148px}
   .legalLogo{width:164px}
   .processBannerTrack{display:flex;width:100%;min-height:56px;padding:0 13px;gap:14px;overflow-x:auto;scrollbar-width:none}
