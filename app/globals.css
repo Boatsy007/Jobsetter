@@ -2884,3 +2884,54 @@ body{color:var(--t-ink)!important}
   .heroPunch span{white-space:nowrap;font-size:22px}
   .heroPunch i{font-size:18px}
 }
+
+
+/* Signature process banner directly under header */
+.processBanner{
+  position:relative;
+  z-index:35;
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #d9dee4;
+  overflow:hidden;
+}
+.processBannerTrack{
+  width:min(1320px,calc(100% - 40px));
+  min-height:72px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  border-top:2px solid #0c1520;
+}
+.processBannerTrack span{
+  color:#0c1520;
+  font-size:clamp(22px,2.1vw,34px);
+  font-weight:950;
+  letter-spacing:-.045em;
+  line-height:1;
+  white-space:nowrap;
+}
+.processBannerTrack i{
+  color:#1769ff;
+  font-size:clamp(18px,1.7vw,27px);
+  font-style:normal;
+  font-weight:950;
+  flex:0 0 auto;
+}
+@media(max-width:700px){
+  .processBannerTrack{
+    width:100%;
+    min-height:58px;
+    padding:0 14px;
+    justify-content:flex-start;
+    gap:16px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  .processBannerTrack::-webkit-scrollbar{display:none}
+  .processBannerTrack span{font-size:22px}
+  .processBannerTrack i{font-size:18px}
+}
