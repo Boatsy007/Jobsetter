@@ -3619,3 +3619,181 @@ body{color:var(--t-ink)!important}
     padding-top:24px!important;
   }
 }
+
+
+/* =========================================================
+   Audit v9 — immediate continuation of hero/banner
+   ========================================================= */
+.heroBold{
+  padding-bottom:18px!important;
+}
+.heroProofBar{
+  margin-bottom:0!important;
+}
+.auditSection{
+  padding-top:22px!important;
+  padding-bottom:82px!important;
+  background:#fff!important;
+}
+.auditLead{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:28px;
+  padding:0 0 22px;
+  border-bottom:2px solid #0c1520;
+  margin-bottom:0;
+}
+.auditLead h2{
+  margin:0!important;
+  color:#0c1520!important;
+  font-size:clamp(42px,5.2vw,76px)!important;
+  line-height:.9!important;
+  letter-spacing:-.065em!important;
+  font-weight:950!important;
+}
+.auditLead h2 span{
+  color:#1769ff!important;
+}
+.auditLead p{
+  max-width:420px;
+  margin:0!important;
+  color:#55616d!important;
+  font-size:15px!important;
+  line-height:1.45!important;
+  font-weight:700;
+}
+
+/* Audit tool now uses the same flat, hard-edged visual language as the hero. */
+.auditSection .diagnosticShell,
+.auditSection .diagnosticResultShell{
+  margin-top:0!important;
+  border:0!important;
+  border-bottom:1px solid #d8dee5!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:#fff!important;
+}
+.auditSection .diagnosticProgress{
+  height:5px!important;
+  background:#e8edf2!important;
+}
+.auditSection .diagnosticProgress span{
+  background:#1769ff!important;
+}
+.auditSection .diagnosticContent{
+  max-width:none!important;
+  margin:0!important;
+  padding:38px 0 28px!important;
+  text-align:left!important;
+}
+.auditSection .questionCount{
+  margin:0 0 10px!important;
+  color:#1769ff!important;
+  font-size:10px!important;
+  font-weight:950!important;
+  letter-spacing:.08em!important;
+}
+.auditSection .diagnosticContent h3{
+  max-width:860px;
+  margin:0 0 10px!important;
+  color:#0c1520!important;
+  font-size:clamp(36px,4.4vw,64px)!important;
+  line-height:.95!important;
+  letter-spacing:-.055em!important;
+}
+.auditSection .diagnosticContent>p{
+  max-width:650px;
+  margin:0 0 26px!important;
+  color:#687581!important;
+  font-size:12px!important;
+}
+.auditSection .diagnosticBigInput{
+  max-width:520px;
+  justify-content:flex-start!important;
+  border-bottom:2px solid #0c1520!important;
+  border-radius:0!important;
+  padding:8px 0!important;
+}
+.auditSection .diagnosticBigInput input{
+  font-size:52px!important;
+  font-weight:900!important;
+  letter-spacing:-.05em!important;
+}
+.auditSection .diagnosticBigInput span{
+  font-size:12px!important;
+  color:#687581!important;
+}
+.auditSection .choiceGrid{
+  max-width:900px;
+  gap:8px!important;
+}
+.auditSection .choice{
+  border-radius:0!important;
+  border:1px solid #d8dee5!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  padding:15px 16px!important;
+}
+.auditSection .choice.active{
+  border-color:#1769ff!important;
+  background:#f2f6ff!important;
+  color:#0c1520!important;
+}
+.auditSection .diagnosticActions{
+  max-width:900px;
+  margin-top:26px!important;
+  padding-top:18px!important;
+  border-top:1px solid #e1e6eb;
+}
+.auditSection .diagnosticActions .button{
+  border-radius:6px!important;
+  box-shadow:none!important;
+  min-width:150px;
+}
+.auditSection .textButton{
+  color:#56636f!important;
+}
+
+/* Make the hero lead directly into the audit instead of feeling like two sections. */
+.heroBoldAction>span{
+  opacity:.78;
+}
+.heroProofBar{
+  border-bottom:0!important;
+}
+.auditSection .shell{
+  width:min(1180px,calc(100% - 40px));
+}
+
+/* Remove the old orange micro-label styling in the audit completely. */
+.auditSection .eyebrow,
+.auditSection .calcBadge{
+  display:none!important;
+}
+
+@media(max-width:700px){
+  .heroBold{
+    padding-bottom:10px!important;
+  }
+  .auditSection{
+    padding-top:14px!important;
+  }
+  .auditLead{
+    display:block;
+    padding-bottom:18px;
+  }
+  .auditLead h2{
+    font-size:clamp(42px,13vw,60px)!important;
+  }
+  .auditLead p{
+    margin-top:10px!important;
+    font-size:14px!important;
+  }
+  .auditSection .diagnosticContent{
+    padding:28px 0 24px!important;
+  }
+  .auditSection .diagnosticContent h3{
+    font-size:clamp(34px,10vw,50px)!important;
+  }
+}
