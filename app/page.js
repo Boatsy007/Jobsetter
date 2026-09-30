@@ -79,7 +79,7 @@ export default function Home() {
 
       <section className="section storySection problemSection">
         <div className="shell storyIntro">
-          <h2>You probably don’t need more leads.</h2>
+          <h2>You don’t need more leads.</h2>
           <p>You need to stop losing the ones you already have.</p>
         </div>
         <div className="shell problemGrid">
