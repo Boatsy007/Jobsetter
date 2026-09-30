@@ -1,21 +1,24 @@
 import Header from "./Header";
-import RevenueLeakCalculator from "./RevenueLeakCalculator";
-import LeadJourney from "./LeadJourney";
-import PilotForm from "./PilotForm";
-import FounderSection from "./FounderSection";
-import FoundingCaseStudy from "./FoundingCaseStudy";
-import CallDemo from "./CallDemo";
-import PipelineMotif from "./PipelineMotif";
-import PilotReportDemo from "./PilotReportDemo";
-import ScrollMotion from "./ScrollMotion";
 import ProcessBanner from "./ProcessBanner";
+import RevenueLeakCalculator from "./RevenueLeakCalculator";
+import PilotForm from "./PilotForm";
+import ScrollMotion from "./ScrollMotion";
+import MarketingFooter from "./MarketingFooter";
 
-const pilotTimeline = [
-  ["Day 1", "Learn your business", "Jobs, service area, calendar and what a good lead looks like."],
-  ["Day 2", "Build the playbook", "Questions, scripts, routing and follow-up rules."],
-  ["Day 3", "Go live", "We start working the agreed leads and quotes."],
-  ["Days 3–14", "Work the pipeline", "New leads, selected quotes and reactivation contacts get a next action."],
-  ["Day 14", "Review the numbers", "See what happened and decide whether we keep going."],
+const steps = [
+  ["01", "Contact", "Every new enquiry gets an instant text, then a call from our Australian-based team within 30 minutes during business hours."],
+  ["02", "Qualify", "We check the job against your rules: location, job type, budget and timing."],
+  ["03", "Book", "Good-fit jobs go straight into your calendar for the agreed next step."],
+  ["04", "Follow up", "Every open quote is followed up until it is won, lost or clearly dead, with the reason recorded."],
+  ["05", "Report", "We reactivate old opportunities and report on response times, bookings, quote outcomes and revenue won against your starting point."],
+];
+
+const fit = [
+  "Roughly 3–20 staff",
+  "20+ enquiries a month",
+  "Typical jobs worth $3,000+",
+  "Owner, manager or estimator still involved in quoting",
+  "Capacity to take on more profitable work",
 ];
 
 export default function Home() {
@@ -27,34 +30,26 @@ export default function Home() {
 
       <section className="hero storySection heroBold" id="top">
         <div className="shell heroBoldInner">
-          <h1>
-            Turn leads into <span>jobs.</span>
-          </h1>
+          <div className="heroKicker">AUSTRALIAN-BASED · HUMAN-LED · HIGH-TICKET TRADES</div>
+          <h1>Turn leads into <span>jobs.</span></h1>
 
           <div className="heroBoldLower">
             <div className="heroBoldCopy">
-              <p className="heroText">
-                We call your leads, qualify the job, book the next step and chase the quote — while you stay on the tools.
-              </p>
+              <p className="heroText">You get the leads. JobSetter turns them into jobs.</p>
               <p className="heroSubline">
-                We can also bring old leads and past customers back into play.
+                We contact new enquiries fast, qualify the job, book the next step, chase every open quote and bring old opportunities back into play.
               </p>
 
               <div className="heroBoldAction">
-                <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
-                <span>60-second audit · free · no signup to start</span>
+                <a className="button heroPrimary" href="/pilot">Start the 30-day pilot <b>→</b></a>
+                <a className="heroTextLink" href="/how-it-works">See how JobSetter works</a>
+                <span>$990 + GST · credited in full against your first month if you continue</span>
               </div>
             </div>
 
             <div className="heroVideoCard">
               {process.env.NEXT_PUBLIC_HERO_VIDEO_URL ? (
-                <video
-                  className="heroVideo"
-                  src={process.env.NEXT_PUBLIC_HERO_VIDEO_URL}
-                  controls
-                  playsInline
-                  preload="metadata"
-                />
+                <video className="heroVideo" src={process.env.NEXT_PUBLIC_HERO_VIDEO_URL} controls playsInline preload="metadata" />
               ) : (
                 <div className="heroVideoPlaceholder">
                   <div className="heroVideoPlay">▶</div>
@@ -69,9 +64,33 @@ export default function Home() {
           </div>
 
           <div className="heroProofBar">
-            <span><b>HUMAN-LED</b> Real customer conversations</span>
-            <span><b>NO CRM CHANGE</b> Works around your setup</span>
-            <span><b>$0 PILOT</b> Test it on your own pipeline</span>
+            <span><b>AUSTRALIAN-BASED TEAM</b> Your customers speak to people here</span>
+            <span><b>HUMAN-LED</b> AI handles texts, reminders and admin</span>
+            <span><b>NO REVENUE CUT</b> Fixed monthly pricing</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section storySection problemSection">
+        <div className="shell storyIntro">
+          <h2>You probably don’t need more leads.</h2>
+          <p>You need to stop losing the ones you already have.</p>
+        </div>
+        <div className="shell problemGrid">
+          <div className="problemList">
+            <p>You’re on site. You’re quoting. You’re driving between jobs.</p>
+            <strong>Meanwhile:</strong>
+            <ul>
+              <li>Enquiries sit for hours.</li>
+              <li>Quotes go out and never get chased.</li>
+              <li>Old leads disappear into the CRM.</li>
+              <li>Past customers never hear from you again.</li>
+            </ul>
+          </div>
+          <div className="problemStatement">
+            <small>THE LEAK</small>
+            <h3>You already paid for the opportunity.</h3>
+            <p>Ads, lead platforms, referrals and word of mouth got the enquiry in. JobSetter gives someone the job of following it through.</p>
           </div>
         </div>
       </section>
@@ -79,179 +98,203 @@ export default function Home() {
       <section className="section auditSection storySection" id="audit">
         <div className="shell auditLead">
           <h2>Find the <span>leak.</span></h2>
-          <p>Seven quick questions. See where follow-up is costing you jobs.</p>
+          <p>Seven quick questions. See where your follow-up is weakest.</p>
         </div>
         <div className="shell"><RevenueLeakCalculator /></div>
       </section>
 
-      <section className="section journeySection storySection" id="journey">
+      <section className="section storySection" id="how">
         <div className="shell storyIntro">
-          <span className="storyNumber">02</span>
-          <div>
-            <div className="eyebrow"><span /> SEE THE WORK</div>
-            <h2>Now watch one lead move.</h2>
-            <p>Pick a new lead, missed call or open quote. This is the job: contact it, qualify it, book it and keep the next action moving.</p>
-          </div>
+          <h2>Someone owns the lead until there’s an answer.</h2>
+          <p>JobSetter sits between the enquiry coming in and the job being won.</p>
         </div>
-        <div className="shell">
-          <PipelineMotif />
-          <LeadJourney />
+        <div className="shell operatingSteps">
+          {steps.map(([number, title, text]) => (
+            <article key={title}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="shell sectionAction"><a className="button secondary" href="/how-it-works">See the full process <b>→</b></a></div>
+      </section>
+
+      <section className="section darkSection storySection">
+        <div className="shell splitIntro">
+          <div>
+            <small>THE DIFFERENCE</small>
+            <h2>Your customers speak to people in Australia.</h2>
+          </div>
+          <div>
+            <p>JobSetter is not an offshore VA service and it is not an AI receptionist.</p>
+            <p>Our customer follow-up is Australian-based and human-led. AI and automation handle instant texts, reminders and repetitive admin around the conversation.</p>
+          </div>
         </div>
       </section>
 
-      <CallDemo />
-      <FoundingCaseStudy />
-
-      <section className="section navySection storySection" id="pilot-offer">
-        <div className="shell storyIntro lightStory">
-          <span className="storyNumber">03</span>
-          <div>
-            <div className="eyebrow light"><span /> TEST IT ON YOUR BUSINESS</div>
-            <h2>Your real leads. Your real quotes. Fourteen days.</h2>
-            <p>We set up one contained pilot, work the agreed pipeline and show you exactly what happened.</p>
-          </div>
-        </div>
-
-        <div className="shell pilotExperience">
-          <div className="pilotOfferSummary">
-            <div className="pilotBigTerms">
-              <article><small>PILOT FEE</small><strong>$0</strong></article>
-              <article><small>GO LIVE</small><strong>Day 3</strong></article>
-              <article><small>DECIDE</small><strong>Day 14</strong></article>
-            </div>
-
-            <div className="pilotTimeline">
-              {pilotTimeline.map(([day,title,text]) => (
-                <article key={day}><span>{day}</span><h3>{title}</h3><p>{text}</p></article>
-              ))}
-            </div>
-
-            <div className="riskCard">
-              <div><small>NO AUTO-ROLLOVER</small><h3>See the work before paying for ongoing service.</h3></div>
-              <p>If the numbers make sense, continue. If they don’t, stop there.</p>
-              <a className="button white" href="#pilot">Request my free pilot <b>→</b></a>
-            </div>
-          </div>
-
-          <PilotReportDemo />
-        </div>
-      </section>
-
-      <section className="section decisionSection storySection" id="why">
+      <section className="section storySection">
         <div className="shell storyIntro">
-          <span className="storyNumber">04</span>
-          <div>
-            <div className="eyebrow"><span /> THE DECISION</div>
-            <h2>Hire someone, use AI, buy more software — or let JobSetter run the follow-up.</h2>
-            <p>AI receptionists can answer and route. JobSetter is built to keep owning the follow-up after that — with humans handling the conversations that need judgement.</p>
-          </div>
+          <h2>Know exactly what we do. And what we don’t.</h2>
         </div>
-
-        <div className="shell decisionGrid">
-          <div className="comparisonTable sixCol desktopComparison">
-            <div className="tableHead"><span></span><b>Answering service</b><b>CRM</b><b>AI receptionist</b><b>Internal hire</b><b className="jobsetterCol">JobSetter</b></div>
-            <div><span>Talks to customers</span><i>Usually</i><i>No</i><i>Yes</i><i>Yes</i><strong>Yes</strong></div>
-            <div><span>Qualifies the job</span><i>Basic</i><i>No</i><i>Rules-based</i><i>If trained</i><strong>Yes</strong></div>
-            <div><span>Books the next step</span><i>Sometimes</i><i>Tool only</i><i>Usually</i><i>Yes</i><strong>Yes</strong></div>
-            <div><span>Chases open quotes</span><i>No</i><i>Automation</i><i>Depends on workflow</i><i>If managed</i><strong>Yes</strong></div>
-            <div><span>Handles objections & judgement</span><i>Limited</i><i>No</i><i>Limited</i><i>Yes</i><strong>Human-led</strong></div>
-            <div><span>Reactivates old leads</span><i>No</i><i>Campaign tools</i><i>Depends on setup</i><i>If managed</i><strong>Yes</strong></div>
-            <div><span>Needs daily management</span><i>No</i><i>Configuration</i><i>Some oversight</i><i>Yes</i><strong>No</strong></div>
-          </div>
-
-          <div className="mobileComparison" aria-label="Mobile comparison">
-            {[
-              ["Answering service", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Usually","Basic","Sometimes","No"]],
-              ["CRM", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["No","No","Tool only","Automation"]],
-              ["AI receptionist", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Yes","Rules-based","Usually","Depends on workflow"]],
-              ["Internal hire", ["Talks to customers","Qualifies the job","Books the next step","Chases open quotes"], ["Yes","If trained","Yes","If managed"]],
-            ].map(([name, labels, values]) => (
-              <details key={name}>
-                <summary>{name} <span>vs JobSetter</span></summary>
-                <div className="mobileCompareRows">
-                  {labels.map((label, index) => (
-                    <div key={label}>
-                      <b>{label}</b>
-                      <span>{values[index]}</span>
-                      <strong>JobSetter: Yes</strong>
-                    </div>
-                  ))}
-                </div>
-              </details>
-            ))}
-            <div className="mobileCompareNote">
-              <b>JobSetter</b>
-              <span>Human-led + AI-assisted. Built to own follow-up from first contact through quote recovery and reactivation.</span>
-            </div>
-          </div>
-
-          <div className="pricingCard" id="pricing">
-            <small>IF YOU CONTINUE</small>
-            <h3>$2,490 <span>+ GST / month</span></h3>
-            <p>Month-to-month. No performance fee. No percentage of your revenue.</p>
+        <div className="shell doDontGrid">
+          <article>
+            <small>WE DO</small>
+            <h3>Own the follow-up.</h3>
             <ul>
-              <li>Up to 80 new enquiries</li>
-              <li>Up to 40 open quotes</li>
-              <li>Up to 100 reactivation contacts</li>
-              <li>Mon–Fri, 8am–6pm</li>
-              <li>Monthly conversion report</li>
+              <li>Contact new-work enquiries</li>
+              <li>Qualify jobs against your criteria</li>
+              <li>Book the next step</li>
+              <li>Follow up open quotes</li>
+              <li>Reactivate old leads and past customers</li>
+              <li>Record outcomes and report back</li>
             </ul>
-            <div className="fitMini">
-              <b>Best fit:</b>
-              <span>30+ enquiries/month or $25k+ open quotes, $750+ typical job value, and room for more work.</span>
-            </div>
-            <a className="button" href="#pilot">Check my fit <b>→</b></a>
-          </div>
+          </article>
+          <article>
+            <small>WE DON’T</small>
+            <h3>Run your whole office.</h3>
+            <ul>
+              <li>Answer every phone call live</li>
+              <li>Handle emergency jobs</li>
+              <li>Run your marketing</li>
+              <li>Write your quotes</li>
+              <li>Send invoices</li>
+              <li>Replace your estimator or salesperson</li>
+            </ul>
+          </article>
         </div>
       </section>
 
-      <FounderSection />
-
-      <section className="section faqSection storySection" id="faq">
+      <section className="section storySection">
         <div className="shell storyIntro">
-          <span className="storyNumber">05</span>
-          <div>
-            <div className="eyebrow"><span /> BEFORE YOU BOOK</div>
-            <h2>The questions most owners ask.</h2>
-          </div>
+          <h2>Built for businesses where one extra job matters.</h2>
+          <p>JobSetter is for established, higher-ticket trade businesses with enough opportunity to justify proper follow-up.</p>
         </div>
-
-        <div className="shell faqCompact">
-          <details open><summary>What does the 14-day pilot cost?</summary><p>$0 JobSetter service fee. There is no automatic rollover.</p></details>
-          <details><summary>Who talks to my customers?</summary><p>A real assigned setter, working from your job criteria, service area, FAQs and booking rules.</p></details>
-          <details><summary>Do I need to change my CRM?</summary><p>No. We work around your existing calendar and systems wherever practical.</p></details>
-          <details><summary>What happens during the 14 days?</summary><p>We learn your business, build the playbook, go live by Day 3, then work the agreed leads, quotes and reactivation contacts until Day 14.</p></details>
-          <details><summary>Am I locked into a contract?</summary><p>No automatic rollover. If you continue, the standard service is month-to-month and you can cancel before the next billing cycle.</p></details>
-          <details className="faqMore"><summary>More questions</summary>
-            <div>
-              <p><b>Do you provide leads?</b> No. The pilot works the demand you already have.</p>
-              <p><b>Do you guarantee revenue?</b> No. We guarantee the agreed work, not customer decisions or sales.</p>
-              <p><b>Is this just an AI receptionist?</b> No. Humans handle the conversations; AI helps with the repetitive work around them.</p>
-            </div>
-          </details>
+        <div className="shell fitGrid">
+          <div className="fitPanel goodFit">
+            <small>A STRONG FIT</small>
+            <ul>{fit.map((item) => <li key={item}>{item}</li>)}</ul>
+            <p>Common fits include builders, renovators, roofers, solar, pools, landscaping, HVAC installs, kitchens and bathrooms.</p>
+          </div>
+          <div className="fitPanel notFit">
+            <small>PROBABLY NOT A FIT</small>
+            <h3>We’d rather tell you before you pay us.</h3>
+            <p>If you’re a sole trader with only a handful of enquiries, or most of your work is low-ticket service calls, a simpler setup will probably make more sense.</p>
+            <a href="/who-its-for">See who JobSetter is for →</a>
+          </div>
         </div>
       </section>
 
-      <section className="ctaSection storySection" id="pilot">
+      <section className="section pilotFeature storySection" id="pilot">
+        <div className="shell pilotHeroGrid">
+          <div>
+            <small>30-DAY REVENUE RECOVERY PILOT</small>
+            <h2>Give us 30 days and your real pipeline.</h2>
+            <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
+            <div className="pilotPrice">$990 <span>+ GST</span></div>
+            <strong>Credited in full against your first month if you continue.</strong>
+            <a className="button" href="/pilot">See the 30-day pilot <b>→</b></a>
+          </div>
+          <div className="pilotMeasure">
+            <small>WE MEASURE</small>
+            <div><b>Response time</b><span>How quickly new enquiries are contacted</span></div>
+            <div><b>Bookings</b><span>Qualified opportunities booked</span></div>
+            <div><b>Quote outcomes</b><span>Won, lost, dead and why</span></div>
+            <div><b>Revenue won</b><span>Compared with your starting point where data allows</span></div>
+            <p>Actual client data. No promised revenue increase.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section storySection" id="pricing">
+        <div className="shell storyIntro">
+          <h2>Simple monthly pricing. No cut of your revenue.</h2>
+          <p>Month-to-month with 30 days’ notice. No performance fee. No percentage of jobs you win.</p>
+        </div>
+        <div className="shell priceCards">
+          <article>
+            <small>CORE</small>
+            <h3>$2,490 <span>+ GST / month</span></h3>
+            <ul>
+              <li>35 new enquiries</li>
+              <li>25 open quotes</li>
+              <li>50 reactivation contacts</li>
+              <li>Weekly summary</li>
+              <li>Monthly revenue report</li>
+              <li>Quarterly results review</li>
+            </ul>
+          </article>
+          <article className="featuredPrice">
+            <small>GROWTH</small>
+            <h3>$4,490 <span>+ GST / month</span></h3>
+            <ul>
+              <li>60 new enquiries</li>
+              <li>50 open quotes</li>
+              <li>100 reactivation contacts</li>
+              <li>Weekly summary</li>
+              <li>Monthly revenue report</li>
+              <li>Quarterly results review</li>
+            </ul>
+          </article>
+        </div>
+        <div className="shell priceFinePrint">
+          <p>Extra work, only after approval: <b>$35 + GST</b> per enquiry · <b>$45 + GST</b> per quote · <b>$9 + GST</b> per reactivation.</p>
+          <p>Quiet month? Unused enquiry allowance can be moved into extra reactivation work.</p>
+          <a className="button secondary" href="/pricing">See full pricing <b>→</b></a>
+        </div>
+      </section>
+
+      <section className="section guaranteeSection storySection">
+        <div className="shell guaranteeGrid">
+          <div>
+            <small>SERVICE STANDARD</small>
+            <h2>We’re accountable for the follow-up.</h2>
+          </div>
+          <div>
+            <p><b>New enquiries:</b> contacted within 30 minutes during business hours.</p>
+            <p><b>Open quotes:</b> followed up to a clear outcome.</p>
+            <p>If we miss the service standard, the monthly fee will be reduced. The exact reduction will be confirmed in the service agreement before this guarantee is activated.</p>
+            <small>This is a service-level guarantee, not a guarantee of sales or revenue.</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="section storySection proofPlaceholder">
+        <div className="shell storyIntro">
+          <h2>We’re new. So we won’t pretend otherwise.</h2>
+          <p>No made-up testimonials. No borrowed logos. No invented results.</p>
+        </div>
+        <div className="shell comingResults">
+          <small>CLIENT RESULTS COMING AFTER FOUNDING PILOTS</small>
+          <span>Response times</span><span>Bookings</span><span>Quote outcomes</span><span>Revenue recovered</span>
+        </div>
+      </section>
+
+      <section className="section storySection">
+        <div className="shell storyIntro">
+          <h2>A few things owners ask before they start.</h2>
+        </div>
+        <div className="shell faqCompact">
+          <details open><summary>Do you answer my phone live?</summary><p>No. JobSetter is not a live answering service. We work new-work enquiries captured through your forms, lead platforms, emails and missed-call systems.</p></details>
+          <details><summary>Is your team in Australia?</summary><p>Yes. JobSetter’s customer follow-up team is Australian-based.</p></details>
+          <details><summary>Do you lock me into a contract?</summary><p>No long lock-in contract. Ongoing plans are month-to-month with 30 days’ notice.</p></details>
+          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers. If you continue, the $990 + GST pilot fee is credited in full against your first month.</p></details>
+        </div>
+        <div className="shell sectionAction"><a className="button secondary" href="/faq">Read all FAQs <b>→</b></a></div>
+      </section>
+
+      <section className="ctaSection storySection">
         <div className="shell ctaCard">
           <div className="ctaCopy">
-            <span className="storyNumber finalNumber">06</span>
-            <div className="eyebrow light"><span /> START THE TEST</div>
-            <h2>Bring us your last 30 days of leads and open quotes.</h2>
-            <p>We’ll map the first 14-day pilot and tell you whether JobSetter is a strong fit.</p>
-            <PipelineMotif compact tone="dark" />
+            <h2>You’ve already paid for the lead. Make sure someone follows it through.</h2>
+            <p>Start with the 30-Day Revenue Recovery Pilot. We’ll first check whether JobSetter actually suits your business.</p>
+            <div className="pilotPrice">$990 <span>+ GST</span></div>
           </div>
           <PilotForm />
         </div>
       </section>
 
-      <footer>
-        <div className="shell footerTop">
-          <div className="footerBrandBlock"><div className="footerLogoPlate"><img className="footerLogo" src="/jobsetterlogo.png" alt="JobSetter" /></div><p>The done-for-you front office for trades.</p></div>
-          <div className="footerNav"><a href="#audit">Audit</a><a href="#journey">How it works</a><a href="#pilot-offer">Free pilot</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
-        </div>
-        <div className="shell footerBottom"><span>© {new Date().getFullYear()} JobSetter · Australia · hello@jobsetter.com.au</span><span>Human-led. AI-assisted.</span></div>
-      </footer>
+      <MarketingFooter />
     </main>
   );
 }
