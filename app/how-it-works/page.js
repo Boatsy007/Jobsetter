@@ -16,8 +16,10 @@ const steps = [
 ];
 
 export default function HowItWorksPage(){
-  return <main>
-    <Header/><ProcessBanner/>
+  return <>
+    <Header/>
+    <main className="site-main">
+    <ProcessBanner/>
     <section className="pageHero"><div className="shell"><small>HOW IT WORKS</small><h1>Someone owns the lead until there’s an answer.</h1><p>Getting the enquiry is only the start. JobSetter gives your business a team responsible for moving opportunities forward.</p></div></section>
     <section className="section"><div className="shell operatingSteps longSteps">{steps.map(([n,t,p])=><article key={t}><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></section>
     <section className="section"><div className="shell storyIntro"><h2>One person knows your account.</h2><p>Each client has a named account manager who learns your service area, job criteria, calendar setup, lead sources, follow-up rules and common questions.</p></div></section>
@@ -25,5 +27,6 @@ export default function HowItWorksPage(){
     <section className="section darkSection"><div className="shell splitIntro"><div><small>WHAT WE NEED FROM YOU</small><h2>It only works if both sides do their part.</h2></div><div><p>Send agreed leads to JobSetter. Give us the calendar access we need. Send quotes within the agreed timeframe after site visits. Tell us when jobs are won or lost. Keep availability and qualification rules up to date.</p><p>If we’re chasing quotes you haven’t sent, there’s not much we can recover.</p></div></div></section>
     <section className="ctaSection"><div className="shell simpleCta"><h2>Want to see it on your own pipeline?</h2><p>Start with the 30-Day Revenue Recovery Pilot.</p><a className="button" href="/pilot">See the pilot <b>→</b></a></div></section>
     <MarketingFooter/>
-  </main>
+    </main>
+  </>
 }
