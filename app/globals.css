@@ -368,11 +368,12 @@ footer .brandSetter{color:#4f8cff}
   .brandLogo{width:146px}
   .footerLogo{width:148px}
   .legalLogo{width:164px}
-  .processBannerTrack{display:flex;width:100%;min-height:56px;padding:0 13px;gap:14px;overflow-x:auto;scrollbar-width:none}
-  .processBannerTrack::-webkit-scrollbar{display:none}
-  .processBannerStep{flex:0 0 auto}
-  .processBannerStep span{font-size:21px}
-  .processBannerStep i{font-size:18px}
+  .processBanner{overflow:hidden}
+  .processBannerTrack{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%;min-height:54px;padding:0 6px;gap:0;overflow:hidden;border-top:1px solid var(--ink)}
+  .processBannerStep{min-width:0;display:flex;align-items:center;justify-content:center;gap:2px}
+  .processBannerStep span{min-width:0;padding:6px 3px;font-size:clamp(9px,2.8vw,12px);letter-spacing:-.035em;line-height:1;white-space:nowrap}
+  .processBannerStep i{flex:0 0 auto;font-size:12px;line-height:1;transform:none}
+  .processBannerStep i.isActive{transform:none}
   .heroBold{padding-top:22px}
   .heroBold h1{font-size:clamp(58px,17vw,84px);line-height:.87;letter-spacing:-.045em}
   .heroBoldLower{gap:24px;padding:24px 0 20px}
