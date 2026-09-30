@@ -142,7 +142,7 @@ export default function Home() {
 
       <section className="section storySection processSection" id="how">
         <div className="shell storyIntro processIntro">
-          <h2>We own the lead until there’s an answer.</h2>
+          <h2>We own the lead until there’s an <span>answer.</span></h2>
           <p>From the first enquiry to the final outcome, we take responsibility for moving it forward.</p>
         </div>
         <ProcessTimeline />
@@ -153,7 +153,7 @@ export default function Home() {
         <div className="shell splitIntro">
           <div>
             <small>THE DIFFERENCE</small>
-            <h2>Your customers speak to Australians.</h2>
+            <h2>Your customers speak to <span>Australians.</span></h2>
           </div>
           <div>
             <p>JobSetter is not an offshore VA service and it is not an AI receptionist.</p>
@@ -164,14 +164,14 @@ export default function Home() {
 
       <section className="section storySection">
         <div className="shell storyIntro">
-          <h2>Know exactly what we do. And what we don’t.</h2>
+          <h2>Know exactly what we do. And what we <span>don’t.</span></h2>
         </div>
         <DoDontSection />
       </section>
 
       <section className="section storySection">
         <div className="shell storyIntro">
-          <h2>Built for businesses where one extra job matters.</h2>
+          <h2>Built for businesses where one extra <span>job matters.</span></h2>
           <p>JobSetter is for established, higher-ticket trade businesses with enough opportunity to justify proper follow-up.</p>
         </div>
         <div className="shell fitGrid">
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="shell pilotHeroGrid">
           <div>
             <small>30-DAY REVENUE RECOVERY PILOT</small>
-            <h2>Give us 30 days and your real pipeline.</h2>
+            <h2>Give us 30 days and your real <span>pipeline.</span></h2>
             <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
             <div className="pilotPrice">$990 <span>+ GST</span></div>
             <strong>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</strong>
@@ -213,7 +213,7 @@ export default function Home() {
 
       <section className="section storySection" id="pricing">
         <div className="shell storyIntro">
-          <h2>Simple monthly pricing. No cut of your revenue.</h2>
+          <h2>Simple monthly pricing. No cut of your <span>revenue.</span></h2>
           <p>Month-to-month with 30 days’ notice. No performance fee. No percentage of jobs you win.</p>
         </div>
         <div className="shell priceCards">
@@ -258,7 +258,7 @@ export default function Home() {
         <div className="shell employeeAltGrid">
           <div className="employeeAltIntro">
             <small>AN AUSTRALIAN TEAM. WITHOUT ANOTHER EMPLOYEE.</small>
-            <h2>The follow-up capacity of an employee, without the employment overhead.</h2>
+            <h2>The follow-up capacity of an employee, without the <span>employment overhead.</span></h2>
             <p>You get a real Australian team to own the follow-up, with systems and cover built into the service.</p>
           </div>
 
@@ -278,7 +278,7 @@ export default function Home() {
 
       <section className="section storySection teamSection">
         <div className="shell storyIntro">
-          <h2>Your JobSetter team.</h2>
+          <h2>Your JobSetter <span>team.</span></h2>
           <p>Real people following up your enquiries and quotes. These placeholders will be replaced with genuine team photos and names.</p>
         </div>
         <div className="shell teamGrid">
@@ -305,7 +305,7 @@ export default function Home() {
         <div className="shell guaranteeGrid">
           <div>
             <small>SERVICE STANDARD</small>
-            <h2>We’re accountable for the follow-up.</h2>
+            <h2>We’re accountable for the <span>follow-up.</span></h2>
           </div>
           <div>
             <p><b>New enquiries:</b> contacted within 30 minutes during business hours.</p>
@@ -318,7 +318,7 @@ export default function Home() {
 
       <section className="section storySection proofPlaceholder">
         <div className="shell storyIntro">
-          <h2>We’re new. So we won’t pretend otherwise.</h2>
+          <h2>We’re new. So we won’t <span>pretend otherwise.</span></h2>
           <p>No made-up testimonials. No borrowed logos. No invented results.</p>
         </div>
         <div className="shell comingResults">
@@ -329,7 +329,7 @@ export default function Home() {
 
       <section className="section storySection">
         <div className="shell storyIntro">
-          <h2>A few things owners ask before they start.</h2>
+          <h2>A few things owners ask before they <span>start.</span></h2>
         </div>
         <div className="shell faqCompact">
           <details open><summary>Do you answer my phone live?</summary><p>No. JobSetter is not a live answering service. We work new-work enquiries captured through your forms, lead platforms, emails and missed-call systems.</p></details>
@@ -343,7 +343,7 @@ export default function Home() {
       <section className="ctaSection storySection">
         <div className="shell ctaCard">
           <div className="ctaCopy">
-            <h2>You’ve already paid for the lead. Make sure someone follows it through.</h2>
+            <h2>You’ve already paid for the lead. Make sure someone <span>follows it through.</span></h2>
             <p>Start with the 30-Day Revenue Recovery Pilot. We’ll first check whether JobSetter actually suits your business.</p>
             <div className="pilotPrice">$990 <span>+ GST</span></div>
           </div>
