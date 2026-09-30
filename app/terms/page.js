@@ -7,7 +7,7 @@ export default function TermsPage() {
   return (
     <main className="legalPage">
       <div className="legalShell">
-        <a className="brand legalBrand" href="/"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></a>
+        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetter-logo.webp" alt="JobSetter" width="360" height="93" /></a>
         <p className="legalUpdated">Last updated: 30 September 2026</p>
         <h1>JobSetter Terms</h1>
         <p>These website terms explain the current public offer. A client service agreement may contain additional commercial, privacy, confidentiality and operational terms and will control if there is any inconsistency.</p>
