@@ -79,7 +79,13 @@ export default function Home() {
 
       <section className="section storySection problemSection">
         <div className="shell storyIntro">
-          <h2>You don’t need more leads.</h2>
+          <h2 className="wordPulseHeadline" aria-label="You don’t need more leads.">
+            <span>You</span>{" "}
+            <span>don’t</span>{" "}
+            <span>need</span>{" "}
+            <span>more</span>{" "}
+            <span>leads.</span>
+          </h2>
           <p>You need to stop losing the ones you already have.</p>
         </div>
         <div className="shell problemGrid">
