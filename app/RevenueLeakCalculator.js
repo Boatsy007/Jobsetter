@@ -48,9 +48,9 @@ const questions = [
 
 export default function RevenueLeakCalculator() {
   const [answers, setAnswers] = useState({
-    monthlyLeads: 60,
-    averageJob: 2500,
-    closeRate: 20,
+    monthlyLeads: "",
+    averageJob: "",
+    closeRate: "",
     responseSpeed: "same-day",
     qualification: "sometimes",
     quoteFollowup: "sometimes",
@@ -111,6 +111,14 @@ export default function RevenueLeakCalculator() {
     } catch {}
   };
 
+  const chooseAndAdvance = (key, value) => {
+    setAnswer(key, value);
+    window.setTimeout(() => {
+      if (step < questions.length - 1) setStep((s) => s + 1);
+      else setComplete(true);
+    }, 260);
+  };
+
   const previous = () => {
     if (complete) {
       setComplete(false);
@@ -147,7 +155,7 @@ export default function RevenueLeakCalculator() {
     if (q.type === "number") {
       return (
         <div className="diagnosticBigInput">
-          <input type="number" min={q.min} value={answers[q.key]} onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
+          <input type="number" min={q.min} value={answers[q.key]} placeholder="e.g. 40" onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
           <span>{q.suffix}</span>
         </div>
       );
@@ -156,14 +164,14 @@ export default function RevenueLeakCalculator() {
       return (
         <div className="diagnosticBigInput money">
           <span>$</span>
-          <input type="number" min={q.min} value={answers[q.key]} onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
+          <input type="number" min={q.min} value={answers[q.key]} placeholder="2500" onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
         </div>
       );
     }
     if (q.type === "percent") {
       return (
         <div className="diagnosticBigInput">
-          <input type="number" min={q.min} max={q.max} value={answers[q.key]} onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
+          <input type="number" min={q.min} max={q.max} value={answers[q.key]} placeholder="20" onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
           <span>%</span>
         </div>
       );
@@ -171,7 +179,7 @@ export default function RevenueLeakCalculator() {
     return (
       <div className="choiceGrid">
         {q.options.map(([value, label]) => (
-          <button key={value} className={answers[q.key] === value ? "choice active" : "choice"} onClick={() => setAnswer(q.key, value)}>
+          <button key={value} className={answers[q.key] === value ? "choice active" : "choice"} onClick={() => chooseAndAdvance(q.key, value)}>
             <span>{label}</span><i>{answers[q.key] === value ? "✓" : "→"}</i>
           </button>
         ))}
