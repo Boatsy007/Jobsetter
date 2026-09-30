@@ -39,11 +39,32 @@ export default function Home() {
               <p className="heroSubline">
                 We can also bring old leads and past customers back into play.
               </p>
+
+              <div className="heroBoldAction">
+                <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
+                <span>60-second audit · free · no signup to start</span>
+              </div>
             </div>
 
-            <div className="heroBoldAction">
-              <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
-              <span>60-second audit · free · no signup to start</span>
+            <div className="heroVideoCard">
+              {process.env.NEXT_PUBLIC_HERO_VIDEO_URL ? (
+                <video
+                  className="heroVideo"
+                  src={process.env.NEXT_PUBLIC_HERO_VIDEO_URL}
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <div className="heroVideoPlaceholder">
+                  <div className="heroVideoPlay">▶</div>
+                  <div>
+                    <small>JOBSETTER INTRO</small>
+                    <strong>Your video goes here.</strong>
+                    <span>Add NEXT_PUBLIC_HERO_VIDEO_URL when you're ready.</span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
