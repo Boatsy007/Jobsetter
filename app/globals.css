@@ -54,7 +54,7 @@ h1,h2,h3,h4,p{margin-top:0}
 
 /* Hero */
 .heroBold{padding:18px 0 14px;background:#fff;border-bottom:0}
-.heroBold h1{max-width:none;margin:0;color:var(--ink);font-size:clamp(64px,7.35vw,118px);line-height:.84;letter-spacing:-.065em;font-weight:950}
+.heroBold h1{max-width:1080px;margin:0;color:var(--ink);font-size:clamp(64px,7.35vw,118px);line-height:.84;letter-spacing:-.065em;font-weight:950}
 .heroBold h1 span{color:var(--blue)}
 .heroBoldLower{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);gap:48px;align-items:stretch;padding:18px 0 18px;border-bottom:2px solid var(--ink)}
 .heroBoldCopy{max-width:820px;display:flex;flex-direction:column;justify-content:flex-end}
@@ -63,7 +63,7 @@ h1,h2,h3,h4,p{margin-top:0}
 .heroBoldAction{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:34px}
 .heroPrimary{width:min(430px,100%);min-height:56px;justify-content:space-between}
 .heroBoldAction>span{font-size:10px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#7b8793}
-.heroVideoCard{position:relative;min-height:250px;border:1px solid rgba(23,105,255,.14);border-radius:22px;background:var(--ink);overflow:hidden;display:flex;box-shadow:0 18px 50px rgba(7,16,28,.18),0 8px 22px rgba(23,105,255,.10)}
+.heroVideoCard{position:relative;min-height:250px;margin-top:18px;border:1px solid rgba(23,105,255,.14);border-radius:22px;background:var(--ink);overflow:hidden;display:flex;box-shadow:0 18px 50px rgba(7,16,28,.18),0 8px 22px rgba(23,105,255,.10)}
 .heroVideoCard:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(23,105,255,.12),transparent 45%);pointer-events:none;z-index:1}
 .heroVideoCard:after{content:"";position:absolute;inset:-1px;border-radius:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);pointer-events:none;z-index:2}
 .heroVideo{display:block;width:100%;height:100%;min-height:250px;object-fit:cover;background:#000}
@@ -377,7 +377,7 @@ footer .brandSetter{color:#4f8cff}
   .heroText{font-size:19px}
   .heroBoldAction{margin-top:24px}
   .heroPrimary{width:100%}
-  .heroVideoCard{min-height:220px;border-radius:18px;box-shadow:0 14px 34px rgba(7,16,28,.16),0 6px 18px rgba(23,105,255,.08)}
+  .heroVideoCard{min-height:220px;margin-top:10px;border-radius:18px;box-shadow:0 14px 34px rgba(7,16,28,.16),0 6px 18px rgba(23,105,255,.08)}
   .heroVideo,.heroVideoPlaceholder{min-height:220px}
   .heroVideoPlaceholder{padding:20px}
   .heroVideoPlaceholder strong{font-size:24px}
