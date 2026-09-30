@@ -3006,3 +3006,91 @@ body{color:var(--t-ink)!important}
     transform:none!important;
   }
 }
+
+
+/* Subtle live-pipeline loop for signature banner */
+.processBannerTrack span,
+.processBannerTrack i{
+  position:relative;
+  transform:translateZ(0);
+}
+.processBannerTrack span{
+  animation:processWordLoop 8s ease-in-out infinite;
+}
+.processBannerTrack i{
+  animation:processArrowLoop 8s ease-in-out infinite;
+}
+.processBannerTrack span:nth-of-type(1){animation-delay:0s}
+.processBannerTrack i:nth-of-type(1){animation-delay:.22s}
+.processBannerTrack span:nth-of-type(2){animation-delay:.44s}
+.processBannerTrack i:nth-of-type(2){animation-delay:.66s}
+.processBannerTrack span:nth-of-type(3){animation-delay:.88s}
+.processBannerTrack i:nth-of-type(3){animation-delay:1.10s}
+.processBannerTrack span:nth-of-type(4){animation-delay:1.32s}
+.processBannerTrack i:nth-of-type(4){animation-delay:1.54s}
+.processBannerTrack span:nth-of-type(5){animation-delay:1.76s}
+
+@keyframes processWordLoop{
+  0%,7%,100%{
+    color:#0c1520;
+    transform:scale(1);
+  }
+  2.5%,4.5%{
+    color:#1769ff;
+    transform:scale(1.025);
+  }
+}
+@keyframes processArrowLoop{
+  0%,7%,100%{
+    color:#1769ff;
+    transform:translateX(0);
+    text-shadow:none;
+  }
+  2.5%,4.5%{
+    color:#1769ff;
+    transform:translateX(3px);
+    text-shadow:0 0 14px rgba(23,105,255,.24);
+  }
+}
+
+/* One restrained light sweep per loop. */
+.processBanner:after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:0;
+  bottom:0;
+  left:-22%;
+  width:18%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(23,105,255,.035),transparent);
+  transform:skewX(-18deg);
+  animation:processSweep 8s ease-in-out infinite;
+}
+.processBannerTrack{position:relative;z-index:1}
+
+@keyframes processSweep{
+  0%,24%{left:-22%;opacity:0}
+  28%{opacity:1}
+  56%{left:108%;opacity:1}
+  60%,100%{left:108%;opacity:0}
+}
+
+@media(max-width:700px){
+  .processBannerTrack span{animation-name:processWordLoopMobile}
+  .processBanner:after{display:none}
+  @keyframes processWordLoopMobile{
+    0%,7%,100%{color:#0c1520;transform:scale(1)}
+    2.5%,4.5%{color:#1769ff;transform:scale(1.015)}
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .processBannerTrack span,
+  .processBannerTrack i,
+  .processBanner:after{
+    animation:none!important;
+    transform:none!important;
+    text-shadow:none!important;
+  }
+}
