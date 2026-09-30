@@ -25,74 +25,36 @@ export default function Home() {
       <Header />
       <ProcessBanner />
 
-      <section className="hero storySection" id="top">
-        <div className="shell heroGrid">
-          <div className="heroCopy">
-            <div className="eyebrow"><span /> DONE-FOR-YOU FRONT OFFICE FOR TRADES</div>
-            <h1>Stop losing jobs<br />you already <span>paid to get.</span></h1>
-            <p className="heroText">
-              We call your leads, qualify the job, book the next step and chase the quote — while you stay on the tools.
-            </p>
-            <p className="heroSubline">We can also bring old leads and past customers back into play.</p>
+      <section className="hero storySection heroBold" id="top">
+        <div className="shell heroBoldInner">
+          <div className="eyebrow heroEyebrow"><span /> DONE-FOR-YOU FRONT OFFICE FOR TRADES</div>
 
-            <div className="heroActions">
-              <a className="button" href="#audit">Take the 60-second audit <b>→</b></a>
-              <a className="button secondary" href="#journey">See how JobSetter works</a>
+          <h1>
+            Stop losing jobs<br />
+            you already <span>paid to get.</span>
+          </h1>
+
+          <div className="heroBoldLower">
+            <div className="heroBoldCopy">
+              <p className="heroText">
+                We call your leads, qualify the job, book the next step and chase the quote — while you stay on the tools.
+              </p>
+              <p className="heroSubline">
+                We can also bring old leads and past customers back into play.
+              </p>
             </div>
 
-            <div className="proofRow">
-              <span>✓ Real human conversations</span>
-              <span>✓ No CRM change required</span>
-              <span>✓ Built around your rules</span>
-            </div>
-
-            <div className="heroPipeline">
-              <PipelineMotif compact />
+            <div className="heroBoldAction">
+              <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
+              <span>60-second audit · free · no signup to start</span>
             </div>
           </div>
 
-          <div className="heroOfferCard heroControlRoom">
-            <div className="offerFlag">FOUNDING PILOT</div>
-            <div className="controlRoomHead">
-              <div>
-                <small>JOBSETTER CONTROL DESK</small>
-                <h2>Lead in. Job moving.</h2>
-              </div>
-              <span className="controlStatus"><i /> ACTIVE WORKFLOW</span>
-            </div>
-
-            <div className="leadStack" aria-label="Illustrative JobSetter workflow">
-              <article className="leadCard leadCardOne">
-                <div><small>NEW LEAD</small><strong>Hot water system</strong></div>
-                <span>CONTACT NOW</span>
-              </article>
-              <article className="leadCard leadCardTwo">
-                <div><small>CONTACTED</small><strong>Qualified + ready</strong></div>
-                <span>BOOK NEXT</span>
-              </article>
-              <article className="leadCard leadCardThree">
-                <div><small>BOOKED</small><strong>Tomorrow · 8:30am</strong></div>
-                <span>DONE</span>
-              </article>
-            </div>
-
-            <div className="controlStrip">
-              <div><b>$0</b><span>Pilot fee</span></div>
-              <div><b>14 days</b><span>Before you decide</span></div>
-              <div><b>No rollover</b><span>You choose to continue</span></div>
-            </div>
-
-            <a className="button fullButton" href="#pilot">Build my free pilot <b>→</b></a>
-            <em>Illustrative workflow. Pilot covers agreed new leads, quotes and reactivation contacts. Ongoing plan: $2,490 + GST/month.</em>
+          <div className="heroProofBar">
+            <span><b>HUMAN-LED</b> Real customer conversations</span>
+            <span><b>NO CRM CHANGE</b> Works around your setup</span>
+            <span><b>$0 PILOT</b> Test it on your own pipeline</span>
           </div>
-        </div>
-      </section>
-
-      <section className="storyBridge">
-        <div className="shell storyBridgeInner">
-          <div><span>01</span><b>A lead comes in.</b><small>Someone needs to own it.</small></div>
-          <div><span>02</span><b>The quote goes out.</b><small>Someone needs to chase it.</small></div>
-          <div><span>03</span><b>The customer goes quiet.</b><small>Someone needs the next move.</small></div>
         </div>
       </section>
 
