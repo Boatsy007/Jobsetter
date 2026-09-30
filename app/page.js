@@ -39,6 +39,11 @@ export default function Home() {
               <p className="heroSubline">
                 We can also bring old leads and past customers back into play.
               </p>
+
+              <div className="heroBoldAction">
+                <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
+                <span>60-second audit · free · no signup to start</span>
+              </div>
             </div>
 
             <div className="heroVideoCard">
@@ -60,11 +65,6 @@ export default function Home() {
                   </div>
                 </div>
               )}
-            </div>
-
-            <div className="heroBoldAction">
-              <a className="button heroPrimary" href="#audit">Find where you're leaking jobs <b>→</b></a>
-              <span>60-second audit · free · no signup to start</span>
             </div>
           </div>
 
