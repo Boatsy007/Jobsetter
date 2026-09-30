@@ -10,47 +10,43 @@ export default function TermsPage() {
         <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetterlogo.png" alt="JobSetter" /></a>
         <p className="legalUpdated">Last updated: 30 September 2026</p>
         <h1>JobSetter Terms</h1>
-        <p>These website terms explain the current public offer. A client service agreement may contain additional commercial, privacy, confidentiality and operational terms and will control if there is any inconsistency.</p>
+        <p>These website terms summarise the current public offer. A client service agreement may contain additional commercial, privacy, confidentiality and operational terms and will control if there is any inconsistency.</p>
 
-        <h2>14-Day Revenue Recovery Pilot</h2>
-        <p>The founding pilot has a $0 JobSetter service fee for 14 calendar days. There is no automatic rollover into paid service. Ongoing pricing is disclosed before the pilot begins. Paid service starts only if the client expressly chooses to continue after the pilot.</p>
+        <h2>30-Day Revenue Recovery Pilot</h2>
+        <p>The current pilot is <strong>$990 + GST</strong> for 30 days. If the client continues into a monthly JobSetter plan, the full pilot fee is credited against the first monthly invoice.</p>
+        <p>The pilot scope is agreed before work begins and may include new enquiries, open quotes, reactivation contacts and measurement of starting response times or win rates where reliable baseline data exists.</p>
+        <p>There is no automatic rollover into paid monthly service. Ongoing service starts only if the client expressly chooses to continue.</p>
 
-        <h3>Pilot operating limits</h3>
-        <ul>
-          <li>One business or brand, one primary service region and one primary CRM/calendar workflow.</li>
-          <li>Up to 20 eligible new enquiries during the 14-day pilot.</li>
-          <li>Up to 15 existing open quotes selected for recovery follow-up.</li>
-          <li>Up to 25 dormant leads or past-customer contacts selected for reactivation.</li>
-          <li>Standard pilot coverage: Monday to Friday, 8:00am–6:00pm in the client's local business time. Leads received outside coverage are queued for the next coverage window unless otherwise agreed.</li>
-          <li>New leads: up to 5 contact attempts across up to 5 business days using the agreed channels.</li>
-          <li>Open quotes: up to 4 follow-up attempts during the pilot.</li>
-          <li>Reactivation contacts: up to 3 attempts during the pilot.</li>
-        </ul>
-        <p>Anything outside those limits requires written agreement before work begins. JobSetter may decline or narrow a pilot if volume, complexity, risk or available capacity makes the proposed scope unsuitable.</p>
+        <h2>Who JobSetter is designed for</h2>
+        <p>JobSetter is primarily designed for established, higher-ticket trade businesses that already generate demand. A strong fit will generally have around 3–20 staff, at least 20 enquiries per month, typical jobs of around $3,000 or more, an existing quoting process and capacity to take on more work.</p>
+        <p>JobSetter may not be suitable for businesses with very low lead volume, mainly low-ticket service calls, no capacity for more work or no practical way to track quote outcomes.</p>
 
-        <h2>What the pilot does not include</h2>
-        <p>Unless specifically agreed, the pilot does not include 24/7 emergency dispatch, cold prospecting to purchased lists, debt collection, technical trade advice, binding quotes or pricing decisions, complaint resolution, regulated advice, payment collection or unlimited contact attempts.</p>
+        <h2>What JobSetter does</h2>
+        <p>JobSetter provides human-led lead and quote follow-up supported by AI and automation. Depending on the agreed scope, this can include contacting new enquiries, qualification, booking, open-quote follow-up, reactivation and reporting.</p>
+
+        <h2>What JobSetter does not do</h2>
+        <p>Unless specifically agreed, JobSetter does not provide live call answering, emergency dispatch, marketing or advertising management, quote writing, invoicing, debt collection, technical trade advice, regulated advice or unlimited contact attempts.</p>
 
         <h2>Client responsibilities</h2>
-        <p>The client must provide accurate service areas, job criteria, availability, scripts or FAQs, escalation rules and access needed to perform the agreed work. The client remains responsible for the quality, pricing, delivery and legal compliance of its own products and services.</p>
-        <p>For any customer or prospect data supplied to JobSetter, the client must ensure it is lawful for that information to be used for the agreed contact and must communicate any restrictions, withdrawals of consent or do-not-contact requests promptly.</p>
+        <p>The client must send agreed leads to JobSetter, provide required calendar or system access, provide accurate qualification and service-area rules, send quotes within the agreed timeframe after site visits, and tell JobSetter when jobs are won or lost.</p>
+        <p>The client remains responsible for the quality, pricing, delivery and legal compliance of its own products and services.</p>
+        <p>For customer or prospect data supplied to JobSetter, the client must ensure the information can lawfully be used for the agreed contact and must communicate any restrictions, withdrawals of consent or do-not-contact requests promptly.</p>
 
-        <h2>No revenue guarantee</h2>
-        <p>JobSetter does not guarantee a particular number of bookings, sales, jobs or revenue. Results depend on lead quality, pricing, demand, availability, customer decisions, service quality and other factors outside JobSetter's control.</p>
+        <h2>Ongoing plans</h2>
+        <p><strong>Core: $2,490 + GST per month</strong> — up to 35 new enquiries contacted and qualified, 25 open quotes followed up and 50 reactivation contacts, plus weekly summary, monthly revenue report and quarterly results review.</p>
+        <p><strong>Growth: $4,490 + GST per month</strong> — up to 60 new enquiries contacted and qualified, 50 open quotes followed up and 100 reactivation contacts, plus weekly summary, monthly revenue report and quarterly results review.</p>
+        <p>Ongoing service is month-to-month with 30 days’ notice unless otherwise agreed. There is no percentage-of-revenue fee and no performance fee.</p>
 
-        <h2>Ongoing service after the pilot</h2>
-        <p>The current standard ongoing plan is <strong>$2,490 + GST per month</strong> and includes up to 80 eligible new enquiries, up to 40 open-quote follow-up records and up to 100 reactivation contacts per month, with standard Monday–Friday 8:00am–6:00pm local-business-time coverage. Higher volumes, extra brands, extra regions, after-hours coverage or more complex workflows are quoted separately.</p>
-        <p>Ongoing service is month-to-month unless otherwise agreed. A client may cancel before the next billing cycle; service continues until the end of the paid billing period unless otherwise agreed.</p>
+        <h2>Additional usage</h2>
+        <p>Where the client requests work beyond the included allowance, the current additional rates are <strong>$35 + GST per new enquiry</strong>, <strong>$45 + GST per open quote</strong> and <strong>$9 + GST per reactivation contact</strong>. JobSetter will tell the client before additional charges apply.</p>
+        <p>In quieter months, unused new-enquiry allowance may be moved into additional reactivation work by agreement with the account manager.</p>
 
-        <h2>Pilot fit</h2>
-        <p>JobSetter is primarily designed for established service businesses that already generate demand. A strong pilot candidate will generally meet most of the following:</p>
-        <ul>
-          <li>At least 30 new enquiries per month, or at least $25,000 of active/open quote opportunity suitable for follow-up.</li>
-          <li>Typical job value of about $750 or more.</li>
-          <li>Capacity to accept additional work during the next 30 days.</li>
-          <li>A working calendar, CRM or other clear booking/handoff process.</li>
-          <li>Lawfully usable lead and customer data for any follow-up or reactivation activity.</li>
-        </ul>
+        <h2>Service standard</h2>
+        <p>The intended service standard is for agreed new enquiries to be contacted within 30 minutes during business hours and for agreed open quotes to be followed up to an outcome.</p>
+        <p>If JobSetter misses the agreed service standard, the applicable fee reduction will be the amount stated in the client service agreement. The exact reduction is not yet published on this website.</p>
+
+        <h2>No sales or revenue guarantee</h2>
+        <p>JobSetter does not guarantee a particular number of bookings, jobs, sales or revenue. Customer decisions, lead quality, pricing, demand, availability, service quality and other factors remain outside JobSetter’s control.</p>
 
         <h2>Website information</h2>
         <p>Calculators, diagnostic scores, examples and workflow illustrations on this website are educational tools. They are not financial forecasts, guarantees or industry benchmarks unless expressly stated otherwise.</p>
