@@ -122,44 +122,39 @@ export default function Home() {
         <div className="shell leadJourneyWrap">
           <div className="leadJourneyHeader">
             <small>WHERE JOBS SLIP THROUGH</small>
-            <p>The process is simple. The leaks happen in the gaps.</p>
+            <p>The lead isn’t usually lost in one big moment. It leaks out in the gaps.</p>
           </div>
 
-          <div className="leadJourneyDiagram" aria-label="Lead journey showing where follow-up can break down">
-            <div className="journeyStep"><span>Enquiry</span></div>
+          <div className="leadJourneyCard" aria-label="Lead journey showing where follow-up can break down">
+            <div className="leadFlowTrack" aria-hidden="true"></div>
 
-            <div className="journeyConnector journeyLeakPoint">
-              <b>LEAK</b>
-              <i>→</i>
+            <div className="leadFlowStage">
+              <span className="leadFlowDot"></span>
+              <strong>Enquiry</strong>
+            </div>
+
+            <div className="leadFlowStage hasLeak">
+              <span className="leadFlowDot"></span>
+              <strong>Contacted</strong>
               <small>Slow response</small>
             </div>
 
-            <div className="journeyStep"><span>Contacted</span></div>
-
-            <div className="journeyConnector">
-              <i>→</i>
+            <div className="leadFlowStage hasLeak">
+              <span className="leadFlowDot"></span>
+              <strong>Quoted</strong>
+              <small>Quote never chased</small>
             </div>
 
-            <div className="journeyStep"><span>Quoted</span></div>
-
-            <div className="journeyConnector journeyLeakPoint">
-              <b>LEAK</b>
-              <i>→</i>
-              <small>No quote follow-up</small>
+            <div className="leadFlowStage hasLeak">
+              <span className="leadFlowDot"></span>
+              <strong>Followed up</strong>
+              <small>Old lead forgotten</small>
             </div>
 
-            <div className="journeyStep"><span>Followed up</span></div>
-
-            <div className="journeyConnector">
-              <i>→</i>
+            <div className="leadFlowStage leadFlowWon">
+              <span className="leadFlowDot"></span>
+              <strong>Won</strong>
             </div>
-
-            <div className="journeyStep successStep"><span>Won</span></div>
-          </div>
-
-          <div className="reactivationLeak">
-            <b>SEPARATE LEAK</b>
-            <span>Old leads and past customers sit untouched instead of being brought back into play.</span>
           </div>
         </div>
       </section>
