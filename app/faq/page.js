@@ -18,7 +18,7 @@ const faqs=[
 ["How do you measure results?","We track what happens to the opportunities we work: response time, qualified leads, bookings, quote outcomes, lost reasons and revenue won where the data is available."],
 ["What software do you work with?","We aim to work around your existing calendar, CRM and job-management setup wherever practical. The exact workflow is confirmed during onboarding."],
 ["What do you need from me?","Send agreed leads to JobSetter, provide the calendar access we need, send quotes within the agreed timeframe after site visits, tell us when jobs are won or lost, and keep availability and job criteria current."],
-["What happens after the pilot?","We review the 30-day results. If you continue, the $990 + GST pilot fee is credited in full against your first month. If you don’t continue, there is no automatic monthly service."],
+["What happens after the pilot?","We review the 30-day results. Your first 30 days are $990 + GST. If you continue, the Core plan is $2,490 + GST a month. No lock-in. If you don’t continue, there is no automatic monthly service."],
 ["Do you write my quotes?","No. Your business remains responsible for preparing and sending quotes. JobSetter follows them up after they have been sent."],
 ["Do you generate leads?","No. JobSetter is not a marketing agency. We work the enquiries, quotes and past contacts your business already has."],
 ["Do you guarantee I’ll win more jobs?","No. Customers still make their own decisions. JobSetter is accountable for the agreed follow-up work and service standard, not a particular sales or revenue result."],
