@@ -3358,3 +3358,47 @@ body{color:var(--t-ink)!important}
     4%,10%{color:#1769ff!important;opacity:1!important}
   }
 }
+
+
+/* Banner v5: state-driven active class wins over all prior animation rules */
+.processBannerStep span,
+.processBannerStep i{
+  animation:none!important;
+  transition:color .24s ease, background .24s ease, transform .24s ease, opacity .24s ease, box-shadow .24s ease!important;
+}
+.processBannerStep span{
+  color:#0c1520!important;
+  background:transparent!important;
+  transform:none!important;
+  box-shadow:none!important;
+}
+.processBannerStep i{
+  color:#8db5ff!important;
+  opacity:.45!important;
+  transform:none!important;
+  text-shadow:none!important;
+}
+.processBannerStep span.isActive{
+  color:#1769ff!important;
+  background:#edf4ff!important;
+  transform:scale(1.035)!important;
+  box-shadow:0 6px 16px rgba(23,105,255,.12)!important;
+}
+.processBannerStep i.isActive{
+  color:#1769ff!important;
+  opacity:1!important;
+  transform:translateX(4px) scale(1.08)!important;
+  text-shadow:0 0 12px rgba(23,105,255,.2)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .processBannerStep span,
+  .processBannerStep i{
+    transition:color .2s ease, background .2s ease, opacity .2s ease!important;
+  }
+  .processBannerStep span.isActive,
+  .processBannerStep i.isActive{
+    transform:none!important;
+    box-shadow:none!important;
+    text-shadow:none!important;
+  }
+}
