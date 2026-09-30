@@ -6,6 +6,7 @@ import ScrollMotion from "./ScrollMotion";
 import MarketingFooter from "./MarketingFooter";
 import JobSetterFitCard from "./JobSetterFitCard";
 import ProcessTimeline from "./ProcessTimeline";
+import DoDontSection from "./DoDontSection";
 
 export const metadata = {
   title: "JobSetter | Turn More Trade Leads Into Jobs",
@@ -165,32 +166,7 @@ export default function Home() {
         <div className="shell storyIntro">
           <h2>Know exactly what we do. And what we don’t.</h2>
         </div>
-        <div className="shell doDontGrid">
-          <article>
-            <small>WE DO</small>
-            <h3>Own the follow-up.</h3>
-            <ul>
-              <li>Contact new-work enquiries</li>
-              <li>Qualify jobs against your criteria</li>
-              <li>Book the next step</li>
-              <li>Follow up open quotes</li>
-              <li>Reactivate old leads and past customers</li>
-              <li>Record outcomes and report back</li>
-            </ul>
-          </article>
-          <article>
-            <small>WE DON’T</small>
-            <h3>Run your whole office.</h3>
-            <ul>
-              <li>Answer every phone call live</li>
-              <li>Handle emergency jobs</li>
-              <li>Run your marketing</li>
-              <li>Write your quotes</li>
-              <li>Send invoices</li>
-              <li>Replace your estimator or salesperson</li>
-            </ul>
-          </article>
-        </div>
+        <DoDontSection />
       </section>
 
       <section className="section storySection">
