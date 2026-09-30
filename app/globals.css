@@ -3808,3 +3808,497 @@ body{color:var(--t-ink)!important}
     letter-spacing:-.06em!important;
   }
 }
+
+
+/* =========================================================
+   Site-wide visual system v10
+   Match banner + hero + audit: bold, flat, direct, trade-focused
+   ========================================================= */
+:root{
+  --js-ink:#0c1520;
+  --js-blue:#1769ff;
+  --js-line:#d8dee5;
+  --js-soft:#f6f8fb;
+  --js-muted:#66727e;
+}
+
+/* Global reset of the old template language */
+.section,
+.founderSection,
+.journeySection,
+.decisionSection,
+.faqSection,
+.ctaSection,
+.navySection{
+  background:#fff!important;
+  color:var(--js-ink)!important;
+}
+.section{
+  padding:72px 0!important;
+  border-top:1px solid var(--js-line);
+}
+.storyIntro{
+  grid-template-columns:1fr!important;
+  gap:0!important;
+  margin-bottom:28px!important;
+}
+.storyNumber,
+.storyIntro .eyebrow,
+.founderMessage .eyebrow,
+.lightStory .eyebrow{
+  display:none!important;
+}
+.storyIntro h2,
+.founderMessage h2,
+.ctaCard h2{
+  max-width:1050px!important;
+  margin:0 0 14px!important;
+  color:var(--js-ink)!important;
+  font-size:clamp(46px,5.4vw,78px)!important;
+  line-height:.94!important;
+  letter-spacing:-.06em!important;
+  font-weight:950!important;
+}
+.storyIntro p,
+.founderMessage .leadText,
+.ctaCard p{
+  max-width:720px!important;
+  color:var(--js-muted)!important;
+  font-size:16px!important;
+  line-height:1.5!important;
+}
+
+/* Strip away SaaS/agency card styling site-wide */
+.journeyShell,
+.reportDemo,
+.comparisonTable,
+.pricingCard,
+.founderIdentity,
+.pilotForm,
+.ctaCard,
+.riskCard,
+.pilotBigTerms article,
+.pilotTimeline article,
+.faqMore>div,
+.prescriptionCard,
+.scenarioCard,
+.recommendationBox,
+.personalUrgency{
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+/* Journey */
+.journeySection{
+  background:#fff!important;
+}
+.journeySection .pipelineMotif{
+  margin:0 0 20px!important;
+  padding:16px 0!important;
+  border-top:2px solid var(--js-ink);
+  border-bottom:1px solid var(--js-line);
+}
+.journeyShell{
+  border:1px solid var(--js-line)!important;
+  background:#fff!important;
+  padding:0!important;
+}
+.journeyTabs{
+  margin:0!important;
+  gap:0!important;
+  border-bottom:1px solid var(--js-line);
+}
+.journeyTabs button{
+  flex:1;
+  border:0!important;
+  border-right:1px solid var(--js-line)!important;
+  border-radius:0!important;
+  background:#fff!important;
+  color:var(--js-ink)!important;
+  padding:14px!important;
+}
+.journeyTabs button:last-child{border-right:0!important}
+.journeyTabs button.active{
+  background:var(--js-blue)!important;
+  color:#fff!important;
+}
+.journeyHeader{
+  padding:22px 24px!important;
+}
+.journeyHeader h3{
+  font-size:32px!important;
+  letter-spacing:-.045em!important;
+}
+.journeyHeader>span{
+  border-radius:0!important;
+  background:#eef4ff!important;
+  color:var(--js-blue)!important;
+}
+.journeySteps{
+  padding:22px 24px 10px!important;
+}
+.journeyRail span{
+  background:var(--js-blue)!important;
+}
+.journeyFooter{
+  margin:0 24px 24px;
+  border-radius:0!important;
+  background:var(--js-ink)!important;
+  color:#fff!important;
+}
+
+/* Pilot section: white, hard lines, black/blue */
+.navySection{
+  background:#fff!important;
+}
+.navySection h2,
+.navySection h3{
+  color:var(--js-ink)!important;
+}
+.lightStory p{
+  color:var(--js-muted)!important;
+}
+.pilotExperience{
+  grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr)!important;
+  gap:30px!important;
+}
+.pilotBigTerms{
+  gap:0!important;
+  border:1px solid var(--js-line);
+}
+.pilotBigTerms article{
+  background:#fff!important;
+  border:0!important;
+  border-right:1px solid var(--js-line)!important;
+}
+.pilotBigTerms article:last-child{border-right:0!important}
+.pilotBigTerms small{
+  color:var(--js-muted)!important;
+}
+.pilotBigTerms strong{
+  color:var(--js-ink)!important;
+}
+#pilot-offer .pilotTimeline{
+  gap:0!important;
+  border:1px solid var(--js-line);
+  border-top:0;
+}
+#pilot-offer .pilotTimeline article{
+  background:#fff!important;
+  border:0!important;
+  border-bottom:1px solid var(--js-line)!important;
+  color:var(--js-ink)!important;
+}
+#pilot-offer .pilotTimeline article:last-child{border-bottom:0!important}
+#pilot-offer .pilotTimeline span{
+  color:var(--js-blue)!important;
+}
+#pilot-offer .pilotTimeline h3{
+  color:var(--js-ink)!important;
+}
+#pilot-offer .pilotTimeline p{
+  color:var(--js-muted)!important;
+}
+#pilot-offer .pilotTimeline article.is-active{
+  background:#f2f6ff!important;
+  border-color:var(--js-line)!important;
+  box-shadow:none!important;
+}
+#pilot-offer .pilotTimeline article.is-active:after{
+  background:var(--js-blue)!important;
+}
+#pilot-offer .pilotTimeline article.is-active span{
+  color:var(--js-blue)!important;
+}
+.riskCard{
+  background:var(--js-ink)!important;
+  border:0!important;
+  padding:22px!important;
+}
+.riskCard h3{color:#fff!important}
+.riskCard p{color:#cbd3dc!important}
+.riskCard small{color:#8db5ff!important}
+.riskCard .button{
+  background:var(--js-blue)!important;
+  color:#fff!important;
+}
+
+/* Report demo */
+.reportDemo{
+  border:1px solid var(--js-line)!important;
+  background:#fff!important;
+}
+.reportDemoTop{
+  border-bottom:2px solid var(--js-ink)!important;
+}
+.reportDemoTop h3{
+  color:var(--js-ink)!important;
+}
+.reportTabs button{
+  border-radius:0!important;
+  background:#fff!important;
+  border:1px solid var(--js-line)!important;
+}
+.reportTabs button.active{
+  background:var(--js-blue)!important;
+  color:#fff!important;
+}
+.reportMetricGrid{
+  border-bottom:1px solid var(--js-line)!important;
+}
+.reportMetricGrid article{
+  border-right:1px solid var(--js-line)!important;
+}
+.reportMetricGrid strong{
+  color:var(--js-ink)!important;
+}
+.reportActivityRow{
+  border-bottom:1px solid #edf0f3!important;
+}
+
+/* Decision/comparison/pricing */
+.decisionSection{
+  background:#fff!important;
+}
+.decisionGrid{
+  align-items:stretch!important;
+}
+.comparisonTable{
+  border:1px solid var(--js-line)!important;
+  background:#fff!important;
+}
+.comparisonTable>div{
+  border-bottom:1px solid var(--js-line)!important;
+}
+.tableHead{
+  background:#fff!important;
+  border-bottom:2px solid var(--js-ink)!important;
+}
+.tableHead .jobsetterCol{
+  background:var(--js-blue)!important;
+  color:#fff!important;
+}
+.comparisonTable strong{
+  background:#eef4ff!important;
+  color:var(--js-blue)!important;
+}
+.pricingCard{
+  background:var(--js-ink)!important;
+  color:#fff!important;
+  padding:28px!important;
+}
+.pricingCard h3{
+  color:#fff!important;
+}
+.pricingCard>p,
+.pricingCard li,
+.fitMini span{
+  color:#c2ccd6!important;
+}
+.pricingCard li:before{
+  color:#fff!important;
+}
+.fitMini{
+  border-radius:0!important;
+  border-top:1px solid rgba(255,255,255,.18);
+  background:transparent!important;
+  padding:16px 0!important;
+}
+.pricingCard .button{
+  background:var(--js-blue)!important;
+  color:#fff!important;
+}
+
+/* Founder */
+.founderSection{
+  border-top:1px solid var(--js-line);
+}
+.founderGrid{
+  grid-template-columns:.7fr 1.3fr!important;
+  gap:42px!important;
+  align-items:start!important;
+}
+.founderIdentity{
+  border:1px solid var(--js-line)!important;
+  padding:22px!important;
+  background:#fff!important;
+}
+.founderAvatar{
+  border-radius:0!important;
+  background:var(--js-blue)!important;
+}
+.founderPhoto{
+  border-radius:0!important;
+}
+.founderIdentity small{
+  color:var(--js-blue)!important;
+}
+.founderIdentity h3{
+  color:var(--js-ink)!important;
+  font-size:32px!important;
+}
+.founderIdentity p{
+  color:var(--js-muted)!important;
+}
+.founderPromise{
+  border-radius:0!important;
+  border-left:4px solid var(--js-blue)!important;
+  background:#f4f7fb!important;
+  color:#34414e!important;
+  padding:16px!important;
+}
+
+/* FAQ */
+.faqSection{
+  background:#fff!important;
+}
+.faqCompact{
+  max-width:none!important;
+  margin:0!important;
+  border-top:2px solid var(--js-ink);
+}
+.faqCompact details{
+  padding:20px 0!important;
+  border-bottom:1px solid var(--js-line)!important;
+}
+.faqCompact summary{
+  font-size:20px!important;
+  color:var(--js-ink)!important;
+}
+.faqCompact p{
+  color:var(--js-muted)!important;
+}
+.faqMore>div{
+  background:#f6f8fb!important;
+}
+
+/* Final CTA + form */
+.ctaSection{
+  padding:72px 0!important;
+  border-top:1px solid var(--js-line);
+  background:#fff!important;
+}
+.ctaCard{
+  padding:0!important;
+  background:#fff!important;
+  border:0!important;
+  display:grid!important;
+  grid-template-columns:.8fr 1.2fr!important;
+  gap:36px!important;
+}
+.ctaCopy{
+  padding-top:8px;
+}
+.ctaCopy .pipelineMotif{
+  border-top:2px solid var(--js-ink);
+  margin-top:26px!important;
+}
+.pilotForm{
+  border:1px solid var(--js-line)!important;
+  background:#fff!important;
+  color:var(--js-ink)!important;
+  padding:24px!important;
+}
+.pilotFormTop{
+  border-bottom:2px solid var(--js-ink);
+  padding-bottom:16px;
+  margin-bottom:18px;
+}
+.pilotFormTop h3{
+  color:var(--js-ink)!important;
+  font-size:32px!important;
+  letter-spacing:-.045em!important;
+}
+.auditChip{
+  border-radius:0!important;
+  background:#eef4ff!important;
+  color:var(--js-blue)!important;
+}
+.formStepProgress{
+  border-radius:0!important;
+}
+.formStepProgress span{
+  border-radius:0!important;
+  background:var(--js-blue)!important;
+}
+.pilotForm input,
+.pilotForm select{
+  border-radius:0!important;
+  border:1px solid var(--js-line)!important;
+}
+.pilotForm .button{
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+/* Footer */
+footer{
+  background:var(--js-ink)!important;
+  border-top:0!important;
+}
+footer .brandJob{color:#fff!important}
+footer .brandSetter{color:#4f8cff!important}
+.footerTop p,
+.footerNav a,
+.footerBottom{
+  color:#aeb9c5!important;
+}
+.footerBottom{
+  border-top:1px solid #26323e!important;
+}
+
+/* Remove leftover orange/lime accents across the main page */
+.eyebrow span,
+.offerFlag,
+.controlStatus i{
+  background:var(--js-blue)!important;
+}
+.lightStory .storyNumber,
+.finalNumber,
+.storyBridgeInner span{
+  color:var(--js-blue)!important;
+}
+
+@media(max-width:1040px){
+  .pilotExperience,
+  .decisionGrid,
+  .founderGrid,
+  .ctaCard{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:700px){
+  .section{
+    padding:54px 0!important;
+  }
+  .storyIntro h2,
+  .founderMessage h2,
+  .ctaCard h2{
+    font-size:clamp(40px,12vw,58px)!important;
+  }
+  .journeyTabs{
+    overflow-x:auto;
+  }
+  .journeyTabs button{
+    flex:0 0 auto;
+    min-width:132px;
+  }
+  .journeySteps{
+    padding:18px!important;
+  }
+  .journeyFooter{
+    margin:0 18px 18px;
+  }
+  .pilotExperience{
+    gap:20px!important;
+  }
+  .pilotBigTerms article{
+    min-width:58%!important;
+  }
+  .founderGrid{
+    gap:24px!important;
+  }
+  .ctaCard{
+    gap:22px!important;
+  }
+}
