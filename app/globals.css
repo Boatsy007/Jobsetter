@@ -357,10 +357,10 @@ footer .brandSetter{color:#4f8cff}
 }
 @media(max-width:760px){
   .shell{width:min(100% - 26px,1180px)}
-  .siteHeader{position:fixed;top:0;left:0;right:0;z-index:9999;transform:translate3d(0,0,0);transition:transform .16s ease}
+  .siteHeader{position:sticky;top:0;left:auto;right:auto;z-index:9999;transform:translate3d(0,0,0);transition:transform .16s ease}
   .siteHeader.headerHidden{transform:translate3d(0,-110%,0)}
   .siteHeader.headerVisible{transform:translate3d(0,0,0)}
-  .mobileHeaderSpacer{display:block;height:64px}
+  .mobileHeaderSpacer{display:none}
   .nav{height:64px}
   .brand{font-size:24px}
   .brandLogo{width:146px}
