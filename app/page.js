@@ -120,16 +120,44 @@ export default function Home() {
         </div>
 
         <div className="shell leadJourneyWrap">
-          <div className="leadJourneyDiagram" aria-label="Where leads can drop out of the follow-up process">
+          <div className="leadJourneyHeader">
+            <small>WHERE JOBS SLIP THROUGH</small>
+            <p>The process is simple. The leaks happen in the gaps.</p>
+          </div>
+
+          <div className="leadJourneyDiagram" aria-label="Lead journey showing where follow-up can break down">
             <div className="journeyStep"><span>Enquiry</span></div>
-            <div className="journeyArrow">→</div>
-            <div className="journeyStep journeyLeak"><span>Contacted</span><small>Slow response</small></div>
-            <div className="journeyArrow">→</div>
-            <div className="journeyStep journeyLeak"><span>Quoted</span><small>Quote never chased</small></div>
-            <div className="journeyArrow">→</div>
-            <div className="journeyStep journeyLeak"><span>Followed up</span><small>Old lead forgotten</small></div>
-            <div className="journeyArrow">→</div>
+
+            <div className="journeyConnector">
+              <i>→</i>
+              <small>Slow response</small>
+            </div>
+
+            <div className="journeyStep"><span>Contacted</span></div>
+
+            <div className="journeyConnector">
+              <i>→</i>
+            </div>
+
+            <div className="journeyStep"><span>Quoted</span></div>
+
+            <div className="journeyConnector">
+              <i>→</i>
+              <small>Quote never chased</small>
+            </div>
+
+            <div className="journeyStep"><span>Followed up</span></div>
+
+            <div className="journeyConnector">
+              <i>→</i>
+            </div>
+
             <div className="journeyStep successStep"><span>Won</span></div>
+          </div>
+
+          <div className="reactivationLeak">
+            <b>Another leak:</b>
+            <span>Old leads and past customers sit untouched instead of being brought back into play.</span>
           </div>
         </div>
       </section>
