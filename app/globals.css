@@ -2935,3 +2935,74 @@ body{color:var(--t-ink)!important}
   .processBannerTrack span{font-size:22px}
   .processBannerTrack i{font-size:18px}
 }
+
+
+/* Subtle looping pipeline motion */
+.processBannerTrack span,
+.processBannerTrack i{
+  position:relative;
+  z-index:1;
+  animation:processStep 8s ease-in-out infinite;
+  will-change:transform,color,opacity;
+}
+.processBannerTrack span:nth-of-type(1){animation-delay:0s}
+.processBannerTrack i:nth-of-type(1){animation-delay:.18s}
+.processBannerTrack span:nth-of-type(2){animation-delay:.36s}
+.processBannerTrack i:nth-of-type(2){animation-delay:.54s}
+.processBannerTrack span:nth-of-type(3){animation-delay:.72s}
+.processBannerTrack i:nth-of-type(3){animation-delay:.90s}
+.processBannerTrack span:nth-of-type(4){animation-delay:1.08s}
+.processBannerTrack i:nth-of-type(4){animation-delay:1.26s}
+.processBannerTrack span:nth-of-type(5){animation-delay:1.44s}
+
+.processBanner:after{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 -22%;
+  width:18%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(23,105,255,.045),transparent);
+  transform:skewX(-18deg);
+  animation:processSweep 8s ease-in-out infinite;
+}
+
+@keyframes processStep{
+  0%,7%,100%{
+    transform:translateY(0) scale(1);
+    opacity:1;
+  }
+  2.5%{
+    transform:translateY(-1px) scale(1.025);
+  }
+}
+@keyframes processSweep{
+  0%,20%{left:-22%;opacity:0}
+  28%{opacity:1}
+  52%{left:104%;opacity:.9}
+  60%,100%{left:104%;opacity:0}
+}
+
+/* Arrows carry slightly more motion than the words. */
+.processBannerTrack i{
+  animation-name:processArrow;
+}
+@keyframes processArrow{
+  0%,7%,100%{
+    transform:translateX(0);
+    opacity:1;
+    color:#1769ff;
+  }
+  2.5%{
+    transform:translateX(3px);
+    color:#0f4ec2;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .processBannerTrack span,
+  .processBannerTrack i,
+  .processBanner:after{
+    animation:none!important;
+    transform:none!important;
+  }
+}
