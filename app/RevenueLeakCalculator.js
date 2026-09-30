@@ -182,7 +182,7 @@ export default function RevenueLeakCalculator() {
       return (
         <div className="diagnosticBigInput money">
           <span>$</span>
-          <input type="number" min={q.min} value={answers[q.key]} placeholder="2500" onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
+          <input type="number" min={q.min} value={answers[q.key]} placeholder="5000" onChange={(e) => setAnswer(q.key, e.target.value)} autoFocus />
         </div>
       );
     }
@@ -276,7 +276,7 @@ export default function RevenueLeakCalculator() {
 
       <div className="diagnosticResultActions">
         <button className="textButton" onClick={previous}>← Change my answers</button>
-        <button className="button" onClick={goToPilot}>Build my 14-day pilot <b>→</b></button>
+        <button className="button" onClick={goToPilot}>Start my 30-day pilot <b>→</b></button>
       </div>
     </div>
   );
