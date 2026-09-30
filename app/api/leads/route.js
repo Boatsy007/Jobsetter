@@ -34,6 +34,9 @@ export async function POST(request) {
     name: clean(body.name, 120),
     business: clean(body.business, 160),
     trade: clean(body.trade, 80),
+    location: clean(body.location, 120),
+    staffCount: clean(body.staffCount, 40),
+    biggestProblem: clean(body.biggestProblem, 120),
     email: clean(body.email, 180).toLowerCase(),
     phone: clean(body.phone, 60),
     monthlyLeads: clean(body.monthlyLeads, 30),
@@ -65,10 +68,10 @@ export async function POST(request) {
 
   const monthlyLeads = toNumber(lead.monthlyLeads);
   const averageJob = toNumber(lead.averageJobValue || lead.audit?.averageJob);
-  const openQuoteValue = toNumber(lead.openQuoteValue);
-  const strongDemand = monthlyLeads >= 30 || openQuoteValue >= 25000;
-  const strongJobValue = averageJob >= 750;
-  const fit = stage === "contact" ? "unscored" : (strongDemand && strongJobValue && lead.capacityWithin30Days ? "strong" : "review");
+  const staffMatch = /^(3-5|6-10|11-20)$/.test(lead.staffCount);
+  const strongDemand = monthlyLeads >= 20;
+  const strongJobValue = averageJob >= 3000;
+  const fit = stage === "contact" ? "unscored" : (strongDemand && strongJobValue && staffMatch ? "strong" : "review");
 
   let persisted = false;
   const persistenceErrors = [];
@@ -104,12 +107,11 @@ export async function POST(request) {
         `Email: ${lead.email}`,
         `Phone: ${lead.phone}`,
         `Trade: ${lead.trade || "-"}`,
+        `Location: ${lead.location || "-"}`,
+        `Staff: ${lead.staffCount || "-"}`,
         `Monthly leads: ${lead.monthlyLeads || "-"}`,
-        `Average job value: $${lead.averageJobValue || "-"}`,
-        `Open quote value: $${lead.openQuoteValue || "-"}`,
-        `CRM/job system: ${lead.currentSystem || "-"}`,
-        `Capacity for more work: ${lead.capacityWithin30Days ? "Yes" : "No / unsure"}`,
-        `Preferred call window: ${lead.preferredWindow || "-"}`,
+        `Average job value: ${lead.averageJobValue || "-"}`,
+        `Biggest problem: ${lead.biggestProblem || "-"}`,
         `Diagnostic score: ${lead.audit?.score ?? "-"}`,
         `Biggest leak: ${lead.audit?.biggestLeak ?? "-"}`,
         `Marketing consent: ${lead.marketingConsent ? "Yes" : "No"}`,
