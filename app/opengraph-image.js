@@ -21,9 +21,13 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "3px solid #0c1520", paddingBottom: 28 }}>
-          <div style={{ fontSize: 42, fontWeight: 900, letterSpacing: -2 }}>
-            Job<span style={{ color: "#1769ff" }}>Setter</span>
-          </div>
+          <img
+            src="https://jobsetter.com.au/jobsetter-logo.webp"
+            alt="JobSetter"
+            width="250"
+            height="65"
+            style={{ objectFit: "contain" }}
+          />
           <div style={{ fontSize: 21, fontWeight: 800 }}>LEAD → CONTACT → BOOK → QUOTE → WIN</div>
         </div>
 
