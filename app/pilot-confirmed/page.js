@@ -11,7 +11,7 @@ export default function PilotConfirmedPage() {
   return (
     <main className="confirmationPage">
       <div className="confirmationCard">
-        <a className="brand" href="/"><span className="brandJob">Job</span><span className="brandSetter">Setter</span></a>
+        <a className="brand brandImageLink" href="/"><img className="legalLogo" src="/jobsetter-logo.webp" alt="JobSetter" width="360" height="93" /></a>
         <div className="confirmationIcon">✓</div>
         <small>PILOT CALL BOOKED</small>
         <h1>You're booked.</h1>
