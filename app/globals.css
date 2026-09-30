@@ -1665,3 +1665,8 @@ footer .brandSetter{color:#4f8cff}
 .employeeAltIntro h2 > span,
 .guaranteeGrid h2 > span,
 .ctaCopy h2 > span { color: var(--blue); }
+
+/* Three-tier pricing */
+.priceCards.threePlans{grid-template-columns:repeat(3,minmax(0,1fr))}
+.planFor{margin:-10px 0 18px;color:var(--muted);font-size:14px;line-height:1.45}
+@media(max-width:1040px){.priceCards.threePlans{grid-template-columns:1fr}}
