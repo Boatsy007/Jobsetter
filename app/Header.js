@@ -35,7 +35,7 @@ export default function Header() {
     <>
       <header className={`siteHeader ${visible ? "headerVisible" : "headerHidden"}`}>
         <div className="shell nav">
-          <a className="brand brandImageLink" href="#top" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
+          <a className="brand brandImageLink" href="/" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
             <img className="brandLogo" src="/jobsetterlogo.png" alt="JobSetter" />
           </a>
           <nav className="desktopNav">
