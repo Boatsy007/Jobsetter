@@ -27,11 +27,8 @@ export default function Home() {
 
       <section className="hero storySection heroBold" id="top">
         <div className="shell heroBoldInner">
-          <div className="eyebrow heroEyebrow"><span /> DONE-FOR-YOU FRONT OFFICE FOR TRADES</div>
-
           <h1>
-            Stop losing jobs<br />
-            you already <span>paid to get.</span>
+            Turn leads into <span>jobs.</span>
           </h1>
 
           <div className="heroBoldLower">
