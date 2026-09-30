@@ -380,6 +380,19 @@ footer .brandSetter{color:#4f8cff}
   .journeyRail i{height:42px}
 }
 @media(max-width:760px){
+  .auditSection{padding-top:14px}
+  .auditLead{display:block;padding-bottom:16px}
+  .auditLead h2{font-size:clamp(44px,13vw,64px)}
+  .auditLead p{max-width:none;margin-top:10px;font-size:16px;line-height:1.35}
+  .diagnosticContent{padding:26px 0 22px}
+  .diagnosticContent h3{font-size:clamp(34px,10.5vw,52px);line-height:.98}
+  .diagnosticContent>p{margin-bottom:18px;font-size:11px}
+  .diagnosticBigInput{padding:4px 0}
+  .diagnosticBigInput input{font-size:46px}
+  .choice{padding:13px 14px}
+  .diagnosticActions,.diagnosticResultActions{margin-top:20px;padding-top:14px}
+}
+@media(max-width:760px){
   html,body{height:100%;min-height:100%;overflow:hidden}
   body{position:relative}
   main{height:100%;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
