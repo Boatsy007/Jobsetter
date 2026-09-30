@@ -356,11 +356,13 @@ footer .brandSetter{color:#4f8cff}
   .journeyRail i{height:42px}
 }
 @media(max-width:760px){
+  html,body{height:100%;min-height:100%;overflow:hidden}
+  body{position:relative}
+  main{height:100%;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .site-main{height:100%;min-height:0;padding-top:64px;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scroll-padding-top:80px}
   .shell{width:min(100% - 26px,1180px)}
-  .siteHeader{position:fixed;top:0;left:0;right:0;z-index:9999;transform:none;transition:top .14s ease}
-  .siteHeader.headerHidden{top:-64px;transform:none}
-  .siteHeader.headerVisible{top:0;transform:none}
-  .mobileHeaderSpacer{display:block;height:64px}
+  .siteHeader{--header-offset:0px;position:absolute;top:0;left:0;right:0;z-index:9999;width:100%;transform:translate3d(0,calc(-1 * var(--header-offset)),0);transition:none;will-change:transform;backface-visibility:hidden}
+  .mobileHeaderSpacer{display:none}
   .nav{height:64px}
   .brand{font-size:24px}
   .brandLogo{width:146px}
