@@ -28,9 +28,10 @@ const fit = [
 
 export default function Home() {
   return (
-    <main>
-      <ScrollMotion />
+    <>
       <Header />
+      <main className="site-main">
+      <ScrollMotion />
       <ProcessBanner />
 
       <section className="hero storySection heroBold" id="top">
@@ -413,6 +414,7 @@ export default function Home() {
       </section>
 
       <MarketingFooter />
-    </main>
+      </main>
+    </>
   );
 }
