@@ -429,3 +429,229 @@ footer .brandSetter{color:#4f8cff}
   html{scroll-behavior:auto}
   .storySection,.founderSection,.caseStudySection,.callDemoSection,.pipelineLine,.pipelineNode,.processBannerStep span,.processBannerStep i{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
 }
+
+
+/* =========================================================
+   Revenue desk content system
+   ========================================================= */
+.heroKicker,
+.pageHero>div>small,
+.darkSection small,
+.problemStatement small,
+.fitPanel small,
+.pilotHeroGrid>div>small,
+.pilotMeasure>small,
+.guaranteeGrid small,
+.comingResults>small,
+.founderPlaceholder>small{
+  display:block;
+  margin-bottom:12px;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.11em;
+}
+.heroTextLink{
+  display:inline-flex;
+  width:max-content;
+  color:var(--ink);
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none;
+  border-bottom:1px solid var(--ink);
+}
+.heroTextLink:hover{color:var(--blue);border-color:var(--blue)}
+
+.pageHero{
+  padding:76px 0 64px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.pageHero h1{
+  max-width:1100px;
+  margin:0 0 20px;
+  color:var(--ink);
+  font-size:clamp(58px,7vw,112px);
+  line-height:.9;
+  letter-spacing:-.068em;
+  font-weight:950;
+}
+.pageHero p{
+  max-width:760px;
+  margin:0;
+  color:var(--muted);
+  font-size:clamp(18px,2vw,25px);
+  line-height:1.45;
+}
+.pageHero .pilotPrice{margin-top:28px}
+.pageHero>div>strong{display:block;margin-top:8px}
+
+.problemGrid,
+.fitGrid,
+.doDontGrid,
+.guaranteeGrid,
+.pilotHeroGrid,
+.splitIntro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+}
+.problemList{padding-right:30px}
+.problemList>p{font-size:20px;line-height:1.5;color:#31404e}
+.problemList>strong{display:block;margin:26px 0 10px}
+.problemList ul,
+.fitPanel ul,
+.doDontGrid ul,
+.priceCards ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.problemList li,
+.fitPanel li,
+.doDontGrid li,
+.priceCards li{
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+  color:#34414d;
+}
+.problemStatement{
+  align-self:start;
+  padding:30px;
+  background:var(--ink);
+  color:#fff;
+}
+.problemStatement small{color:#8db5ff}
+.problemStatement h3{margin:0 0 12px;font-size:38px;line-height:1;letter-spacing:-.045em}
+.problemStatement p{margin:0;color:#bbc5cf;line-height:1.6}
+
+.operatingSteps{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--line);
+}
+.operatingSteps article{padding:22px 18px;border-right:1px solid var(--line)}
+.operatingSteps article:last-child{border-right:0}
+.operatingSteps article>span{color:var(--blue);font-size:10px;font-weight:950}
+.operatingSteps h3{margin:14px 0 8px;font-size:25px;letter-spacing:-.04em}
+.operatingSteps p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.longSteps{grid-template-columns:1fr}
+.longSteps article{display:grid;grid-template-columns:70px 180px 1fr;gap:20px;align-items:start;border-right:0;border-bottom:1px solid var(--line)}
+.longSteps article:last-child{border-bottom:0}
+.longSteps h3{margin:0}
+.sectionAction{margin-top:26px}
+
+.darkSection{background:var(--ink)!important;color:#fff!important}
+.darkSection h2{margin:0;color:#fff;font-size:clamp(48px,5.5vw,80px);line-height:.94;letter-spacing:-.06em}
+.darkSection p{color:#c0c9d2;font-size:17px;line-height:1.6}
+.darkSection b{color:#fff}
+.darkSection .button.white{margin-top:10px}
+
+.doDontGrid article{padding:28px;border-top:3px solid var(--ink);background:#fff}
+.doDontGrid article:last-child{background:var(--soft)}
+.doDontGrid small{display:block;color:var(--blue);font-size:9px;font-weight:950;letter-spacing:.1em}
+.doDontGrid h3{margin:10px 0 16px;font-size:34px;letter-spacing:-.045em}
+
+.fitPanel{padding:28px;border:1px solid var(--line)}
+.goodFit{border-top:4px solid var(--blue)}
+.notFit{background:var(--soft);border-top:4px solid var(--ink)}
+.fitPanel h3{margin:10px 0;font-size:32px;line-height:1;letter-spacing:-.04em}
+.fitPanel p{color:var(--muted);line-height:1.6}
+.fitPanel a{color:var(--blue);font-weight:900;text-decoration:none}
+
+.pilotFeature{background:#f8faff!important}
+.pilotHeroGrid{align-items:start}
+.pilotHeroGrid h2{margin:0 0 16px;font-size:clamp(52px,5.7vw,82px);line-height:.92;letter-spacing:-.06em}
+.pilotHeroGrid p{color:var(--muted);font-size:17px;line-height:1.55}
+.pilotPrice{margin:24px 0 6px;color:var(--ink);font-size:clamp(58px,7vw,88px);font-weight:950;letter-spacing:-.07em;line-height:.9}
+.pilotPrice span{font-size:14px;letter-spacing:0;color:var(--muted)}
+.pilotHeroGrid>div>strong{display:block;margin-bottom:24px}
+.pilotMeasure{border-top:3px solid var(--ink)}
+.pilotMeasure>small{padding-top:18px}
+.pilotMeasure>div{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pilotMeasure b{font-size:15px}
+.pilotMeasure span{max-width:280px;color:var(--muted);font-size:12px;text-align:right}
+.pilotMeasure p{margin:16px 0 0;font-size:10px}
+
+.priceCards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.priceCards article{padding:30px;border:1px solid var(--line);background:#fff}
+.priceCards article>small{color:var(--blue);font-size:9px;font-weight:950;letter-spacing:.1em}
+.priceCards h3{margin:10px 0 22px;font-size:44px;letter-spacing:-.055em}
+.priceCards h3 span{font-size:12px;color:var(--muted);letter-spacing:0}
+.featuredPrice{background:var(--ink)!important;color:#fff}
+.featuredPrice h3{color:#fff}
+.featuredPrice h3 span,.featuredPrice li{color:#c4ced7}
+.featuredPrice li{border-color:#2b3743}
+.priceFinePrint{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.priceFinePrint p{margin:0 0 8px;color:var(--muted)}
+
+.guaranteeSection{border-top:2px solid var(--ink)!important}
+.guaranteeGrid h2{margin:0;font-size:clamp(48px,5vw,72px);line-height:.94;letter-spacing:-.06em}
+.guaranteeGrid p{color:#45525f;line-height:1.6}
+.guaranteeGrid>div:last-child>small{color:#88929b;letter-spacing:0;line-height:1.5}
+
+.proofPlaceholder{background:#fafbfc!important}
+.comingResults{
+  display:grid;
+  grid-template-columns:1.3fr repeat(4,1fr);
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--line);
+}
+.comingResults>*{padding:18px;border-right:1px solid var(--line)}
+.comingResults>*:last-child{border-right:0}
+.comingResults>small{margin:0;color:var(--blue)}
+.comingResults>span{font-size:12px;font-weight:850}
+.estimateDisclaimer{margin-top:14px;color:#8a949d;font-size:10px}
+
+.pilotDayGrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.pilotDayGrid article{padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pilotDayGrid article:last-child{border-right:0}
+.pilotDayGrid small{color:var(--blue);font-size:9px;font-weight:950;letter-spacing:.1em}
+.pilotDayGrid h3{margin:10px 0;font-size:28px;letter-spacing:-.04em}
+.pilotDayGrid p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+
+.extraPriceGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.extraPriceGrid article{padding:22px;border-right:1px solid var(--line)}
+.extraPriceGrid article:last-child{border-right:0}
+.extraPriceGrid b{display:block;font-size:30px;letter-spacing:-.04em}
+.extraPriceGrid span{color:var(--muted);font-size:12px}
+
+.founderPlaceholder{padding:34px;border:1px dashed #aeb7c0;background:var(--soft)}
+.founderPlaceholder h2{margin:0 0 12px;font-size:46px;letter-spacing:-.05em}
+.founderPlaceholder p{margin:0;max-width:800px;color:var(--muted);line-height:1.6}
+
+.simpleCta{max-width:900px}
+.simpleCta h2{margin:0 0 12px;font-size:clamp(48px,5.5vw,76px);line-height:.94;letter-spacing:-.06em}
+.simpleCta p{color:var(--muted);font-size:17px}
+.simpleCta .button{margin-top:10px}
+.contactFacts{display:grid;grid-template-columns:1fr;margin-top:28px;border-top:2px solid var(--ink)}
+.contactFacts span{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+.contactFacts b{color:var(--ink)}
+
+@media(max-width:1040px){
+  .operatingSteps{grid-template-columns:1fr 1fr}
+  .operatingSteps article{border-bottom:1px solid var(--line)}
+  .problemGrid,.fitGrid,.doDontGrid,.guaranteeGrid,.pilotHeroGrid,.splitIntro{grid-template-columns:1fr}
+  .priceCards{grid-template-columns:1fr}
+  .pilotDayGrid{grid-template-columns:1fr 1fr}
+  .comingResults{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .pageHero{padding:50px 0 42px}
+  .pageHero h1{font-size:clamp(48px,14vw,70px)}
+  .pageHero p{font-size:18px}
+  .heroKicker{margin-bottom:10px}
+  .operatingSteps{grid-template-columns:1fr}
+  .operatingSteps article{border-right:0}
+  .longSteps article{grid-template-columns:42px 1fr}
+  .longSteps article p{grid-column:2}
+  .pilotDayGrid,.extraPriceGrid,.comingResults{grid-template-columns:1fr}
+  .pilotDayGrid article,.extraPriceGrid article,.comingResults>*{border-right:0}
+  .pilotHeroGrid h2,.darkSection h2,.guaranteeGrid h2,.simpleCta h2{font-size:clamp(42px,12vw,58px)}
+  .problemStatement,.fitPanel,.doDontGrid article,.priceCards article{padding:22px}
+}
