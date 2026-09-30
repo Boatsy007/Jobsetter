@@ -52,7 +52,7 @@ export default function Home() {
               <div className="heroBoldAction">
                 <a className="button heroPrimary" href="/pilot">Start the 30-day pilot <b>→</b></a>
                 <a className="heroTextLink" href="#audit">Find where you’re losing leads ↓</a>
-                <span>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</span>
+                <span>Your first 30 days: $990 + GST. Ongoing plans start at $1,000 + GST a month. No lock-in.</span>
               </div>
             </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
           <div className="fitPanel notFit">
             <small>PROBABLY NOT A FIT</small>
             <h3>We’d rather tell you before you pay us.</h3>
-            <p>If you’re a sole trader with only a handful of enquiries, or most of your work is low-ticket service calls, a simpler setup will probably make more sense.</p>
+            <p>If you only have a handful of opportunities each month, Starter may be enough. If most of your work is low-ticket service calls, JobSetter may still not make financial sense.</p>
             <a href="/who-its-for">See who JobSetter is for →</a>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function Home() {
             <h2>Give us 30 days and your real <span>pipeline.</span></h2>
             <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
             <div className="pilotPrice">$990 <span>+ GST</span></div>
-            <strong>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</strong>
+            <strong>Your first 30 days: $990 + GST. After the pilot, we’ll recommend the ongoing plan that matches your actual pipeline. No lock-in.</strong>
             <a className="button" href="/pilot">See the 30-day pilot <b>→</b></a>
           </div>
           <div className="pilotMeasure">
@@ -216,9 +216,23 @@ export default function Home() {
           <h2>Simple monthly pricing. No cut of your <span>revenue.</span></h2>
           <p>Month-to-month with 30 days’ notice. No performance fee. No percentage of jobs you win.</p>
         </div>
-        <div className="shell priceCards">
+        <div className="shell priceCards threePlans">
           <article>
-            <small>CORE</small>
+            <small>STARTER</small>
+            <h3>$1,000 <span>+ GST / month</span></h3>
+            <p className="planFor">For smaller pipelines that still need proper follow-up.</p>
+            <ul>
+              <li>10 new enquiries</li>
+              <li>10 open quotes</li>
+              <li>10 reactivation contacts</li>
+              <li>Australian human follow-up</li>
+              <li>AI-powered workflow and admin</li>
+              <li>CRM outcomes updated</li>
+              <li>Monthly performance summary</li>
+            </ul>
+          </article>
+          <article className="featuredPrice">
+            <small>CORE · MOST POPULAR</small>
             <h3>$2,490 <span>+ GST / month</span></h3>
             <ul>
               <li>35 new enquiries</li>
@@ -231,7 +245,7 @@ export default function Home() {
               <li>Quarterly results review</li>
             </ul>
           </article>
-          <article className="featuredPrice">
+          <article>
             <small>GROWTH</small>
             <h3>$4,490 <span>+ GST / month</span></h3>
             <ul>
@@ -335,7 +349,7 @@ export default function Home() {
           <details open><summary>Do you answer my phone live?</summary><p>No. JobSetter is not a live answering service. We work new-work enquiries captured through your forms, lead platforms, emails and missed-call systems.</p></details>
           <details><summary>Is your team in Australia?</summary><p>Yes. JobSetter’s customer follow-up team is Australian-based.</p></details>
           <details><summary>Do you lock me into a contract?</summary><p>No long lock-in contract. Ongoing plans are month-to-month with 30 days’ notice.</p></details>
-          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers. Your first 30 days are $990 + GST. If you continue, the Core plan is $2,490 + GST a month. No lock-in.</p></details>
+          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers and recommend the ongoing plan that fits your actual pipeline. Plans start at $1,000 + GST a month. No lock-in.</p></details>
         </div>
         <div className="shell sectionAction"><a className="button secondary" href="/faq">Read all FAQs <b>→</b></a></div>
       </section>
