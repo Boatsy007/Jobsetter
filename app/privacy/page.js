@@ -7,7 +7,7 @@ export default function PrivacyPage() {
   return (
     <main className="legalPage">
       <div className="legalShell">
-        <a className="brand legalBrand brandWordmark" href="/"><span className="logoJob">Job</span><span className="logoSetter">Setter</span></a>
+        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetterlogo.png" alt="JobSetter" /></a>
         <p className="legalUpdated">Last updated: 30 September 2026</p>
         <h1>Privacy Policy</h1>
         <p>JobSetter is an Australian service business. This policy explains how JobSetter collects, uses, stores and shares personal information when you use our website, request a pilot, communicate with us or become a client.</p>
