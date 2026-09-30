@@ -10,7 +10,7 @@ import DoDontSection from "./DoDontSection";
 
 export const metadata = {
   title: "JobSetter | Turn More Trade Leads Into Jobs",
-  description: "Australian-based follow-up team for high-ticket trades. We contact leads, book jobs, chase quotes and reactivate old customers.",
+  description: "Australian human follow-up for established trade businesses. Real people handle customer conversations while AI handles admin, reminders and reporting.",
 };
 
 const steps = [
@@ -39,14 +39,14 @@ export default function Home() {
 
       <section className="hero storySection heroBold" id="top">
         <div className="shell heroBoldInner">
-          <div className="heroKicker">AUSTRALIAN TEAM · HUMAN-LED · HIGH-TICKET TRADES</div>
+          <div className="heroKicker">AUSTRALIAN TEAM · HUMAN CONVERSATIONS · AI-POWERED OPERATIONS</div>
           <h1>Turn leads into <span>jobs.</span></h1>
 
           <div className="heroBoldLower">
             <div className="heroBoldCopy">
               <p className="heroText">You get the leads. JobSetter turns them into jobs.</p>
               <p className="heroSubline">
-                We contact new enquiries fast, qualify the job, book the next step, chase every open quote and bring old opportunities back into play.
+                Real Australian people handle the conversations. AI handles the admin, reminders, workflow and reporting around them — so every opportunity keeps moving.
               </p>
 
               <div className="heroBoldAction">
@@ -74,7 +74,7 @@ export default function Home() {
 
           <div className="heroProofBar">
             <span><b>AUSTRALIAN TEAM</b> Your customers speak to Australians</span>
-            <span><b>HUMAN-LED</b> AI handles texts, reminders and admin</span>
+            <span><b>HUMANS CALL</b> AI handles admin, workflow and reporting</span>
             <span><b>NO REVENUE CUT</b> Fixed monthly pricing</span>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
           <div>
             <p>JobSetter is not an offshore VA service and it is not an AI receptionist.</p>
-            <p>Your customer follow-up is handled by an Australian team and is human-led. AI and automation handle instant texts, reminders and repetitive admin around the conversation.</p>
+            <p>Your customer conversations are handled by real Australians. Behind them, AI and automation prepare context, handle repetitive admin, trigger reminders, update workflows and help produce reporting — keeping your JobSetter focused on the conversation.</p>
           </div>
         </div>
       </section>
@@ -204,8 +204,9 @@ export default function Home() {
             <div><b>Response time</b><span>How quickly new enquiries are contacted</span></div>
             <div><b>Bookings</b><span>Qualified opportunities booked</span></div>
             <div><b>Quote outcomes</b><span>Won, lost, dead and why</span></div>
-            <div><b>Revenue won</b><span>Compared with your starting point where data allows</span></div>
-            <p>Actual client data. No promised revenue increase.</p>
+            <div><b>Pipeline influenced</b><span>Opportunities JobSetter actively worked</span></div>
+            <div><b>Recovered wins</b><span>Wins attributable to follow-up where the data supports it</span></div>
+            <p>We separate pipeline influenced from attributable wins. Actual client data. No promised revenue increase.</p>
           </div>
         </div>
       </section>
@@ -223,7 +224,9 @@ export default function Home() {
               <li>35 new enquiries</li>
               <li>25 open quotes</li>
               <li>50 reactivation contacts</li>
-              <li>Weekly summary</li>
+              <li>Defined multi-touch follow-up</li>
+              <li>CRM outcomes updated</li>
+              <li>Weekly performance summary</li>
               <li>Monthly revenue report</li>
               <li>Quarterly results review</li>
             </ul>
@@ -235,14 +238,17 @@ export default function Home() {
               <li>60 new enquiries</li>
               <li>50 open quotes</li>
               <li>100 reactivation contacts</li>
-              <li>Weekly summary</li>
+              <li>Defined multi-touch follow-up</li>
+              <li>CRM outcomes updated</li>
+              <li>Priority calling capacity</li>
+              <li>Weekly performance summary</li>
               <li>Monthly revenue report</li>
               <li>Quarterly results review</li>
             </ul>
           </article>
         </div>
         <div className="shell priceFinePrint">
-          <p>Extra work, only after approval: <b>$35 + GST</b> per enquiry · <b>$45 + GST</b> per quote · <b>$9 + GST</b> per reactivation.</p>
+          <p>Extra work, only after approval: <b>$35 + GST</b> per enquiry · <b>$45 + GST</b> per quote · <b>$15 + GST</b> per additional reactivation.</p>
           <p>Quiet month? Unused enquiry allowance can be moved into extra reactivation work.</p>
           <a className="button secondary" href="/pricing">See full pricing <b>→</b></a>
         </div>
