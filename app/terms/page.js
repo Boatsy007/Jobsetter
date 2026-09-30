@@ -13,7 +13,7 @@ export default function TermsPage() {
         <p>These website terms summarise the current public offer. A client service agreement may contain additional commercial, privacy, confidentiality and operational terms and will control if there is any inconsistency.</p>
 
         <h2>30-Day Revenue Recovery Pilot</h2>
-        <p>The current pilot is <strong>$990 + GST</strong> for 30 days. If the client continues into a monthly JobSetter plan, the full pilot fee is credited against the first monthly invoice.</p>
+        <p>The current pilot is <strong>$990 + GST</strong> for 30 days. If the client continues after the first 30 days, the Core plan is $2,490 + GST per month unless another plan is agreed. There is no lock-in contract.</p>
         <p>The pilot scope is agreed before work begins and may include new enquiries, open quotes, reactivation contacts and measurement of starting response times or win rates where reliable baseline data exists.</p>
         <p>There is no automatic rollover into paid monthly service. Ongoing service starts only if the client expressly chooses to continue.</p>
 
