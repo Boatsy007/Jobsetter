@@ -39,13 +39,13 @@ export default function Header() {
             <img className="brandLogo" src="/jobsetterlogo.png" alt="JobSetter" />
           </a>
           <nav className="desktopNav">
-            <a href="#audit" onClick={() => trackNav("Revenue Audit")}>Revenue audit</a>
-            <a href="#journey" onClick={() => trackNav("How It Works")}>How it works</a>
-            <a href="#pilot-offer" onClick={() => trackNav("14-Day Pilot")}>14-day pilot</a>
-            <a href="#pricing" onClick={() => trackNav("Pricing")}>Pricing</a>
-            <a href="#why" onClick={() => trackNav("Why JobSetter")}>Why JobSetter</a>
+            <a href="/how-it-works" onClick={() => trackNav("How It Works")}>How it works</a>
+            <a href="/who-its-for" onClick={() => trackNav("Who It's For")}>Who it's for</a>
+            <a href="/pricing" onClick={() => trackNav("Pricing")}>Pricing</a>
+            <a href="/pilot" onClick={() => trackNav("30-Day Pilot")}>30-day pilot</a>
+            <a href="/about" onClick={() => trackNav("About")}>About</a>
           </nav>
-          <a className="button small" href="#pilot" onClick={() => trackNav("Start Pilot")}>Start a pilot</a>
+          <a className="button small" href="/contact" onClick={() => trackNav("Book Call")}>Book a call</a>
         </div>
       </header>
       <div className="mobileHeaderSpacer" aria-hidden="true" />
