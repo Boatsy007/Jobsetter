@@ -3177,3 +3177,71 @@ body{color:var(--t-ink)!important}
     text-shadow:none!important;
   }
 }
+
+
+/* Process banner v3: reliable CSS-only sequential loop */
+.processBannerStep{
+  --step:0;
+}
+.processBannerStep span,
+.processBannerStep i{
+  animation:none!important;
+}
+.processBannerStep span{
+  background:transparent!important;
+  color:#0c1520!important;
+  box-shadow:none!important;
+  transform:none!important;
+  animation:processStepWord 5.5s ease-in-out infinite!important;
+  animation-delay:calc(var(--step) * 1.1s)!important;
+}
+.processBannerStep i{
+  opacity:.42!important;
+  color:#1769ff!important;
+  transform:none!important;
+  text-shadow:none!important;
+  animation:processStepArrow 5.5s ease-in-out infinite!important;
+  animation-delay:calc(var(--step) * 1.1s + .55s)!important;
+}
+
+@keyframes processStepWord{
+  0%,14%,100%{
+    color:#0c1520;
+    transform:scale(1);
+  }
+  5%,9%{
+    color:#1769ff;
+    transform:scale(1.035);
+  }
+}
+@keyframes processStepArrow{
+  0%,14%,100%{
+    opacity:.42;
+    transform:translateX(0) scale(1);
+    text-shadow:none;
+  }
+  5%,9%{
+    opacity:1;
+    transform:translateX(4px) scale(1.08);
+    text-shadow:0 0 12px rgba(23,105,255,.22);
+  }
+}
+
+@media(max-width:700px){
+  .processBannerStep span{
+    animation-name:processStepWordMobile!important;
+  }
+  @keyframes processStepWordMobile{
+    0%,14%,100%{color:#0c1520;transform:scale(1)}
+    5%,9%{color:#1769ff;transform:scale(1.02)}
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .processBannerStep span,
+  .processBannerStep i{
+    animation:none!important;
+    transform:none!important;
+    text-shadow:none!important;
+  }
+}
