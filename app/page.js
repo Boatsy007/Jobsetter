@@ -128,7 +128,8 @@ export default function Home() {
           <div className="leadJourneyDiagram" aria-label="Lead journey showing where follow-up can break down">
             <div className="journeyStep"><span>Enquiry</span></div>
 
-            <div className="journeyConnector">
+            <div className="journeyConnector journeyLeakPoint">
+              <b>LEAK</b>
               <i>→</i>
               <small>Slow response</small>
             </div>
@@ -141,9 +142,10 @@ export default function Home() {
 
             <div className="journeyStep"><span>Quoted</span></div>
 
-            <div className="journeyConnector">
+            <div className="journeyConnector journeyLeakPoint">
+              <b>LEAK</b>
               <i>→</i>
-              <small>Quote never chased</small>
+              <small>No quote follow-up</small>
             </div>
 
             <div className="journeyStep"><span>Followed up</span></div>
@@ -156,7 +158,7 @@ export default function Home() {
           </div>
 
           <div className="reactivationLeak">
-            <b>Another leak:</b>
+            <b>SEPARATE LEAK</b>
             <span>Old leads and past customers sit untouched instead of being brought back into play.</span>
           </div>
         </div>
