@@ -4,6 +4,7 @@ import RevenueLeakCalculator from "./RevenueLeakCalculator";
 import PilotForm from "./PilotForm";
 import ScrollMotion from "./ScrollMotion";
 import MarketingFooter from "./MarketingFooter";
+import JobSetterFitCard from "./JobSetterFitCard";
 
 export const metadata = {
   title: "JobSetter | Turn More Trade Leads Into Jobs",
@@ -126,20 +127,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="shell jobSetterLayer">
-          <div className="jobSetterLayerIntro">
-            <small>WHERE JOBSETTER FITS</small>
-            <h3>We close the follow-up gaps around your existing sales process.</h3>
-            <p>You still quote the work and run the job. We make sure the opportunity keeps moving.</p>
-          </div>
-          <div className="jobSetterActions">
-            <span>Call new enquiries</span>
-            <span>Keep following up</span>
-            <span>Work old leads</span>
-            <span>Book the next step</span>
-            <span>Hand it back to your team</span>
-          </div>
-        </div>
+        <JobSetterFitCard />
       </section>
 
       <section className="section auditSection storySection" id="audit">
