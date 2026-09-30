@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { track } from "@vercel/analytics";
 
 const initialForm = {
@@ -8,13 +8,12 @@ const initialForm = {
   business: "",
   email: "",
   phone: "",
-  trade: "Plumbing",
-  monthlyLeads: "",
+  trade: "Building / renovation",
+  location: "",
+  staffCount: "3-5",
   averageJobValue: "",
-  openQuoteValue: "",
-  currentSystem: "",
-  preferredWindow: "Morning",
-  capacityWithin30Days: false,
+  monthlyLeads: "",
+  biggestProblem: "Slow response",
   pilotContactConsent: false,
   marketingConsent: false,
   website: "",
@@ -22,27 +21,12 @@ const initialForm = {
 
 export default function PilotForm() {
   const [form, setForm] = useState(initialForm);
-  const [audit, setAudit] = useState(null);
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [leadId, setLeadId] = useState("");
   const [fit, setFit] = useState("");
-
-  useEffect(() => {
-    try {
-      const raw = sessionStorage.getItem("jobsetterAudit");
-      if (!raw) return;
-      const parsed = JSON.parse(raw);
-      setAudit(parsed);
-      setForm((old) => ({
-        ...old,
-        monthlyLeads: parsed.monthlyLeads ? String(parsed.monthlyLeads) : old.monthlyLeads,
-        averageJobValue: parsed.averageJob ? String(parsed.averageJob) : old.averageJobValue,
-      }));
-    } catch {}
-  }, []);
 
   const update = (key, value) => {
     setForm((old) => ({ ...old, [key]: value }));
@@ -55,7 +39,7 @@ export default function PilotForm() {
     if (form.business.trim().length < 2) next.business = "Enter your business name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) next.email = "Enter a valid email.";
     if (form.phone.replace(/\D/g, "").length < 8) next.phone = "Enter a valid phone number.";
-    if (!form.pilotContactConsent) next.pilotContactConsent = "Please agree so we can contact you about this request.";
+    if (!form.pilotContactConsent) next.pilotContactConsent = "Please agree so we can contact you about the pilot.";
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -63,7 +47,6 @@ export default function PilotForm() {
   const context = () => {
     const params = new URLSearchParams(window.location.search);
     return {
-      audit,
       page: window.location.href,
       referrer: document.referrer,
       utm: {
@@ -79,12 +62,7 @@ export default function PilotForm() {
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        ...form,
-        ...context(),
-        stage,
-        leadId,
-      }),
+      body: JSON.stringify({ ...form, ...context(), stage, leadId }),
     });
     const data = await response.json();
     if (!response.ok || !data.ok) {
@@ -97,11 +75,7 @@ export default function PilotForm() {
 
   const continueToFit = async (event) => {
     event.preventDefault();
-    if (!validateStepOne()) {
-      try { track("Pilot Form Validation Error", { step: "contact" }); } catch {}
-      return;
-    }
-
+    if (!validateStepOne()) return;
     setStatus("saving");
     setMessage("");
     try {
@@ -122,7 +96,7 @@ export default function PilotForm() {
       url.searchParams.set("email", form.email);
       url.searchParams.set("utm_source", "jobsetter");
       url.searchParams.set("utm_medium", "website");
-      url.searchParams.set("utm_campaign", "14_day_pilot");
+      url.searchParams.set("utm_campaign", "30_day_pilot");
       return url.toString();
     } catch {
       return base;
@@ -133,19 +107,11 @@ export default function PilotForm() {
     event.preventDefault();
     setStatus("saving");
     setMessage("");
-
     try {
       const data = await persist("qualified");
       setFit(data.fit || "review");
       setStatus("saved");
-
-      try {
-        track("Pilot Lead Qualified", {
-          trade: form.trade,
-          hasAudit: audit ? "yes" : "no",
-          fit: data.fit || "review",
-        });
-      } catch {}
+      try { track("Pilot Lead Qualified", { trade: form.trade, fit: data.fit || "review" }); } catch {}
 
       if (data.bookingUrl) {
         try { track("Booking Opened", { source: "Saved Lead", fit: data.fit || "strong" }); } catch {}
@@ -155,7 +121,7 @@ export default function PilotForm() {
 
       setMessage(
         data.fit === "review"
-          ? "We’ve got your details. We’ll review the fit and contact you with the best next step."
+          ? "We’ve got your details. We’ll review whether JobSetter is the right fit and come back to you."
           : "You’re saved. We’ll contact you to arrange the pilot call."
       );
     } catch (error) {
@@ -168,8 +134,8 @@ export default function PilotForm() {
     return (
       <div className="pilotForm successState">
         <div className="successIcon">✓</div>
-        <small>PILOT REQUEST SAVED</small>
-        <h3>{fit === "review" ? "We’ll review the fit." : "You’re in the pipeline."}</h3>
+        <small>CALL REQUEST SAVED</small>
+        <h3>{fit === "review" ? "We’ll check the fit." : "Let’s talk."}</h3>
         <p>{message}</p>
         {leadId && <span>Reference: {leadId.slice(0, 8).toUpperCase()}</span>}
       </div>
@@ -181,9 +147,8 @@ export default function PilotForm() {
       <div className="pilotFormTop">
         <div>
           <small>STEP {step} OF 2</small>
-          <h3>{step === 1 ? "First, where can we reach you?" : "Now, is JobSetter a fit?"}</h3>
+          <h3>{step === 1 ? "First, your details." : "Now, tell us about the business."}</h3>
         </div>
-        {audit && <span className="auditChip">Audit {audit.score}/100</span>}
       </div>
 
       <div className="formStepProgress"><span style={{width: step === 1 ? "50%" : "100%"}} /></div>
@@ -203,7 +168,7 @@ export default function PilotForm() {
 
           <label className="checkRow">
             <input type="checkbox" checked={form.pilotContactConsent} onChange={(e) => update("pilotContactConsent", e.target.checked)} />
-            <span>I agree JobSetter can contact me by phone, email or SMS about this pilot request. *</span>
+            <span>I agree JobSetter can contact me by phone, email or SMS about this request. *</span>
           </label>
           {errors.pilotContactConsent && <em className="consentError">{errors.pilotContactConsent}</em>}
 
@@ -214,18 +179,13 @@ export default function PilotForm() {
       ) : (
         <>
           <div className="formGrid">
-            <label><span>Trade</span><select value={form.trade} onChange={(e) => update("trade", e.target.value)}><option>Plumbing</option><option>Electrical</option><option>HVAC</option><option>Roofing</option><option>Building</option><option>Landscaping</option><option>Other service business</option></select></label>
-            <label><span>Monthly enquiries</span><input type="number" min="0" value={form.monthlyLeads} onChange={(e) => update("monthlyLeads", e.target.value)} placeholder="e.g. 60" /></label>
-            <label><span>Average job value</span><input type="number" min="0" value={form.averageJobValue} onChange={(e) => update("averageJobValue", e.target.value)} placeholder="e.g. 2500" /></label>
-            <label><span>Open quotes sitting there</span><input type="number" min="0" value={form.openQuoteValue} onChange={(e) => update("openQuoteValue", e.target.value)} placeholder="e.g. 40000" /></label>
-            <label><span>CRM / job system</span><input value={form.currentSystem} onChange={(e) => update("currentSystem", e.target.value)} placeholder="ServiceM8, Tradify, other…" /></label>
-            <label><span>Best call window</span><select value={form.preferredWindow} onChange={(e) => update("preferredWindow", e.target.value)}><option>Morning</option><option>Lunch time</option><option>Afternoon</option></select></label>
+            <label><span>Trade</span><select value={form.trade} onChange={(e) => update("trade", e.target.value)}><option>Building / renovation</option><option>Roofing</option><option>Solar</option><option>Pools</option><option>Landscaping</option><option>HVAC installs</option><option>Kitchens / bathrooms</option><option>Other high-ticket trade</option></select></label>
+            <label><span>Location</span><input value={form.location} onChange={(e) => update("location", e.target.value)} placeholder="e.g. Gold Coast" /></label>
+            <label><span>Number of staff</span><select value={form.staffCount} onChange={(e) => update("staffCount", e.target.value)}><option>1-2</option><option>3-5</option><option>6-10</option><option>11-20</option><option>20+</option></select></label>
+            <label><span>Average job value</span><input type="number" min="0" value={form.averageJobValue} onChange={(e) => update("averageJobValue", e.target.value)} placeholder="e.g. 5000" /></label>
+            <label><span>Enquiries per month</span><input type="number" min="0" value={form.monthlyLeads} onChange={(e) => update("monthlyLeads", e.target.value)} placeholder="e.g. 30" /></label>
+            <label><span>Biggest problem</span><select value={form.biggestProblem} onChange={(e) => update("biggestProblem", e.target.value)}><option>Slow response</option><option>No quote follow-up</option><option>Old leads never contacted</option><option>A mix of all three</option></select></label>
           </div>
-
-          <label className="checkRow">
-            <input type="checkbox" checked={form.capacityWithin30Days} onChange={(e) => update("capacityWithin30Days", e.target.checked)} />
-            <span>We have room to take on more work in the next 30 days.</span>
-          </label>
 
           <label className="checkRow optional">
             <input type="checkbox" checked={form.marketingConsent} onChange={(e) => update("marketingConsent", e.target.checked)} />
@@ -235,14 +195,14 @@ export default function PilotForm() {
           <div className="formStepActions">
             <button className="textButton" type="button" onClick={() => setStep(1)}>← Back</button>
             <button className="button pilotSubmit" type="submit" disabled={status === "saving"}>
-              {status === "saving" ? "Checking fit…" : "Check my fit & choose a time"} <b>→</b>
+              {status === "saving" ? "Checking fit…" : "Book my JobSetter call"} <b>→</b>
             </button>
           </div>
         </>
       )}
 
       {status === "error" && <p className="formError">{message}</p>}
-      <p className="privacyLine">By submitting, you acknowledge our <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms" target="_blank" rel="noreferrer">Terms</a>.</p>
+      <p className="privacyLine">Submitting this form does not lock you into the pilot or an ongoing plan. See our <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms" target="_blank" rel="noreferrer">Terms</a>.</p>
     </form>
   );
 }
