@@ -48,7 +48,7 @@ export default function Home() {
               <div className="heroBoldAction">
                 <a className="button heroPrimary" href="/pilot">Start the 30-day pilot <b>→</b></a>
                 <a className="heroTextLink" href="/how-it-works">See how JobSetter works</a>
-                <span>$990 + GST · credited in full against your first month if you continue</span>
+                <span>Your first 30 days: $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.</span>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default function Home() {
             <h2>Give us 30 days and your real pipeline.</h2>
             <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
             <div className="pilotPrice">$990 <span>+ GST</span></div>
-            <strong>Credited in full against your first month if you continue.</strong>
+            <strong>Then $2,490 + GST a month if you continue. No lock-in.</strong>
             <a className="button" href="/pilot">See the 30-day pilot <b>→</b></a>
           </div>
           <div className="pilotMeasure">
@@ -283,7 +283,7 @@ export default function Home() {
           <details open><summary>Do you answer my phone live?</summary><p>No. JobSetter is not a live answering service. We work new-work enquiries captured through your forms, lead platforms, emails and missed-call systems.</p></details>
           <details><summary>Is your team in Australia?</summary><p>Yes. JobSetter’s customer follow-up team is Australian-based.</p></details>
           <details><summary>Do you lock me into a contract?</summary><p>No long lock-in contract. Ongoing plans are month-to-month with 30 days’ notice.</p></details>
-          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers. If you continue, the $990 + GST pilot fee is credited in full against your first month.</p></details>
+          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers. Your first 30 days are $990 + GST. If you continue, the Core plan is $2,490 + GST a month. No lock-in.</p></details>
         </div>
         <div className="shell sectionAction"><a className="button secondary" href="/faq">Read all FAQs <b>→</b></a></div>
       </section>
