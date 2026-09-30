@@ -3316,3 +3316,45 @@ body{color:var(--t-ink)!important}
     animation:none!important;
   }
 }
+
+
+/* Banner fallback for devices reporting reduced motion.
+   Keep the sequence visible using colour only, with no movement. */
+@media(prefers-reduced-motion:reduce){
+  .processBannerStep span{
+    animation-name:processReducedWord!important;
+    animation-duration:5.5s!important;
+    animation-timing-function:ease-in-out!important;
+    animation-iteration-count:infinite!important;
+    transform:none!important;
+    text-shadow:none!important;
+  }
+  .processBannerStep i{
+    animation-name:processReducedArrow!important;
+    animation-duration:5.5s!important;
+    animation-timing-function:ease-in-out!important;
+    animation-iteration-count:infinite!important;
+    transform:none!important;
+    text-shadow:none!important;
+  }
+
+  .processBannerStep:nth-child(1) span{animation-delay:0s!important}
+  .processBannerStep:nth-child(2) span{animation-delay:1.1s!important}
+  .processBannerStep:nth-child(3) span{animation-delay:2.2s!important}
+  .processBannerStep:nth-child(4) span{animation-delay:3.3s!important}
+  .processBannerStep:nth-child(5) span{animation-delay:4.4s!important}
+
+  .processBannerStep:nth-child(1) i{animation-delay:.55s!important}
+  .processBannerStep:nth-child(2) i{animation-delay:1.65s!important}
+  .processBannerStep:nth-child(3) i{animation-delay:2.75s!important}
+  .processBannerStep:nth-child(4) i{animation-delay:3.85s!important}
+
+  @keyframes processReducedWord{
+    0%,14%,100%{color:#0c1520!important;background:transparent!important}
+    4%,10%{color:#1769ff!important;background:#edf4ff!important}
+  }
+  @keyframes processReducedArrow{
+    0%,14%,100%{color:#8db5ff!important;opacity:.45!important}
+    4%,10%{color:#1769ff!important;opacity:1!important}
+  }
+}
