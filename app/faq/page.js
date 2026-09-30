@@ -28,11 +28,14 @@ const faqs=[
 ];
 
 export default function FaqPage(){
-  return <main>
-    <Header/><ProcessBanner/>
+  return <>
+    <Header/>
+    <main className="site-main">
+    <ProcessBanner/>
     <section className="pageHero"><div className="shell"><small>FAQ</small><h1>Straight answers before you start.</h1><p>No sales fog. Here’s what JobSetter does, doesn’t do and what it costs.</p></div></section>
     <section className="section"><div className="shell faqCompact">{faqs.map(([q,a],i)=><details key={q} open={i===0}><summary>{q}</summary><p>{a}</p></details>)}</div></section>
     <section className="ctaSection"><div className="shell simpleCta"><h2>Still not sure if it fits?</h2><p>Book a short call. We’ll look at your numbers first.</p><a className="button" href="/contact">Book a call <b>→</b></a></div></section>
     <MarketingFooter/>
-  </main>
+    </main>
+  </>
 }
