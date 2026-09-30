@@ -63,8 +63,9 @@ h1,h2,h3,h4,p{margin-top:0}
 .heroBoldAction{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:34px}
 .heroPrimary{width:min(430px,100%);min-height:56px;justify-content:space-between}
 .heroBoldAction>span{font-size:10px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#7b8793}
-.heroVideoCard{position:relative;min-height:300px;border:1px solid var(--line);background:var(--ink);overflow:hidden;display:flex}
-.heroVideoCard:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(23,105,255,.12),transparent 45%);pointer-events:none}
+.heroVideoCard{position:relative;min-height:300px;border:1px solid rgba(23,105,255,.14);border-radius:22px;background:var(--ink);overflow:hidden;display:flex;box-shadow:0 18px 50px rgba(7,16,28,.18),0 8px 22px rgba(23,105,255,.10)}
+.heroVideoCard:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(23,105,255,.12),transparent 45%);pointer-events:none;z-index:1}
+.heroVideoCard:after{content:"";position:absolute;inset:-1px;border-radius:22px;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);pointer-events:none;z-index:2}
 .heroVideo{display:block;width:100%;height:100%;min-height:300px;object-fit:cover;background:#000}
 .heroVideoPlaceholder{position:relative;z-index:1;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:22px;padding:28px;color:#fff;background:
   linear-gradient(180deg,transparent 0%,rgba(12,21,32,.82) 100%),
@@ -376,7 +377,7 @@ footer .brandSetter{color:#4f8cff}
   .heroText{font-size:19px}
   .heroBoldAction{margin-top:24px}
   .heroPrimary{width:100%}
-  .heroVideoCard{min-height:220px}
+  .heroVideoCard{min-height:220px;border-radius:18px;box-shadow:0 14px 34px rgba(7,16,28,.16),0 6px 18px rgba(23,105,255,.08)}
   .heroVideo,.heroVideoPlaceholder{min-height:220px}
   .heroVideoPlaceholder{padding:20px}
   .heroVideoPlaceholder strong{font-size:24px}
