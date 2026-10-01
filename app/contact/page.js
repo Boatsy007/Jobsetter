@@ -4,8 +4,33 @@ import PilotForm from "../PilotForm";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "Book a Call | JobSetter Australia",
-  description: "See if JobSetter suits your trade business. Tell us about your leads, team and average job value and book a call.",
+  title: "Book a Call",
+  description: "See if JobSetter suits your Australian trade business. Tell us about your lead volume, quotes and average job value and book a short fit call.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Book a Call | JobSetter",
+    description: "See whether JobSetter's Australian human lead and quote follow-up service fits your business and pipeline.",
+    url: "/contact",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Call | JobSetter",
+    description: "See whether JobSetter's Australian human lead and quote follow-up service fits your business and pipeline.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function ContactPage(){
