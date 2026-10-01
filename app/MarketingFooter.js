@@ -10,7 +10,6 @@ export default function MarketingFooter() {
           <a href="/how-it-works">How it works</a>
           <a href="/who-its-for">Who it's for</a>
           <a href="/pricing">Pricing</a>
-          <a href="/pilot">30-day pilot</a>
           <a href="/about">About</a>
           <a href="/faq">FAQ</a>
           <a href="/contact">Book a call</a>
