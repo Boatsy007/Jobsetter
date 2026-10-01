@@ -96,7 +96,7 @@ export default function Header() {
     <header className={`siteHeader${menuOpen ? " menuOpen" : ""}`}>
       <div className="shell nav">
         <a className="brand brandImageLink" href="/" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
-          <img className="brandLogo" src="/jobsetter-logo.webp" alt="JobSetter" />
+          <img className="brandLogo" src="/jobsetterlogo.png" alt="JobSetter" />
         </a>
         <nav className="desktopNav">
           <a href="/how-it-works" onClick={() => trackNav("How It Works")}>How it works</a>
