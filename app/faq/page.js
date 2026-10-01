@@ -3,8 +3,33 @@ import ProcessBanner from "../ProcessBanner";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "JobSetter FAQ | Leads, Quotes, Pricing & Pilot",
-  description: "Answers about JobSetter’s Australian team, lead follow-up, quote chasing, pricing, pilot, software and service terms.",
+  title: "Lead Follow-Up FAQ for Tradies",
+  description: "Straight answers about JobSetter's Australian team, lead and quote follow-up, pricing, allowances, software, service standards and month-to-month terms.",
+  alternates: {
+    canonical: "/faq",
+  },
+  openGraph: {
+    title: "Lead Follow-Up FAQ for Tradies | JobSetter",
+    description: "Answers about Australian human lead follow-up, quote chasing, pricing, allowances, software and service terms.",
+    url: "/faq",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lead Follow-Up FAQ for Tradies | JobSetter",
+    description: "Answers about Australian human lead follow-up, quote chasing, pricing, allowances, software and service terms.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const faqs=[
@@ -12,13 +37,13 @@ const faqs=[
 ["What about emergencies?","We don’t manage emergency call-outs. JobSetter is designed for project and quote-based work where the enquiry can be qualified and booked into an agreed next step."],
 ["Is your team in Australia?","Yes. JobSetter’s customer follow-up team is Australian-based. AI and automation support repetitive tasks, but customer conversations are human-led."],
 ["How quickly do you contact new enquiries?","Our service standard is within 30 minutes during business hours. An instant text can be sent immediately, followed by a call from the team."],
-["What if I go over my monthly allowance?","We tell you before additional charges apply. Extra work is $35 + GST per enquiry, $45 + GST per open quote and $9 + GST per reactivation contact."],
+["What if I go over my monthly allowance?","We tell you before additional charges apply. Extra work is $35 + GST per enquiry, $45 + GST per open quote and $15 + GST per reactivation contact."],
 ["Is there a lock-in contract?","No long lock-in contract. Monthly plans are month-to-month with 30 days’ notice."],
 ["Do you charge a percentage of the work I win?","No. There is no percentage of revenue and no performance fee."],
 ["How do you measure results?","We track what happens to the opportunities we work: response time, qualified leads, bookings, quote outcomes, lost reasons and revenue won where the data is available."],
 ["What software do you work with?","We aim to work around your existing calendar, CRM and job-management setup wherever practical. The exact workflow is confirmed during onboarding."],
 ["What do you need from me?","Send agreed leads to JobSetter, provide the calendar access we need, send quotes within the agreed timeframe after site visits, tell us when jobs are won or lost, and keep availability and job criteria current."],
-["What happens after the pilot?","We review the 30-day results. Your first 30 days are $990 + GST. If you continue, the Core plan is $2,490 + GST a month. No lock-in. If you don’t continue, there is no automatic monthly service."],
+["Which plan is right for me?","We look at your actual new-enquiry, open-quote and reactivation volume and recommend the smallest plan that properly covers your pipeline. Starter is $1,000 + GST per month, Core is $2,490 + GST and Growth is $4,490 + GST. Plans are month-to-month with 30 days’ notice."],
 ["Do you write my quotes?","No. Your business remains responsible for preparing and sending quotes. JobSetter follows them up after they have been sent."],
 ["Do you generate leads?","No. JobSetter is not a marketing agency. We work the enquiries, quotes and past contacts your business already has."],
 ["Do you guarantee I’ll win more jobs?","No. Customers still make their own decisions. JobSetter is accountable for the agreed follow-up work and service standard, not a particular sales or revenue result."],
