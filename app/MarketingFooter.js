@@ -3,7 +3,7 @@ export default function MarketingFooter() {
     <footer>
       <div className="shell footerTop">
         <div className="footerBrandBlock">
-          <div className="footerLogoPlate"><img className="footerLogo" src="/jobsetter-logo.webp" alt="JobSetter" /></div>
+          <div className="footerLogoPlate"><img className="footerLogo" src="/jobsetterlogo.png" alt="JobSetter" /></div>
           <p>Australian-based revenue follow-up for high-ticket trades.</p>
         </div>
         <div className="footerNav">
