@@ -19,7 +19,8 @@ const initialForm = {
   website: "",
 };
 
-export default function PilotForm() {
+export default function PilotForm({ mode = "pilot" }) {
+  const isPilot = mode === "pilot";
   const [form, setForm] = useState(initialForm);
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
@@ -39,7 +40,7 @@ export default function PilotForm() {
     if (form.business.trim().length < 2) next.business = "Enter your business name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) next.email = "Enter a valid email.";
     if (form.phone.replace(/\D/g, "").length < 8) next.phone = "Enter a valid phone number.";
-    if (!form.pilotContactConsent) next.pilotContactConsent = "Please agree so we can contact you about the pilot.";
+    if (!form.pilotContactConsent) next.pilotContactConsent = "Please agree so we can contact you about this request.";
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -62,7 +63,7 @@ export default function PilotForm() {
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ ...form, ...context(), stage, leadId }),
+      body: JSON.stringify({ ...form, ...context(), stage, leadId, requestMode: mode }),
     });
     const data = await response.json();
     if (!response.ok || !data.ok) {
@@ -82,7 +83,7 @@ export default function PilotForm() {
       await persist("contact");
       setStatus("idle");
       setStep(2);
-      try { track("Pilot Contact Captured", { source: "Pilot Form" }); } catch {}
+      try { track(isPilot ? "Pilot Contact Captured" : "Contact Captured", { source: isPilot ? "Pilot Form" : "Contact Form" }); } catch {}
     } catch (error) {
       setStatus("error");
       setMessage(error.message || "Something went wrong. Please try again.");
@@ -96,7 +97,7 @@ export default function PilotForm() {
       url.searchParams.set("email", form.email);
       url.searchParams.set("utm_source", "jobsetter");
       url.searchParams.set("utm_medium", "website");
-      url.searchParams.set("utm_campaign", "30_day_pilot");
+      url.searchParams.set("utm_campaign", isPilot ? "30_day_pilot" : "website_contact");
       return url.toString();
     } catch {
       return base;
@@ -111,7 +112,7 @@ export default function PilotForm() {
       const data = await persist("qualified");
       setFit(data.fit || "review");
       setStatus("saved");
-      try { track("Pilot Lead Qualified", { trade: form.trade, fit: data.fit || "review" }); } catch {}
+      try { track(isPilot ? "Pilot Lead Qualified" : "Contact Lead Qualified", { trade: form.trade, fit: data.fit || "review" }); } catch {}
 
       if (data.bookingUrl) {
         try { track("Booking Opened", { source: "Saved Lead", fit: data.fit || "strong" }); } catch {}
@@ -122,7 +123,7 @@ export default function PilotForm() {
       setMessage(
         data.fit === "review"
           ? "We’ve got your details. We’ll review whether JobSetter is the right fit and come back to you."
-          : "You’re saved. We’ll contact you to arrange the pilot call."
+          : (isPilot ? "You’re saved. We’ll contact you to arrange the pilot call." : "You’re saved. We’ll contact you to arrange your JobSetter call.")
       );
     } catch (error) {
       setStatus("error");
@@ -202,7 +203,7 @@ export default function PilotForm() {
       )}
 
       {status === "error" && <p className="formError">{message}</p>}
-      <p className="privacyLine">Submitting this form does not lock you into the pilot or an ongoing plan. See our <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms" target="_blank" rel="noreferrer">Terms</a>.</p>
+      <p className="privacyLine">Submitting this form does not lock you into {isPilot ? "the pilot or an ongoing plan" : "any plan"}. See our <a href="/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> and <a href="/terms" target="_blank" rel="noreferrer">Terms</a>.</p>
     </form>
   );
 }
