@@ -59,7 +59,7 @@ const organisationSchema = {
   name: "JobSetter",
   url: "https://jobsetter.com.au",
   email: "hello@jobsetter.com.au",
-  logo: "https://jobsetter.com.au/jobsetter-logo.webp",
+  logo: "https://jobsetter.com.au/jobsetterlogo.png",
   description: "Human-led lead follow-up, qualification, booking, quote recovery and reactivation for Australian trade and service businesses.",
   contactPoint: {
     "@type": "ContactPoint",
