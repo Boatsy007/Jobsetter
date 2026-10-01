@@ -3,8 +3,33 @@ import ProcessBanner from "../ProcessBanner";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "How JobSetter Works | Trade Lead Follow-Up",
-  description: "See how JobSetter contacts trade leads, qualifies jobs, books appointments, follows up quotes and reports on results.",
+  title: "How Lead Follow-Up Works for Tradies",
+  description: "See how JobSetter contacts new trade enquiries, qualifies jobs, books next steps, follows up quotes, reactivates old opportunities and reports outcomes.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
+  openGraph: {
+    title: "How Lead Follow-Up Works for Tradies | JobSetter",
+    description: "See how JobSetter's Australian team works new enquiries, open quotes and old opportunities from contact through to outcome.",
+    url: "/how-it-works",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How Lead Follow-Up Works for Tradies | JobSetter",
+    description: "See how JobSetter's Australian team works new enquiries, open quotes and old opportunities from contact through to outcome.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const steps = [
@@ -26,7 +51,7 @@ export default function HowItWorksPage(){
     <section className="section"><div className="shell storyIntro"><h2>One person knows your account.</h2><p>Each client has a named account manager who learns your service area, job criteria, calendar setup, lead sources, follow-up rules and common questions.</p></div></section>
     <section className="section"><div className="shell doDontGrid"><article><small>OUR JOB</small><h3>Own the follow-up.</h3><ul><li>Contact new enquiries</li><li>Qualify them</li><li>Book the right ones</li><li>Follow up open quotes</li><li>Reactivate old opportunities</li><li>Track outcomes</li><li>Report what happened</li><li>Separate influenced pipeline from attributable wins</li></ul></article><article><small>NOT OUR JOB</small><h3>Run your whole office.</h3><ul><li>Live-answer every call</li><li>Manage emergency work</li><li>Run advertising</li><li>Write quotes</li><li>Invoice customers</li><li>Replace your estimator</li></ul></article></div></section>
     <section className="section darkSection"><div className="shell splitIntro"><div><small>WHAT WE NEED FROM YOU</small><h2>It only works if both sides do their part.</h2></div><div><p>Send agreed leads to JobSetter. Give us the calendar access we need. Send quotes within the agreed timeframe after site visits. Tell us when jobs are won or lost. Keep availability and qualification rules up to date.</p><p>If we’re chasing quotes you haven’t sent, there’s not much we can recover.</p></div></div></section>
-    <section className="ctaSection"><div className="shell simpleCta"><h2>Want to see it on your own pipeline?</h2><p>Start with the 30-Day Revenue Recovery Pilot.</p><a className="button" href="/pilot">See the pilot <b>→</b></a></div></section>
+    <section className="ctaSection"><div className="shell simpleCta"><h2>Want to see if it fits your pipeline?</h2><p>Book a short call and we’ll look at your enquiry volume, quotes and follow-up process first.</p><a className="button" href="/contact">Book a call <b>→</b></a></div></section>
     <MarketingFooter/>
     </main>
   </>
