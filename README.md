@@ -139,3 +139,41 @@ https://YOUR-PRODUCTION-DOMAIN/pilot-confirmed
 ```
 
 That page fires the `Pilot Call Booked` analytics event.
+
+
+## Internal operations backend
+
+Step 1 of the JobSetter operating system now lives under `/admin`.
+
+The first backend release includes:
+
+- Supabase authentication for staff
+- protected internal admin routes
+- Starter / Core / Growth plan records
+- client records and client-specific rules
+- lead sources
+- contacts
+- opportunities
+- tasks / callbacks
+- activity history
+- monthly usage
+- a database view for the future Call Now queue
+
+### Supabase setup
+
+1. Create or connect the JobSetter Supabase project.
+2. Run `supabase/migrations/202610010001_jobsetter_core.sql`.
+3. Add these Vercel environment variables:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+4. Create the first staff user in Supabase Authentication.
+5. Visit `/admin/login`.
+
+The migration automatically creates a `profiles` row when a new Auth user is created.
+
+Do not expose `SUPABASE_SERVICE_ROLE_KEY` in client-side code.
