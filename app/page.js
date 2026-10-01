@@ -21,10 +21,10 @@ const steps = [
 ];
 
 const fit = [
-  "Roughly 3–20 staff",
-  "20+ enquiries a month",
-  "Typical jobs worth $3,000+",
-  "Owner, manager or estimator still involved in quoting",
+  "Busy sole trader or growing team",
+  "10+ workable opportunities a month",
+  "Typical jobs worth around $2,000+",
+  "You or someone on your team is still involved in quoting",
   "Capacity to take on more profitable work",
 ];
 
@@ -171,7 +171,7 @@ export default function Home() {
       <section className="section storySection">
         <div className="shell storyIntro">
           <h2>Built for businesses where one extra <span>job matters.</span></h2>
-          <p>JobSetter is for established, higher-ticket trade businesses with enough opportunity to justify proper follow-up.</p>
+          <p>JobSetter is for trade businesses where missed opportunities cost real money — from busy sole traders to established teams.</p>
         </div>
         <div className="shell fitGrid">
           <div className="fitPanel goodFit">
@@ -182,7 +182,7 @@ export default function Home() {
           <div className="fitPanel notFit">
             <small>PROBABLY NOT A FIT</small>
             <h3>We’d rather tell you before you pay us.</h3>
-            <p>If you only have a handful of opportunities each month, Starter may be enough. If most of your work is low-ticket service calls, JobSetter may still not make financial sense.</p>
+            <p>If you have fewer than roughly 10 workable opportunities each month, or most of your work is low-ticket service calls, JobSetter may not make financial sense yet.</p>
             <a href="/who-its-for">See who JobSetter is for →</a>
           </div>
         </div>
