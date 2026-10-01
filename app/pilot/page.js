@@ -4,8 +4,16 @@ import PilotForm from "../PilotForm";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "30-Day JobSetter Pilot | Test It On Your Leads",
-  description: "Your first 30 days with JobSetter are $990 + GST. Then $2,490 + GST a month if you continue. No lock-in.",
+  title: "30-Day JobSetter Pilot",
+  description: "Private JobSetter pilot offer for selected businesses.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 export default function PilotPage(){
