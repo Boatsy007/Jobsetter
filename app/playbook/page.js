@@ -25,6 +25,13 @@ export const metadata = {
 
 const guides = [
   {
+    category: "HUMAN VS AI",
+    title: "AI receptionist for tradies vs human follow-up: what’s better?",
+    summary: "Where AI receptionists help, where the follow-up gap begins and why answering a call is not the same as owning an opportunity.",
+    href: "/playbook/ai-receptionist-vs-human-follow-up-tradies",
+    time: "9 min read",
+  },
+  {
     category: "QUOTE FOLLOW-UP",
     title: "How to follow up a quote without sounding pushy",
     summary: "A practical follow-up rhythm for trade businesses, including what to say, when to call and when to stop chasing.",
