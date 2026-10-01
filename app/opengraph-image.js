@@ -22,7 +22,7 @@ export default function Image() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "3px solid #0c1520", paddingBottom: 28 }}>
           <img
-            src="https://jobsetter.com.au/jobsetterlogo.png"
+            src="https://jobsetter.com.au/jobsetter-logo.webp"
             alt="JobSetter"
             width="260"
             height="67"
