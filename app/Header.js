@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 760px)").matches;
     const main = document.querySelector(".site-main");
@@ -40,7 +42,9 @@ export default function Header() {
       const delta = y - lastY;
       const maxOffset = headerHeight();
 
-      if (y <= 0) {
+      if (header.classList.contains("menuOpen")) {
+        offset = 0;
+      } else if (y <= 0) {
         offset = 0;
       } else if (delta > 0) {
         // Match Monsta: dismiss quickly as the user scrolls down.
@@ -70,12 +74,26 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
   const trackNav = (label) => {
     try { track("Nav Click", { label }); } catch {}
   };
 
+  const closeMenu = (label) => {
+    setMenuOpen(false);
+    trackNav(label);
+  };
+
   return (
-    <header className="siteHeader">
+    <header className={`siteHeader${menuOpen ? " menuOpen" : ""}`}>
       <div className="shell nav">
         <a className="brand brandImageLink" href="/" aria-label="JobSetter home" onClick={() => trackNav("Logo")}>
           <img className="brandLogo" src="/jobsetterlogo.png" alt="JobSetter" />
@@ -86,8 +104,29 @@ export default function Header() {
           <a href="/pricing" onClick={() => trackNav("Pricing")}>Pricing</a>
           <a href="/about" onClick={() => trackNav("About")}>About</a>
         </nav>
-        <a className="button small" href="/contact" onClick={() => trackNav("Book Call")}>Book a call</a>
+        <div className="mobileHeaderActions">
+          <button
+            className={`mobileMenuButton${menuOpen ? " isOpen" : ""}`}
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <a className="button small" href="/contact" onClick={() => closeMenu("Book Call")}>Book a call</a>
+        </div>
       </div>
+      <nav id="mobile-navigation" className={`mobileNavPanel${menuOpen ? " isOpen" : ""}`} aria-hidden={!menuOpen}>
+        <div className="shell mobileNavInner">
+          <a href="/how-it-works" onClick={() => closeMenu("How It Works")}>How it works <b>→</b></a>
+          <a href="/who-its-for" onClick={() => closeMenu("Who It's For")}>Who it's for <b>→</b></a>
+          <a href="/pricing" onClick={() => closeMenu("Pricing")}>Pricing <b>→</b></a>
+          <a href="/about" onClick={() => closeMenu("About")}>About <b>→</b></a>
+          <a href="/faq" onClick={() => closeMenu("FAQ")}>FAQ <b>→</b></a>
+        </div>
+      </nav>
     </header>
   );
 }
