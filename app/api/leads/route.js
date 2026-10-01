@@ -45,6 +45,7 @@ export async function POST(request) {
     currentSystem: clean(body.currentSystem, 120),
     preferredWindow: clean(body.preferredWindow, 80),
     capacityWithin30Days: Boolean(body.capacityWithin30Days),
+    requestMode: clean(body.requestMode, 20) || "pilot",
     pilotContactConsent: Boolean(body.pilotContactConsent),
     pilotContactConsentAt: body.pilotContactConsent ? now : "",
     marketingConsent: Boolean(body.marketingConsent),
@@ -60,7 +61,7 @@ export async function POST(request) {
   if (lead.business.length < 2) errors.business = "Enter your business name.";
   if (!emailPattern.test(lead.email)) errors.email = "Enter a valid email.";
   if (lead.phone.replace(/\D/g, "").length < 8) errors.phone = "Enter a valid phone number.";
-  if (!lead.pilotContactConsent) errors.pilotContactConsent = "Please agree so we can contact you about your pilot request.";
+  if (!lead.pilotContactConsent) errors.pilotContactConsent = "Please agree so we can contact you about your request.";
 
   if (Object.keys(errors).length) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
@@ -68,10 +69,16 @@ export async function POST(request) {
 
   const monthlyLeads = toNumber(lead.monthlyLeads);
   const averageJob = toNumber(lead.averageJobValue || lead.audit?.averageJob);
-  const staffMatch = /^(3-5|6-10|11-20)$/.test(lead.staffCount);
+  const staffMatch = /^(3-5|6-10|11-20|20\+)$/.test(lead.staffCount);
   const strongDemand = monthlyLeads >= 20;
   const strongJobValue = averageJob >= 3000;
-  const fit = stage === "contact" ? "unscored" : (strongDemand && strongJobValue && staffMatch ? "strong" : "review");
+  const starterDemand = monthlyLeads >= 10;
+  const starterJobValue = averageJob >= 2000;
+  const publicContact = lead.requestMode === "contact";
+  const scoredFit = strongDemand && strongJobValue && staffMatch
+    ? "strong"
+    : (publicContact && starterDemand && starterJobValue ? "starter" : "review");
+  const fit = stage === "contact" ? "unscored" : scoredFit;
 
   let persisted = false;
   const persistenceErrors = [];
@@ -101,7 +108,7 @@ export async function POST(request) {
         "",
         `Lead ID: ${lead.id}`,
         `Stage: ${stage}`,
-        `Pilot fit: ${fit}`,
+        `Fit: ${fit}`,
         `Name: ${lead.name}`,
         `Business: ${lead.business}`,
         `Email: ${lead.email}`,
@@ -128,7 +135,7 @@ export async function POST(request) {
           to: [recipient],
           subject: stage === "contact"
             ? `JobSetter contact — ${lead.business}`
-            : `JobSetter pilot [${fit.toUpperCase()}] — ${lead.business}`,
+            : `JobSetter ${lead.requestMode === "pilot" ? "pilot " : ""}[${fit.toUpperCase()}] — ${lead.business}`,
           text: textBody,
           reply_to: lead.email,
         }),
@@ -164,6 +171,6 @@ export async function POST(request) {
     ok: true,
     leadId: lead.id,
     fit,
-    bookingUrl: stage === "qualified" && fit === "strong" ? (process.env.NEXT_PUBLIC_BOOKING_URL || "") : "",
+    bookingUrl: stage === "qualified" && (fit === "strong" || fit === "starter") ? (process.env.NEXT_PUBLIC_BOOKING_URL || "") : "",
   });
 }
