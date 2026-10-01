@@ -5,24 +5,21 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL("https://jobsetter.com.au"),
   title: {
-    default: "JobSetter | Turn More Trade Leads Into Jobs",
+    default: "Turn More Trade Leads Into Jobs | JobSetter",
     template: "%s | JobSetter",
   },
-  description: "Australian-based, human-led follow-up for high-ticket trade businesses: new enquiries, qualification, booking, quote follow-up and reactivation.",
+  description: "Australian human lead and quote follow-up for trade businesses: new enquiries, qualification, booking, quote follow-up and reactivation.",
   keywords: [
     "tradie lead follow up",
     "appointment setting for trades",
     "quote follow up",
-    "outsourced front office",
     "lead conversion for tradies",
-    "missed call recovery"
+    "lead reactivation",
+    "sales follow up for trades"
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
-    title: "JobSetter | Turn leads into jobs",
-    description: "Human-led lead follow-up, booking, quote recovery and reactivation for tradies.",
+    title: "Turn More Trade Leads Into Jobs | JobSetter",
+    description: "Australian human lead and quote follow-up for tradies, with AI supporting admin, workflow and reporting.",
     url: "/",
     type: "website",
     locale: "en_AU",
@@ -38,14 +35,17 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JobSetter | Turn leads into jobs",
-    description: "Human-led lead follow-up, booking, quote recovery and reactivation for tradies.",
+    title: "Turn More Trade Leads Into Jobs | JobSetter",
+    description: "Australian human lead and quote follow-up for tradies, with AI supporting admin, workflow and reporting.",
     images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
   },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
@@ -59,7 +59,15 @@ const organisationSchema = {
   name: "JobSetter",
   url: "https://jobsetter.com.au",
   email: "hello@jobsetter.com.au",
+  logo: "https://jobsetter.com.au/jobsetter-logo.webp",
   description: "Human-led lead follow-up, qualification, booking, quote recovery and reactivation for Australian trade and service businesses.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: "hello@jobsetter.com.au",
+    areaServed: "AU",
+    availableLanguage: "English",
+  },
 };
 
 const serviceSchema = {
