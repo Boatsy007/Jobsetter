@@ -3,8 +3,33 @@ import ProcessBanner from "../ProcessBanner";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "Who JobSetter Is For | Australian Trade Businesses",
-  description: "JobSetter is built for Australian trade businesses where enquiries, quotes and old opportunities are valuable enough to justify proper follow-up.",
+  title: "Who JobSetter Is For",
+  description: "See which Australian trade businesses are a strong fit for JobSetter lead and quote follow-up, from busy sole traders to growing teams.",
+  alternates: {
+    canonical: "/who-its-for",
+  },
+  openGraph: {
+    title: "Who JobSetter Is For | Australian Trade Businesses",
+    description: "See when outsourced human lead and quote follow-up makes commercial sense for an Australian trade business.",
+    url: "/who-its-for",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Who JobSetter Is For | Australian Trade Businesses",
+    description: "See when outsourced human lead and quote follow-up makes commercial sense for an Australian trade business.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function WhoItsForPage(){
