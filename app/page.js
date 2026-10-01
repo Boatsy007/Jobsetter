@@ -8,8 +8,33 @@ import ProcessTimeline from "./ProcessTimeline";
 import DoDontSection from "./DoDontSection";
 
 export const metadata = {
-  title: "JobSetter | Turn More Trade Leads Into Jobs",
-  description: "Australian human follow-up for established trade businesses. Real people handle customer conversations while AI handles admin, reminders and reporting.",
+  title: "Turn More Trade Leads Into Jobs",
+  description: "Australian human lead and quote follow-up for trade businesses. Real people handle customer conversations while AI supports admin, reminders and reporting.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Turn More Trade Leads Into Jobs | JobSetter",
+    description: "Australian humans follow up trade leads and quotes while AI supports the admin, workflow and reporting.",
+    url: "/",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turn More Trade Leads Into Jobs | JobSetter",
+    description: "Australian humans follow up trade leads and quotes while AI supports the admin, workflow and reporting.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const steps = [
