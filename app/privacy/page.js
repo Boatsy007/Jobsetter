@@ -1,25 +1,50 @@
 export const metadata = {
-  title: "Privacy Policy | JobSetter",
-  description: "How JobSetter handles personal information."
+  title: "Privacy Policy",
+  description: "How JobSetter collects, uses, stores and shares personal information for its Australian lead and quote follow-up service.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | JobSetter",
+    description: "How JobSetter handles personal information for website enquiries and client lead follow-up services.",
+    url: "/privacy",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | JobSetter",
+    description: "How JobSetter handles personal information for website enquiries and client lead follow-up services.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function PrivacyPage() {
   return (
     <main className="legalPage">
       <div className="legalShell">
-        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetterlogo.png" alt="JobSetter" /></a>
+        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetter-logo.webp" alt="JobSetter" /></a>
         <p className="legalUpdated">Last updated: 30 September 2026</p>
         <h1>Privacy Policy</h1>
-        <p>JobSetter is an Australian service business. This policy explains how JobSetter collects, uses, stores and shares personal information when you use our website, request a pilot, communicate with us or become a client.</p>
+        <p>JobSetter is an Australian service business. This policy explains how JobSetter collects, uses, stores and shares personal information when you use our website, contact us, communicate with us or become a client.</p>
 
         <h2>What we collect</h2>
         <p>Depending on how you interact with us, we may collect your name, business name, phone number, email address, trade, approximate business revenue, enquiry volume, CRM or job-management system, booking preferences, diagnostic answers, website analytics, referral information and information you choose to provide during calls or onboarding.</p>
 
         <h2>Why we collect it</h2>
-        <p>We use this information to respond to enquiries, assess pilot suitability, provide and improve JobSetter services, configure qualification and follow-up workflows, arrange meetings, measure website and funnel performance, maintain records, prevent misuse and meet legal obligations.</p>
+        <p>We use this information to respond to enquiries, assess service suitability, provide and improve JobSetter services, configure qualification and follow-up workflows, arrange meetings, measure website and funnel performance, maintain records, prevent misuse and meet legal obligations.</p>
 
         <h2>Communications</h2>
-        <p>If you request a pilot or contact us, we may use the contact details you provide to respond to that request by phone, email or SMS. Marketing messages are only sent where we have an appropriate basis to do so. Where required, marketing messages identify the sender and include a way to opt out.</p>
+        <p>If you contact us or contact us, we may use the contact details you provide to respond to that request by phone, email or SMS. Marketing messages are only sent where we have an appropriate basis to do so. Where required, marketing messages identify the sender and include a way to opt out.</p>
 
         <h2>Service providers</h2>
         <p>We may use service providers for hosting, analytics, CRM, scheduling, communications, workflow automation and email delivery. Those providers may process information on our behalf. We only use information for the purposes described in this policy or otherwise disclosed to you.</p>
