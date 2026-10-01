@@ -1,24 +1,47 @@
 export const metadata = {
-  title: "Terms | JobSetter",
-  description: "Website, pilot and service terms for JobSetter."
+  title: "Terms of Service",
+  description: "Website and service terms for JobSetter's Australian human-led lead and quote follow-up plans.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | JobSetter",
+    description: "Current JobSetter website and service terms, including plans, allowances, additional usage and service standards.",
+    url: "/terms",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | JobSetter",
+    description: "Current JobSetter website and service terms, including plans, allowances, additional usage and service standards.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function TermsPage() {
   return (
     <main className="legalPage">
       <div className="legalShell">
-        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetterlogo.png" alt="JobSetter" /></a>
-        <p className="legalUpdated">Last updated: 30 September 2026</p>
+        <a className="brand legalBrand brandImageLink" href="/"><img className="legalLogo" src="/jobsetter-logo.webp" alt="JobSetter" /></a>
+        <p className="legalUpdated">Last updated: 1 October 2026</p>
         <h1>JobSetter Terms</h1>
         <p>These website terms summarise the current public offer. A client service agreement may contain additional commercial, privacy, confidentiality and operational terms and will control if there is any inconsistency.</p>
 
-        <h2>30-Day Revenue Recovery Pilot</h2>
-        <p>The current pilot is <strong>$990 + GST</strong> for 30 days. If the client continues after the first 30 days, the Core plan is $2,490 + GST per month unless another plan is agreed. There is no lock-in contract.</p>
-        <p>The pilot scope is agreed before work begins and may include new enquiries, open quotes, reactivation contacts and measurement of starting response times or win rates where reliable baseline data exists.</p>
-        <p>There is no automatic rollover into paid monthly service. Ongoing service starts only if the client expressly chooses to continue.</p>
+        <h2>Promotional offers</h2>
+        <p>JobSetter may occasionally offer introductory, founding-client or pilot terms to selected businesses. Any such offer applies only where it is provided in writing and does not change the standard public monthly plans unless expressly stated.</p>
 
         <h2>Who JobSetter is designed for</h2>
-        <p>JobSetter is primarily designed for established, higher-ticket trade businesses that already generate demand. A strong fit will generally have around 3–20 staff, at least 20 enquiries per month, typical jobs of around $3,000 or more, an existing quoting process and capacity to take on more work.</p>
+        <p>JobSetter is designed for Australian trade businesses that already generate worthwhile opportunities. A strong fit may be a busy sole trader or a growing team with roughly 10 or more workable opportunities each month across new enquiries, open quotes or reactivation, typical jobs around $2,000 or more, an existing quoting process and capacity to take on more work.</p>
         <p>JobSetter may not be suitable for businesses with very low lead volume, mainly low-ticket service calls, no capacity for more work or no practical way to track quote outcomes.</p>
 
         <h2>What JobSetter does</h2>
@@ -33,12 +56,13 @@ export default function TermsPage() {
         <p>For customer or prospect data supplied to JobSetter, the client must ensure the information can lawfully be used for the agreed contact and must communicate any restrictions, withdrawals of consent or do-not-contact requests promptly.</p>
 
         <h2>Ongoing plans</h2>
+        <p><strong>Starter: $1,000 + GST per month</strong> — up to 10 new enquiries contacted and qualified, 10 open quotes followed up and 10 reactivation contacts, plus Australian human follow-up, AI-supported workflow and admin, CRM outcome updates and a monthly performance summary.</p>
         <p><strong>Core: $2,490 + GST per month</strong> — up to 35 new enquiries contacted and qualified, 25 open quotes followed up and 50 reactivation contacts, plus weekly summary, monthly revenue report and quarterly results review.</p>
         <p><strong>Growth: $4,490 + GST per month</strong> — up to 60 new enquiries contacted and qualified, 50 open quotes followed up and 100 reactivation contacts, plus weekly summary, monthly revenue report and quarterly results review.</p>
         <p>Ongoing service is month-to-month with 30 days’ notice unless otherwise agreed. There is no percentage-of-revenue fee and no performance fee.</p>
 
         <h2>Additional usage</h2>
-        <p>Where the client requests work beyond the included allowance, the current additional rates are <strong>$35 + GST per new enquiry</strong>, <strong>$45 + GST per open quote</strong> and <strong>$9 + GST per reactivation contact</strong>. JobSetter will tell the client before additional charges apply.</p>
+        <p>Where the client requests work beyond the included allowance, the current additional rates are <strong>$35 + GST per new enquiry</strong>, <strong>$45 + GST per open quote</strong> and <strong>$15 + GST per reactivation contact</strong>. JobSetter will tell the client before additional charges apply.</p>
         <p>In quieter months, unused new-enquiry allowance may be moved into additional reactivation work by agreement with the account manager.</p>
 
         <h2>Service standard</h2>
