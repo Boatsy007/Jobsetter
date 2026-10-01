@@ -104,7 +104,7 @@ export async function POST(request) {
       const from = process.env.RESEND_FROM_EMAIL || "JobSetter Leads <leads@jobsetter.com.au>";
 
       const textBody = [
-        stage === "contact" ? "JobSetter contact captured" : "JobSetter qualified pilot lead",
+        stage === "contact" ? "JobSetter contact captured" : (lead.requestMode === "pilot" ? "JobSetter qualified pilot lead" : "JobSetter qualified contact lead"),
         "",
         `Lead ID: ${lead.id}`,
         `Stage: ${stage}`,
@@ -160,7 +160,7 @@ export async function POST(request) {
   }
 
   try {
-    await track(stage === "contact" ? "Pilot Contact Captured" : "Pilot Lead Qualified", {
+    await track(stage === "contact" ? (lead.requestMode === "pilot" ? "Pilot Contact Captured" : "Contact Captured") : (lead.requestMode === "pilot" ? "Pilot Lead Qualified" : "Contact Lead Qualified"), {
       trade: lead.trade || "Unknown",
       hasAudit: lead.audit ? "yes" : "no",
       fit,
