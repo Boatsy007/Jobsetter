@@ -1743,3 +1743,178 @@ footer .brandSetter{color:#4f8cff}
 .priceCards.threePlans{grid-template-columns:repeat(3,minmax(0,1fr))}
 .planFor{margin:-10px 0 18px;color:var(--muted);font-size:14px;line-height:1.45}
 @media(max-width:1040px){.priceCards.threePlans{grid-template-columns:1fr}}
+
+
+/* Follow-Up Playbook */
+.playbookHero{background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)}
+.playbookHero p{max-width:820px}
+.playbookIntro{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:50px;
+  align-items:end;
+  margin-bottom:28px;
+}
+.playbookIntro small{
+  display:block;
+  margin-bottom:10px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.1em;
+}
+.playbookIntro h2{
+  margin:0;
+  max-width:760px;
+  color:var(--ink);
+  font-size:clamp(46px,5.2vw,76px);
+  line-height:.94;
+  letter-spacing:-.045em;
+}
+.playbookIntro p{
+  margin:0;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.6;
+}
+.playbookGrid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.playbookCard{
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  padding:26px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  color:var(--ink);
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.playbookCard:hover{
+  transform:translateY(-3px);
+  border-color:#bcd0ff;
+  box-shadow:0 18px 34px rgba(7,16,28,.08);
+}
+.playbookCard.featuredGuide{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+.playbookMeta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.08em;
+}
+.featuredGuide .playbookMeta{color:#8db5ff}
+.playbookCard h3{
+  margin:26px 0 14px;
+  font-size:clamp(28px,2.5vw,38px);
+  line-height:1;
+  letter-spacing:-.035em;
+}
+.playbookCard p{
+  margin:0 0 28px;
+  color:#55616d;
+  font-size:15px;
+  line-height:1.6;
+}
+.featuredGuide p{color:#c4ced7}
+.playbookCard b{
+  margin-top:auto;
+  color:var(--blue);
+  font-size:14px;
+}
+.featuredGuide b{color:#fff}
+
+.guideArticle{padding:74px 0 20px}
+.guideHero{
+  max-width:920px;
+  padding-top:20px;
+  padding-bottom:44px;
+  border-bottom:1px solid var(--line);
+}
+.guideBack{
+  display:inline-block;
+  margin-bottom:38px;
+  color:var(--blue);
+  font-size:13px;
+  font-weight:900;
+  text-decoration:none;
+}
+.guideHero>small{
+  display:block;
+  margin-bottom:12px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.1em;
+}
+.guideHero h1{
+  margin:0 0 22px;
+  color:var(--ink);
+  font-size:clamp(54px,7vw,92px);
+  line-height:.9;
+  letter-spacing:-.055em;
+}
+.guideHero p{
+  max-width:780px;
+  margin:0;
+  color:var(--muted);
+  font-size:21px;
+  line-height:1.5;
+}
+.guideBody{
+  max-width:820px;
+  padding-top:44px;
+  padding-bottom:70px;
+}
+.guideBody h2{
+  margin:48px 0 14px;
+  color:var(--ink);
+  font-size:clamp(34px,4vw,52px);
+  line-height:1;
+  letter-spacing:-.035em;
+}
+.guideBody h2:first-child{margin-top:0}
+.guideBody p{
+  margin:0 0 18px;
+  color:#46525f;
+  font-size:18px;
+  line-height:1.75;
+}
+.guideCallout{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:34px 0;
+  padding:24px;
+  border-left:4px solid var(--blue);
+  background:#f5f8ff;
+}
+.guideCallout b{color:var(--ink);font-size:18px}
+.guideCallout span{color:#4d5966;font-size:16px;line-height:1.55}
+
+@media(max-width:1040px){
+  .playbookGrid{grid-template-columns:1fr}
+  .playbookCard{min-height:0}
+}
+@media(max-width:760px){
+  .playbookIntro{grid-template-columns:1fr;gap:16px}
+  .playbookIntro h2{font-size:clamp(42px,12vw,58px)}
+  .playbookCard{padding:22px}
+  .guideArticle{padding-top:26px}
+  .guideHero{padding-bottom:32px}
+  .guideBack{margin-bottom:26px}
+  .guideHero h1{font-size:clamp(48px,13vw,68px)}
+  .guideHero p{font-size:18px}
+  .guideBody{padding-top:32px}
+  .guideBody p{font-size:17px;line-height:1.7}
+}
