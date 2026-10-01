@@ -14,7 +14,7 @@ export default function FounderSection() {
           <div>
             <small>FOUNDER, JOBSETTER</small>
             <h3>Rohan</h3>
-            <p>Building JobSetter around one thing: no good lead should be left sitting there.</p>
+            <p>Building JobSetter around one thing: worthwhile opportunities deserve proper follow-up.</p>
           </div>
         </div>
 
@@ -22,8 +22,10 @@ export default function FounderSection() {
           <div className="eyebrow"><span /> WHY JOBSETTER EXISTS</div>
           <h2>Getting the lead is only half the job.</h2>
           <p className="leadText">
-            JobSetter is being built around a simple idea: if a business is already spending time and money creating enquiries,
-            somebody should be responsible for working every worthwhile opportunity until there is a clear next step.
+            Rohan comes from a hands-on trade and fabrication background and later moved into marketing and business. JobSetter was created around a simple operational gap: trade businesses can spend heavily generating enquiries and preparing quotes, then lose momentum because nobody has the time to consistently follow every opportunity through.
+          </p>
+          <p>
+            The service is designed to give owners a real Australian team responsible for those conversations, while AI and automation handle much of the repetitive admin, reminders and workflow around them.
           </p>
           <p className="founderPromise">Before we go live, you know who is talking to your customers, what a good job looks like and exactly how bookings get handed back to you.</p>
           {videoUrl && (
