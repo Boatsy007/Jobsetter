@@ -102,6 +102,7 @@ export default function Header() {
           <a href="/how-it-works" onClick={() => trackNav("How It Works")}>How it works</a>
           <a href="/who-its-for" onClick={() => trackNav("Who It's For")}>Who it's for</a>
           <a href="/pricing" onClick={() => trackNav("Pricing")}>Pricing</a>
+          <a href="/playbook" onClick={() => trackNav("Playbook")}>Playbook</a>
           <a href="/about" onClick={() => trackNav("About")}>About</a>
         </nav>
         <div className="mobileHeaderActions">
@@ -123,6 +124,7 @@ export default function Header() {
           <a href="/how-it-works" onClick={() => closeMenu("How It Works")}>How it works <b>→</b></a>
           <a href="/who-its-for" onClick={() => closeMenu("Who It's For")}>Who it's for <b>→</b></a>
           <a href="/pricing" onClick={() => closeMenu("Pricing")}>Pricing <b>→</b></a>
+          <a href="/playbook" onClick={() => closeMenu("Playbook")}>Playbook <b>→</b></a>
           <a href="/about" onClick={() => closeMenu("About")}>About <b>→</b></a>
           <a href="/faq" onClick={() => closeMenu("FAQ")}>FAQ <b>→</b></a>
         </div>
