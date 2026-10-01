@@ -1,7 +1,6 @@
 import Header from "./Header";
 import ProcessBanner from "./ProcessBanner";
 import RevenueLeakCalculator from "./RevenueLeakCalculator";
-import PilotForm from "./PilotForm";
 import ScrollMotion from "./ScrollMotion";
 import MarketingFooter from "./MarketingFooter";
 import JobSetterFitCard from "./JobSetterFitCard";
@@ -50,9 +49,9 @@ export default function Home() {
               </p>
 
               <div className="heroBoldAction">
-                <a className="button heroPrimary" href="/pilot">Start the 30-day pilot <b>→</b></a>
+                <a className="button heroPrimary" href="/contact">See if JobSetter fits your business <b>→</b></a>
                 <a className="heroTextLink" href="#audit">Find where you’re losing leads ↓</a>
-                <span>Your first 30 days: $990 + GST. Ongoing plans start at $1,000 + GST a month. No lock-in.</span>
+                <span>Plans start at $1,000 + GST a month. Month-to-month. No long lock-in.</span>
               </div>
             </div>
 
@@ -189,28 +188,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section pilotFeature storySection" id="pilot">
-        <div className="shell pilotHeroGrid">
-          <div>
-            <small>30-DAY REVENUE RECOVERY PILOT</small>
-            <h2>Give us 30 days and your real <span>pipeline.</span></h2>
-            <p>We measure your starting response times and win rate, then work agreed new enquiries and open quotes for 30 days.</p>
-            <div className="pilotPrice">$990 <span>+ GST</span></div>
-            <strong>Your first 30 days: $990 + GST. After the pilot, we’ll recommend the ongoing plan that matches your actual pipeline. No lock-in.</strong>
-            <a className="button" href="/pilot">See the 30-day pilot <b>→</b></a>
-          </div>
-          <div className="pilotMeasure">
-            <small>WE MEASURE</small>
-            <div><b>Response time</b><span>How quickly new enquiries are contacted</span></div>
-            <div><b>Bookings</b><span>Qualified opportunities booked</span></div>
-            <div><b>Quote outcomes</b><span>Won, lost, dead and why</span></div>
-            <div><b>Pipeline influenced</b><span>Opportunities JobSetter actively worked</span></div>
-            <div><b>Recovered wins</b><span>Wins attributable to follow-up where the data supports it</span></div>
-            <p>We separate pipeline influenced from attributable wins. Actual client data. No promised revenue increase.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="section storySection" id="pricing">
         <div className="shell storyIntro">
           <h2>Simple monthly pricing. No cut of your <span>revenue.</span></h2>
@@ -336,7 +313,7 @@ export default function Home() {
           <p>No made-up testimonials. No borrowed logos. No invented results.</p>
         </div>
         <div className="shell comingResults">
-          <small>CLIENT RESULTS COMING AFTER FOUNDING PILOTS</small>
+          <small>CLIENT RESULTS COMING AS FOUNDING CLIENTS GO LIVE</small>
           <span>Response times</span><span>Bookings</span><span>Quote outcomes</span><span>Revenue recovered</span>
         </div>
       </section>
@@ -349,7 +326,7 @@ export default function Home() {
           <details open><summary>Do you answer my phone live?</summary><p>No. JobSetter is not a live answering service. We work new-work enquiries captured through your forms, lead platforms, emails and missed-call systems.</p></details>
           <details><summary>Is your team in Australia?</summary><p>Yes. JobSetter’s customer follow-up team is Australian-based.</p></details>
           <details><summary>Do you lock me into a contract?</summary><p>No long lock-in contract. Ongoing plans are month-to-month with 30 days’ notice.</p></details>
-          <details><summary>What happens after the pilot?</summary><p>We review the 30-day numbers and recommend the ongoing plan that fits your actual pipeline. Plans start at $1,000 + GST a month. No lock-in.</p></details>
+          <details><summary>Which plan is right for me?</summary><p>We’ll look at your actual enquiry, quote and reactivation volume and recommend the smallest plan that properly covers your pipeline. Plans start at $1,000 + GST a month.</p></details>
         </div>
         <div className="shell sectionAction"><a className="button secondary" href="/faq">Read all FAQs <b>→</b></a></div>
       </section>
@@ -358,10 +335,9 @@ export default function Home() {
         <div className="shell ctaCard">
           <div className="ctaCopy">
             <h2>You’ve already paid for the lead. Make sure someone <span>follows it through.</span></h2>
-            <p>Start with the 30-Day Revenue Recovery Pilot. We’ll first check whether JobSetter actually suits your business.</p>
-            <div className="pilotPrice">$990 <span>+ GST</span></div>
+            <p>Book a call and we’ll first check whether JobSetter actually suits your business and which plan matches your pipeline.</p>
           </div>
-          <PilotForm />
+          <div className="ctaAction"><a className="button" href="/contact">Book a call <b>→</b></a><p>Plans from $1,000 + GST a month. Month-to-month.</p></div>
         </div>
       </section>
 
