@@ -5,6 +5,7 @@ export default function sitemap() {
     "/how-it-works",
     "/pricing",
     "/playbook",
+    "/playbook/ai-receptionist-vs-human-follow-up-tradies",
     "/playbook/how-to-follow-up-a-quote",
     "/playbook/how-fast-to-contact-a-new-lead",
     "/playbook/reactivate-old-leads",
