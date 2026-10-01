@@ -167,8 +167,8 @@ The first backend release includes:
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_SECRET_KEY=
 ```
 
 4. Create the first staff user in Supabase Authentication.
@@ -176,4 +176,4 @@ SUPABASE_SERVICE_ROLE_KEY=
 
 The migration automatically creates a `profiles` row when a new Auth user is created.
 
-Do not expose `SUPABASE_SERVICE_ROLE_KEY` in client-side code.
+Do not expose `SUPABASE_SECRET_KEY` in client-side code.
