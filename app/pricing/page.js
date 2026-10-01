@@ -3,8 +3,33 @@ import ProcessBanner from "../ProcessBanner";
 import MarketingFooter from "../MarketingFooter";
 
 export const metadata = {
-  title: "JobSetter Pricing | Trade Lead Follow-Up",
-  description: "JobSetter plans from $1,000 + GST per month. See allowances, extras and simple month-to-month terms.",
+  title: "Lead Follow-Up Pricing for Tradies",
+  description: "JobSetter plans start at $1,000 + GST per month for Australian human lead and quote follow-up. Compare Starter, Core and Growth.",
+  alternates: {
+    canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Lead Follow-Up Pricing for Tradies | JobSetter",
+    description: "Compare JobSetter Starter, Core and Growth plans for Australian human lead and quote follow-up.",
+    url: "/pricing",
+    type: "website",
+    locale: "en_AU",
+    siteName: "JobSetter",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "JobSetter — Turn leads into jobs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lead Follow-Up Pricing for Tradies | JobSetter",
+    description: "Compare JobSetter Starter, Core and Growth plans for Australian human lead and quote follow-up.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const plans=[
