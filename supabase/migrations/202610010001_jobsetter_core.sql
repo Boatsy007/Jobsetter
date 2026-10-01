@@ -390,7 +390,9 @@ to authenticated
 using (public.is_active_staff())
 with check (public.is_active_staff());
 
-create or replace view public.call_queue as
+create or replace view public.call_queue
+with (security_invoker = true)
+as
 select
   t.id as task_id,
   t.type as task_type,
